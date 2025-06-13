@@ -1,2 +1,3 @@
 # Buay-InfoSystem
-2nd Year Project of Information Management Course
+2nd Year Project of Information Management Subject
+
