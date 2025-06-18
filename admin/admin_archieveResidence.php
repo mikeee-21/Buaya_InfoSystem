@@ -432,7 +432,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -1130,7 +1130,7 @@ function populateResidentModal(data) {
 
 // Main function to load all residents
 function loadAllResidents() {
-  fetch('../backend/admin/get_all_archived_resident.php')
+  fetch('../views/admin/get_all_archived_resident.php')
     .then(response => response.json())
     .then(data => {
       const tbody = document.querySelector("#archiveResidenceTable tbody");
@@ -1248,7 +1248,7 @@ function createResidentRow(res) {
 
 //archive resident
 function archiveResident(resId, rowElement) {
-  fetch('../backend/admin/unarchived_resident.php', {
+  fetch('../views/admin/unarchived_resident.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -1360,7 +1360,7 @@ function searchResidents() {
   const lastName = document.querySelector('#last_name').value.trim();
   const residentId = document.querySelector('#resident_id').value.trim();
 
-  fetch('../backend/admin/filter_unarchived_resident.php', {
+  fetch('../views/admin/filter_unarchived_resident.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -1415,8 +1415,8 @@ document.querySelector('#reset').addEventListener('click', () => {
 
 
 <script>
-  // Fetch the zones from the backend
-  fetch('../backend/admin/get_all_zone_name.php')
+  // Fetch the zones from the views
+  fetch('../views/admin/get_all_zone_name.php')
     .then(response => response.json())
     .then(zones => {
         // Get the select element

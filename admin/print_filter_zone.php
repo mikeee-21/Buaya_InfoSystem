@@ -332,7 +332,7 @@ function displayAppliedFilters(filters) {
 
 function loadResidentsForPrint(filters) {
     $.ajax({
-        url: "../backend/admin/filter_resident_in_zone.php",
+        url: "../views/admin/filter_resident_in_zone.php",
         type: "GET",
         data: filters,
         dataType: "json",

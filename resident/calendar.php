@@ -647,7 +647,7 @@ font-family: 'Inter', sans-serif;
         let currentView = 'month';
         let events = [];
         
-        // Fetch events from backend
+        // Fetch events from views
         fetchEvents();
         
         // initialize calendar
@@ -758,9 +758,9 @@ font-family: 'Inter', sans-serif;
             }
         }
         
-        // Fetch events from backend
+        // Fetch events from views
         function fetchEvents() {
-            fetch('../backend/resident/get_events.php')
+            fetch('../views/resident/get_events.php')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');

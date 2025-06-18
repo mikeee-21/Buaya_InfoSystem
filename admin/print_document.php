@@ -322,7 +322,7 @@ $(document).ready(function() {
 
 function loadRequestData(requestId) {
     $.ajax({
-        url: "../backend/admin/get_request_data.php",
+        url: "../views/admin/get_request_data.php",
         type: "GET",
         data: { id: requestId },
         dataType: "json",

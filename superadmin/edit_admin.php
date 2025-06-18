@@ -124,7 +124,7 @@
             <li><a class="dropdown-item" href="adminProfile_Settings.php">Buaya Profile Settings</a></li>
           </ul>
         </div>
-        <a href="../backend/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+        <a href="../views/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
       </div>
     </div>
   </div>
@@ -242,7 +242,7 @@
   let permissionGroups = []; 
 
   if (adminId) {
-    fetch(`../backend/superadmin/get_admin_data_to_edit.php?id=${adminId}`)
+    fetch(`../views/superadmin/get_admin_data_to_edit.php?id=${adminId}`)
       .then(response => response.json())
       .then(data => {
         if (data.error) {
@@ -286,7 +286,7 @@
 
   // Function to load and display role and permissions
   function loadRoleAndPermissions(roleId) {
-  fetch(`../backend/superadmin/get_role_permision.php?role_id=${roleId}`)
+  fetch(`../views/superadmin/get_role_permision.php?role_id=${roleId}`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -401,7 +401,7 @@ function capitalizeWords(str) {
 
 
 
-    fetch('../backend/superadmin/update_admin_data.php', {
+    fetch('../views/superadmin/update_admin_data.php', {
       method: 'POST',
       body: formData
     })

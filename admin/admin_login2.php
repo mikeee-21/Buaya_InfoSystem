@@ -447,7 +447,7 @@
                 <div class="panel">
                     <div class="white-panel">
                         <h1 class="form-title">LOG IN</h1>
-                        <form class="form" action="../backend/admin/login_process.php" method="POST" id="loginForm">
+                        <form class="form" action="../views/admin/login_process.php" method="POST" id="loginForm">
                             <div class="mb-4">
                                 <label class="form-label">Username</label>
                                 <input type="text" class="form-control" name="username" placeholder="Enter your username" required>

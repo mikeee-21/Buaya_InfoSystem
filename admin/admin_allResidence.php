@@ -249,7 +249,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4 font-inter">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -1225,8 +1225,8 @@ function toggleStatus(el) {
   const text = el.querySelector('.toggle-text');
   text.textContent = capitalize(newStatus);
 
-  // Send to backend
-  fetch('../backend/admin/update_resident_status.php', {
+  // Send to views
+  fetch('../views/admin/update_resident_status.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ id: residentId, status: newStatus })
@@ -1307,7 +1307,7 @@ function populateResidentModal(data) {
 
 // Main function to load all residents
 function loadAllResidents() {
-  fetch('../backend/admin/get_all_residents.php')
+  fetch('../views/admin/get_all_residents.php')
     .then(response => response.json())
     .then(data => {
       const tbody = document.querySelector("#allResidenceTable tbody");
@@ -1415,7 +1415,7 @@ function filterResidents() {
 
 
 
-  fetch('../backend/admin/filter_residents.php', {
+  fetch('../views/admin/filter_residents.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(filters)
@@ -1532,7 +1532,7 @@ function createResidentRow(res) {
 
 //archive resident
 function archiveResident(resId, rowElement) {
-  fetch('../backend/admin/archived_resident.php', {
+  fetch('../views/admin/archived_resident.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -1703,7 +1703,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   console.log("Sending data:", updatedData); // Debug to see what's being sent
     
-  fetch('../backend/admin/update_resident.php', {
+  fetch('../views/admin/update_resident.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedData)
@@ -1811,8 +1811,8 @@ $(document).ready(function () {
 
 
 <script>
-  // Fetch the zones from the backend
-  fetch('../backend/admin/get_all_zone_name.php')
+  // Fetch the zones from the views
+  fetch('../views/admin/get_all_zone_name.php')
     .then(response => response.json())
     .then(zones => {
         // Get the select element

@@ -965,7 +965,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -1612,7 +1612,7 @@ li a p{
 
     // Fetch approved requests from server
     function fetchApprovedRequests() {  
-        fetch('../backend/admin/get_approved_request.php')
+        fetch('../views/admin/get_approved_request.php')
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
@@ -1748,7 +1748,7 @@ li a p{
                 claimBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
                 claimBtn.disabled = true;
                 
-                fetch('../backend/admin/mark_as_claimed.php', {
+                fetch('../views/admin/mark_as_claimed.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

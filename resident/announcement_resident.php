@@ -855,7 +855,7 @@
 
 
     function loadAnnouncementTypes() {
-        fetch('../backend/resident/get_announcement_type.php')
+        fetch('../views/resident/get_announcement_type.php')
             .then(handleResponse)
             .then(data => {
                 announcementTypes = data;
@@ -891,7 +891,7 @@
 
     // Main Functions
     function loadAnnouncements() {
-        fetch('../backend/resident/get_all_announcement.php')
+        fetch('../views/resident/get_all_announcement.php')
             .then(handleResponse)
             .then(data => {
                 allAnnouncements = data;
@@ -1010,7 +1010,7 @@
                         <div class="image-container" 
                             data-index="${index}" 
                             data-announcement-id="${announcementId}">
-                            <img src="../backend/${img.pos_img_img}" 
+                            <img src="../views/${img.pos_img_img}" 
                                 alt="Announcement Image ${index + 1}"
                                 class="ann-image"
                                 onerror="this.style.display='none'">
@@ -1065,7 +1065,7 @@
         // Update modal with current image
         const currentImage = images[startIndex];
         slide.innerHTML = `
-            <img src="../backend/${currentImage.pos_img_img}" 
+            <img src="../views/${currentImage.pos_img_img}" 
                  alt="Gallery Image ${startIndex + 1}"
                  class="gallery-image">
         `;
@@ -1107,7 +1107,7 @@
             // Update modal with new image
             const currentImage = images[currentIndex];
             modal.querySelector('.gallery-slide').innerHTML = `
-                <img src="../backend/${currentImage.pos_img_img}" 
+                <img src="../views/${currentImage.pos_img_img}" 
                     alt="Gallery Image ${currentIndex + 1}"
                     class="gallery-image">
             `;
@@ -1187,7 +1187,7 @@
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Posting...';
             
-            fetch('../backend/resident/submit_comment.php', {
+            fetch('../views/resident/submit_comment.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
@@ -1213,7 +1213,7 @@
                     nameInput.value = '';
                     
                     // Fetch and refresh all comments
-                    return fetch(`../backend/resident/get_all_announcement.php?comments_for=${announcementId}`);
+                    return fetch(`../views/resident/get_all_announcement.php?comments_for=${announcementId}`);
                 } else {
                     showNotification(data.message || 'Failed to post comment', 'error');
                 }

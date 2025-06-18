@@ -144,7 +144,7 @@
               <li><a class="dropdown-item" href="adminProfile_Settings.php">Buaya Profile Settings</a></li>
             </ul>
           </div>
-          <a href="../backend/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+          <a href="../views/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
         </div>
       </div>
     </div>
@@ -178,7 +178,7 @@
     const searchInput = document.querySelector('input[aria-label="Search"]');
 
     // Fetch logs from PHP
-    fetch('../backend/superadmin/get_logs.php') 
+    fetch('../views/superadmin/get_logs.php') 
       .then(response => response.json())
       .then(data => {
         data.forEach(log => {

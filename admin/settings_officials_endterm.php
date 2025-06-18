@@ -511,7 +511,7 @@ li a p{
 
   <!-- SIGN OUT -->
   <li class="nav-item mr-4 font-inter">
-    <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+    <a class="nav-link" href="../views/admin/sign_out.php" role="button">
       <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
       <span style="color:black;">Sign Out</span>
     </a>
@@ -655,7 +655,7 @@ li a p{
   }
 
   function fetchOfficials(positionId = "") {
-  fetch('../backend/admin/get_deleted_officials.php')
+  fetch('../views/admin/get_deleted_officials.php')
     .then(res => res.json())
     .then(response => {
       if (response.status === 'success') {

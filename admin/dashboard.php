@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../backend/admin/adminSession.php';
+require_once '../views/admin/adminSession.php';
 
 // Deserialize the admin object
 if (isset($_SESSION['admin_object'])) {
@@ -636,7 +636,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4 font-inter">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -1080,7 +1080,7 @@ li a p{
             fetchPendingRequests();
             
             function fetchActiveAdmins() {
-                fetch('../backend/admin/get_active_admins.php')
+                fetch('../views/admin/get_active_admins.php')
                     .then(response => {
                         if (!response.ok) throw new Error('Network response was not ok');
                         return response.json();
@@ -1143,7 +1143,7 @@ li a p{
 
         // Enhanced Pending Requests Script
         function fetchPendingRequests() {
-            fetch('../backend/admin/get_some_request.php')
+            fetch('../views/admin/get_some_request.php')
                 .then(response => {
                     if (!response.ok) throw new Error('Network response was not ok');
                     return response.json();
@@ -1307,7 +1307,7 @@ li a p{
 
             const ctx = pieChartCanvas.getContext('2d');
 
-            fetch('../backend/admin/get_resident_each_zone.php')
+            fetch('../views/admin/get_resident_each_zone.php')
                 .then(response => response.json())
                 .then(data => {
                     const labels = data.map(item => item.zone_name);
@@ -1392,7 +1392,7 @@ li a p{
 
         // Enhanced Officials Script
         document.addEventListener("DOMContentLoaded", function () {
-            fetch("../backend/admin/official.php")
+            fetch("../views/admin/official.php")
                 .then(response => response.json())
                 .then(data => {
                     const container = document.querySelector(".container-item-officials");
@@ -1462,7 +1462,7 @@ li a p{
                 });
         });
 
-        // Update pending requests count (you can integrate this with your backend)
+        // Update pending requests count (you can integrate this with your views)
         function updatePendingCount() {
             // Replace this with actual API call to get pending requests count
             const count = document.querySelectorAll('.pending-request-item').length;

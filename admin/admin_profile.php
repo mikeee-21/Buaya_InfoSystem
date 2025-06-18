@@ -246,7 +246,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -630,7 +630,7 @@ li a p{
 <script>
 $(document).ready(function () {
   $.ajax({
-    url: '../backend/admin/get_admin_account.php',
+    url: '../views/admin/get_admin_account.php',
     type: 'GET',
     dataType: 'json',
     success: function (response) {

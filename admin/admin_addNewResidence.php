@@ -249,7 +249,7 @@
 
           <!-- SIGN OUT -->
           <li class="nav-item mr-4 font-inter">
-            <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+            <a class="nav-link" href="../views/admin/sign_out.php" role="button">
               <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
               <span style="color:black;">Sign Out</span>
             </a>
@@ -815,7 +815,7 @@
   <script>
   $(document).ready(function() {
       $.ajax({
-          url: '../backend/admin/get_barangay_profile.php',
+          url: '../views/admin/get_barangay_profile.php',
           method: 'GET',
           dataType: 'json',
           success: function(data) {
@@ -891,7 +891,7 @@
   <!-- display all zone -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      fetch('../backend/admin/get_all_zone_to_display.php')
+      fetch('../views/admin/get_all_zone_to_display.php')
         .then(response => response.json())
         .then(data => {
           const select = document.getElementById('add_zone');
@@ -929,7 +929,7 @@
       const formData = new FormData(this);    
 
       $.ajax({
-        url: '../backend/admin/add_resident.php',
+        url: '../views/admin/add_resident.php',
         type: 'POST',
         data: formData,
         contentType: false,

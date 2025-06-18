@@ -976,7 +976,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -1504,10 +1504,10 @@ li a p{
 
 
 <script>
-        // Enhanced JavaScript that works with your existing backend
+        // Enhanced JavaScript that works with your existing views
         document.addEventListener('DOMContentLoaded', function() {
             // Fetch data from server
-            fetch('../backend/admin/get_request.php')
+            fetch('../views/admin/get_request.php')
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
@@ -1649,7 +1649,7 @@ li a p{
                           const dateIssued = document.getElementById('dateIssued').value;
                           const dateExpiration = document.getElementById('dateIssuedExpiration').value;
                           
-                          fetch('../backend/admin/update_request_status.php', {
+                          fetch('../views/admin/update_request_status.php', {
                               method: 'POST',
                               headers: {
                                   'Content-Type': 'application/json',

@@ -280,7 +280,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -689,7 +689,7 @@ li a p{
         return;
     }
 
-    fetch('../backend/admin/add_position.php', {
+    fetch('../views/admin/add_position.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -741,7 +741,7 @@ li a p{
 <script>
     // Fetch and display positions with enhanced UI
     function fetchPositions() {
-        fetch('../backend/admin/get_all_position.php')
+        fetch('../views/admin/get_all_position.php')
             .then(response => response.json())
             .then(data => {
                 const table = document.getElementById('positionTable');

@@ -698,7 +698,7 @@ body {
 
     function loadCertificates() {
         $.ajax({
-            url: '../backend/resident/request_document.php', // Adjust path as needed
+            url: '../views/resident/request_document.php', // Adjust path as needed
             type: 'GET',
             data: { action: 'get_certificates' },
             dataType: 'json',
@@ -728,7 +728,7 @@ body {
         
         if (firstName && lastName && dateOfBirth) {
             $.ajax({
-                url: '../backend/resident/request_document.php', // Adjust path as needed
+                url: '../views/resident/request_document.php', // Adjust path as needed
                 type: 'POST',
                 data: {
                     action: 'check_resident',
@@ -785,7 +785,7 @@ body {
         formData.append('res_id', residentId);
 
         $.ajax({
-            url: '../backend/resident/request_document.php',
+            url: '../views/resident/request_document.php',
             type: 'POST',
             data: formData,
             processData: false,
@@ -948,7 +948,7 @@ body {
     console.log('Loading barangay data...');
 
     // Fetch data from your PHP script
-    fetch('../backend/resident/get_barangay.php')
+    fetch('../views/resident/get_barangay.php')
         .then(response => response.json())
         .then(data => {
             console.log('Data received:', data);

@@ -857,7 +857,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -1155,7 +1155,7 @@ li a p{
             addBtn.disabled = true;
             addBtn.style.background = 'linear-gradient(135deg, #6c757d, #495057)';
 
-            fetch("../backend/admin/add_certificate.php", {
+            fetch("../views/admin/add_certificate.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -1284,7 +1284,7 @@ li a p{
         
         tbody.innerHTML = loadingHtml;
         
-        fetch('../backend/admin/get_all_certificate.php')
+        fetch('../views/admin/get_all_certificate.php')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -1512,7 +1512,7 @@ li a p{
                 saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Updating...';
                 saveBtn.disabled = true;
 
-                fetch('../backend/admin/update_certificate.php', {
+                fetch('../views/admin/update_certificate.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -1627,7 +1627,7 @@ li a p{
                 row.style.opacity = '0.6';
                 row.style.transform = 'scale(0.98)';
 
-                fetch('../backend/admin/delete_certificate.php', {
+                fetch('../views/admin/delete_certificate.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -1716,7 +1716,7 @@ $(document).ready(function() {
     // Function to fetch and display requests
     function fetchRequests(filter = 'all') {
         $.ajax({
-            url: '../backend/admin/get_all_request.php',
+            url: '../views/admin/get_all_request.php',
             type: 'GET',
             data: { filter: filter },
             dataType: 'json',

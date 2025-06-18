@@ -942,7 +942,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -1312,7 +1312,7 @@ li a p{
 <!-- fetch all announcement type -->
  <script>
   // Load announcement types dynamically
-  fetch('../backend/admin/get_all_announcement_type.php')
+  fetch('../views/admin/get_all_announcement_type.php')
 
     .then(response => response.json())
     .then(data => {
@@ -1353,8 +1353,8 @@ document.getElementById('announcementForm').addEventListener('submit', function 
   
   // Determine the endpoint based on operation type
   const endpoint = isUpdate 
-    ? '../backend/admin/update_announcement.php' 
-    : '../backend/admin/add_announcement.php';
+    ? '../views/admin/update_announcement.php' 
+    : '../views/admin/add_announcement.php';
 
   fetch(endpoint, {
     method: 'POST',
@@ -1523,7 +1523,7 @@ document.getElementById('announcementForm').addEventListener('submit', function 
   }
 
   // Fetch announcements
-  fetch('../backend/admin/get_announcement.php')
+  fetch('../views/admin/get_announcement.php')
     .then(res => res.json())
     .then(data => {
 
@@ -1536,7 +1536,7 @@ document.getElementById('announcementForm').addEventListener('submit', function 
         
         data.data.forEach(announcement => {
 
-          // Attach empty array if backend didn't provide images/comments
+          // Attach empty array if views didn't provide images/comments
           announcement.images = announcement.images || [];
           announcement.comments = announcement.comments || [];
 
@@ -1567,7 +1567,7 @@ document.getElementById('announcementForm').addEventListener('submit', function 
     let imagesHTML = '';
     if (announcement.images && announcement.images.length > 0) {
       imagesHTML = announcement.images.map(img => 
-        `<img src="../backend/${img}" 
+        `<img src="../views/${img}" 
               alt="Announcement Image" 
               class="img-fluid mb-2 image-clickable" 
               data-group="${announcement.pos_ann_id}" 
@@ -1745,8 +1745,8 @@ function editAnnouncement(announcementId) {
 
     // Extract the path from the src attribute
     const src = img.getAttribute('src');
-    // We need to convert from "../backend/path/to/image.jpg" to "path/to/image.jpg"
-      return src.replace('../backend/', '');
+    // We need to convert from "../views/path/to/image.jpg" to "path/to/image.jpg"
+      return src.replace('../views/', '');
 
     });
     
@@ -1778,7 +1778,7 @@ function editAnnouncement(announcementId) {
         const imageContainer = document.createElement('div');
         imageContainer.className = 'image-preview-item position-relative mr-2 mb-2';
         imageContainer.innerHTML = `
-          <img src="../backend/${img}" alt="Announcement Image" class="img-thumbnail" style="height: 80px; width: 80px; object-fit: cover;">
+          <img src="../views/${img}" alt="Announcement Image" class="img-thumbnail" style="height: 80px; width: 80px; object-fit: cover;">
           <button type="button" class="btn btn-sm btn-danger position-absolute remove-image-btn" style="top: -10px; right: -10px; border-radius: 50%;" 
                  data-image-path="${img}" data-announcement-id="${announcementId}">
             <i class="fas fa-times"></i>
@@ -1928,7 +1928,7 @@ document.getElementById('resetFormBtn').addEventListener('click', function(e) {
 
 
 
-// Function to handle server-side image removal (for the backend file)
+// Function to handle server-side image removal (for the views file)
 function removeAnnouncementImage(announcementId, imagePath, containerElement) {
   // Confirm with the user
   if (!confirm('Are you sure you want to permanently remove this image?')) {
@@ -1936,7 +1936,7 @@ function removeAnnouncementImage(announcementId, imagePath, containerElement) {
   }
   
   // Send request to delete the image
-  fetch('../backend/admin/remove_announcement_image.php', {
+  fetch('../views/admin/remove_announcement_image.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -1998,8 +1998,8 @@ function removeAnnouncementImage(announcementId, imagePath, containerElement) {
       announcementElement.style.opacity = '0.5';
     }
     
-    // Send delete request to backend
-    fetch(`../backend/admin/delete_announcement.php`, {
+    // Send delete request to views
+    fetch(`../views/admin/delete_announcement.php`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -2177,7 +2177,7 @@ document.addEventListener('click', function (e) {
     const commentText = commentInput.value.trim();
 
     if (commentText) {
-      fetch('../backend/admin/comment.php', {
+      fetch('../views/admin/comment.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -2219,7 +2219,7 @@ document.addEventListener('click', function (event) {
     const annId = btn.dataset.id;
 
     // Send the like request
-    fetch('../backend/admin/toggle_like.php', {
+    fetch('../views/admin/toggle_like.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ announcement_id: annId })

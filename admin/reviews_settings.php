@@ -263,7 +263,7 @@ li a p{
 
   <!-- SIGN OUT -->
   <li class="nav-item mr-4">
-    <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+    <a class="nav-link" href="../views/admin/sign_out.php" role="button">
       <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
       <span style="color:black;">Sign Out</span>
     </a>
@@ -345,7 +345,7 @@ li a p{
 
     // Function to load reviews from server
     function loadReviews() {
-        fetch('../backend/admin/get_reviews.php')
+        fetch('../views/admin/get_reviews.php')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -457,7 +457,7 @@ li a p{
 
     // Function to mark a review as read
     function markAsRead(reviewId, button) {
-        fetch('../backend/admin/update_review_status.php', {
+        fetch('../views/admin/update_review_status.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

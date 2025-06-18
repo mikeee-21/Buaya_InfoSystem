@@ -365,7 +365,7 @@
 
           <!-- SIGN OUT -->
           <li class="nav-item mr-4 font-inter">
-            <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+            <a class="nav-link" href="../views/admin/sign_out.php" role="button">
               <i class="nav-icon fa-solid fa-right-from-bracket mr-1" ></i>
               <span style="color:black;">Sign Out</span>
             </a>
@@ -528,7 +528,7 @@
     // Fetch logs from server (dynamic)
     function fetchActivityLogs() {
       $.ajax({
-        url: '../backend/admin/get_logs.php',
+        url: '../views/admin/get_logs.php',
         method: 'GET',
         success: function(response) {
           if (Array.isArray(response)) {

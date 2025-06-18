@@ -1878,7 +1878,7 @@ td.current-day {
         let currentView = 'month';
         let events = [];
         
-        // Fetch events from backend
+        // Fetch events from views
         fetchEvents();
         
         // initialize calendar
@@ -1989,9 +1989,9 @@ td.current-day {
             }
         }
         
-        // Fetch events from backend
+        // Fetch events from views
         function fetchEvents() {
-            fetch('../backend/resident/get_events.php')
+            fetch('../views/resident/get_events.php')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -2244,7 +2244,7 @@ td.current-day {
     swiperEl.classList.add('d-none');
     
     // Fetch officials from API
-    fetch('../backend/resident/get_officials.php')
+    fetch('../views/resident/get_officials.php')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
@@ -2412,7 +2412,7 @@ td.current-day {
     }
 
     // 2. Fetch announcements from server
-    fetch('../backend/resident/get_announcement.php')
+    fetch('../views/resident/get_announcement.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -2461,7 +2461,7 @@ td.current-day {
         const slide = document.createElement('div');
         slide.className = 'swiper-slide';
         
-        const imagePath = announcement.image_path ? `../backend/${announcement.image_path}` : null;
+        const imagePath = announcement.image_path ? `../views/${announcement.image_path}` : null;
         const shouldTruncate = announcement.content && announcement.content.length > MAX_CONTENT_LENGTH;
         const shortContent = shouldTruncate ? 
             announcement.content.substring(0, MAX_CONTENT_LENGTH) + '...' : 
@@ -2600,7 +2600,7 @@ td.current-day {
         
         const imageContainer = document.getElementById('modalAnnouncementImageContainer');
         if (announcement.image_path) {
-            const imagePath = `../backend/${announcement.image_path}`;
+            const imagePath = `../views/${announcement.image_path}`;
             imageContainer.innerHTML = `
                 <img src="${imagePath}" alt="${announcement.title}" 
                     class="img-fluid rounded mx-auto d-block"
@@ -2631,7 +2631,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Loading barangay data...');
     
     // Fetch data from your PHP script
-    fetch('../backend/resident/get_barangay.php')
+    fetch('../views/resident/get_barangay.php')
         .then(response => response.json())
         .then(data => {
             console.log('Data received:', data);

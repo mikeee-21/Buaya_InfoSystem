@@ -306,7 +306,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -936,7 +936,7 @@ li a p{
 <script>
 
     const resId = <?= json_encode($resId) ?>;
-    fetch('../backend/admin/official_profile.php?res_id=' + resId)
+    fetch('../views/admin/official_profile.php?res_id=' + resId)
 
     .then(res => res.json())
     .then(data => {
@@ -1046,7 +1046,7 @@ li a p{
 
 <script>
     // Fetch positions dynamically
-    fetch('../backend/admin/get_all_position2.php')
+    fetch('../views/admin/get_all_position2.php')
         .then(response => response.json())
         .then(data => {
             const selectElement = document.getElementById('edit_position');

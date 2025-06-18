@@ -691,7 +691,7 @@ body {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch officials data from PHP endpoint
-    fetch('../backend/resident/get_all_officials.php')
+    fetch('../views/resident/get_all_officials.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -854,7 +854,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Loading barangay data...');
     
     // Fetch data from your PHP script
-    fetch('../backend/resident/get_barangay.php')
+    fetch('../views/resident/get_barangay.php')
         .then(response => response.json())
         .then(data => {
             console.log('Data received:', data);

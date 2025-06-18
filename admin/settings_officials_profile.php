@@ -227,7 +227,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4 font-inter">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="nav-icon fa-solid fa-right-from-bracket mr-1" ></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -669,7 +669,7 @@ li a p{
     setInterval(fetchActiveAdmins, 30000);
     
     function fetchActiveAdmins() {
-        fetch('../backend/admin/get_active_admins.php')
+        fetch('../views/admin/get_active_admins.php')
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
@@ -728,7 +728,7 @@ li a p{
 <script>
 
     const resId = <?= json_encode($resId) ?>;
-    fetch('../backend/admin/get_all_officials_profile.php?res_id=' + resId)
+    fetch('../views/admin/get_all_officials_profile.php?res_id=' + resId)
 
     .then(res => res.json())
     .then(data => {
@@ -841,7 +841,7 @@ li a p{
 
 <script>
     // Fetch positions dynamically
-    fetch('../backend/admin/get_all_position2.php')
+    fetch('../views/admin/get_all_position2.php')
         .then(response => response.json())
         .then(data => {
             const selectElement = document.getElementById('edit_position');
@@ -897,7 +897,7 @@ document.getElementById('editOfficialForm').addEventListener('submit', async fun
     const formData = new FormData(form);
 
     try {
-        const response = await fetch('../backend/admin/update_officials.php', {
+        const response = await fetch('../views/admin/update_officials.php', {
             method: 'POST',
             body: formData
         });

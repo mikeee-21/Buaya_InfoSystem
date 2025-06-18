@@ -702,7 +702,7 @@ html, body {
     console.log('Loading barangay data...');
     
     // Fetch data from your PHP script
-    fetch('../backend/superadmin/get_barangay.php')
+    fetch('../views/superadmin/get_barangay.php')
         .then(response => response.json())
         .then(data => {
             console.log('Data received:', data);

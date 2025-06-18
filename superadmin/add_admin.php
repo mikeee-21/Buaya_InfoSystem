@@ -126,7 +126,7 @@
             <li><a class="dropdown-item" href="adminProfile_Settings.php">Buaya Profile Settings</a></li>
           </ul>
         </div>
-        <a href="../backend/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+        <a href="../views/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
       </div>
     </div>
   </div>
@@ -136,7 +136,7 @@
 <div class="container">
   <div class="form-container">
     <h3 class="mb-4">Create Admin Account</h3>
-    <form id="adminForm" action="../backend/create_admin_account.php" method="POST" enctype="multipart/form-data">
+    <form id="adminForm" action="../views/create_admin_account.php" method="POST" enctype="multipart/form-data">
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="fname" class="form-label">First Name</label>
@@ -222,7 +222,7 @@
 
 
  function loadRoles() {
-  fetch('../backend/superadmin/get_roles.php')
+  fetch('../views/superadmin/get_roles.php')
     .then(response => response.json())
     .then(data => {
       console.log("Roles Data:", data); // Check if data is correctly fetched
@@ -250,7 +250,7 @@
 let permissionGroups = [];
 
 function loadPermissionGroups() {
-  fetch('../backend/superadmin/get_permision.php')
+  fetch('../views/superadmin/get_permision.php')
     .then(response => response.json())
     .then(data => {
       permissionGroups = data.groups;
@@ -366,8 +366,8 @@ document.getElementById('adminForm').addEventListener('submit', function(event) 
     return;
   }
 
-// Send data to backend
-fetch('../backend/superadmin/create_admin_account.php', {
+// Send data to views
+fetch('../views/superadmin/create_admin_account.php', {
   method: 'POST',
   body: formData
 })

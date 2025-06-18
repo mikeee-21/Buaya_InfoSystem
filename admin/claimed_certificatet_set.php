@@ -965,7 +965,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -1278,7 +1278,7 @@ li a p{
         });
 
         function fetchAllRequests() {
-            fetch('../backend/admin/claimed_and_unclaimed_request.php')
+            fetch('../views/admin/claimed_and_unclaimed_request.php')
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
@@ -1485,7 +1485,7 @@ li a p{
                   },
               });
 
-              fetch('../backend/admin/delete_request.php', {
+              fetch('../views/admin/delete_request.php', {
                   method: 'POST',
                   headers: {
                       'Content-Type': 'application/json',

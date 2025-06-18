@@ -506,7 +506,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4 font-inter">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -655,7 +655,7 @@ li a p{
   }
 
   function fetchOfficials(positionId = "") {
-  fetch('../backend/admin/get_all_officials.php')
+  fetch('../views/admin/get_all_officials.php')
     .then(res => res.json())
     .then(response => {
       if (response.status === 'success') {
@@ -780,8 +780,8 @@ li a p{
 
   // Function to handle deletion
 function deleteOfficial(officialId) {
-  // Send a request to the backend to update the off_is_deleted field to true
-  fetch('../backend/admin/delete_official.php', {
+  // Send a request to the views to update the off_is_deleted field to true
+  fetch('../views/admin/delete_official.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

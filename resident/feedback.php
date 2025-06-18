@@ -574,7 +574,7 @@ html, body {
         if (result.isConfirmed) {
           const guestName = result.value;
 
-          fetch('../backend/resident/submit_feeback.php', {
+          fetch('../views/resident/submit_feeback.php', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded',

@@ -266,7 +266,7 @@
                 <li><a class="dropdown-item" href="adminProfile_Settings.php">Buaya Profile Settings</a></li>
             </ul>
           </div>
-          <a href="../backend/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+          <a href="../views/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
         </div>
       </div>
     </div>
@@ -473,7 +473,7 @@
 $(document).ready(function() {
     // Load barangay data on page load
     $.ajax({
-        url: '../backend/superadmin/get_barangay_profile.php',
+        url: '../views/superadmin/get_barangay_profile.php',
         type: 'GET',
         dataType: 'json',
         success: function(response) {
@@ -528,7 +528,7 @@ $(document).ready(function() {
 
         // Send data to server
         $.ajax({
-            url: '../backend/superadmin/update_barangay_profile.php',
+            url: '../views/superadmin/update_barangay_profile.php',
             type: 'POST',
             data: formData,
             contentType: false,

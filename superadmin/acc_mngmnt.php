@@ -217,7 +217,7 @@
               <li><a class="dropdown-item" href="adminProfile_Settings.php">Buaya Profile Settings</a></li>
             </ul>
           </div>
-          <a href="../backend/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+          <a href="../views/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
         </div>
       </div>
     </div>
@@ -293,7 +293,7 @@
 
 <script>
   $.ajax({
-    url: '../backend/superadmin/get_allAdmins.php',
+    url: '../views/superadmin/get_allAdmins.php',
     method: 'GET',
     success: function(data) {
       const admins = JSON.parse(data);  // Parse the JSON response
@@ -463,7 +463,7 @@
 
 
     $.ajax({
-      url: '../backend/superadmin/get_roles_for_searching.php',
+      url: '../views/superadmin/get_roles_for_searching.php',
       method: 'GET',
       success: function(response) {
         const roles = JSON.parse(response);
@@ -534,7 +534,7 @@ function deleteAdmin(icon) {
     if (result.isConfirmed) {
       // Make AJAX call to delete admin
       $.ajax({
-        url: '../backend/superadmin/delete_admin.php',
+        url: '../views/superadmin/delete_admin.php',
         method: 'POST',
         data: { admin_id: adminId },
         success: function (response) {

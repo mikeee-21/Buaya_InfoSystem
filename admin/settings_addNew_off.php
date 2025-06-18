@@ -250,7 +250,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4 font-inter">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -678,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // get all position
 function loadPositions() {
-    fetch('../backend/admin/get_all_position2.php')
+    fetch('../views/admin/get_all_position2.php')
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
@@ -710,7 +710,7 @@ function searchResident() {
         return;
     }
 
-    fetch('../backend/admin/search_resident.php', {
+    fetch('../views/admin/search_resident.php', {
 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -759,7 +759,7 @@ function searchResident() {
 // fetch resident
 function fetchResidentDetails(id) {
 
-    fetch('../backend/admin/search_resident.php', {
+    fetch('../views/admin/search_resident.php', {
 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -876,7 +876,7 @@ function setupResidentAutocomplete() {
             return;
         }
 
-        fetch('../backend/admin/search_suggestion.php', {
+        fetch('../views/admin/search_suggestion.php', {
 
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -978,7 +978,7 @@ document.getElementById('editOfficialForm').addEventListener('submit', function 
 
     };
 
-    fetch('../backend/admin/add_official.php', {
+    fetch('../views/admin/add_official.php', {
 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

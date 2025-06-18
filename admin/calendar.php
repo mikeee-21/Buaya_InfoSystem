@@ -285,7 +285,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -649,7 +649,7 @@ li a p{
                 center: 'title',
                 right: 'dayGridMonth'
             },
-            events: '../backend/admin/get_event.php',
+            events: '../views/admin/get_event.php',
             eventContent: function(arg) {
                 const startTime = arg.event.start ? formatTimeForDisplay(arg.event.start) : '';
                 const endTime = arg.event.end ? formatTimeForDisplay(arg.event.end) : '';
@@ -752,7 +752,7 @@ li a p{
             }
             
             $.ajax({
-                url: '../backend/admin/calendar-events.php',
+                url: '../views/admin/calendar-events.php',
                 type: 'POST',
                 data: formData,
                 dataType: 'json',
@@ -806,7 +806,7 @@ li a p{
             const endTime = event.end ? endUTC.toISOString().split('T')[1].substring(0, 8) : startTime;
             
             $.ajax({
-                url: '../backend/admin/update_event_time.php',
+                url: '../views/admin/update_event_time.php',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({
@@ -867,7 +867,7 @@ li a p{
           console.log('Submitting:', serverData);
           
           $.ajax({
-              url: '../backend/admin/update_event.php',
+              url: '../views/admin/update_event.php',
               type: 'POST',
               contentType: 'application/json',
               data: JSON.stringify(serverData),
@@ -907,7 +907,7 @@ li a p{
             
             if (confirm('Are you sure you want to delete this event?')) {
                 $.ajax({
-                    url: '../backend/admin/delete_event.php',
+                    url: '../views/admin/delete_event.php',
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify({ id: event.id }),

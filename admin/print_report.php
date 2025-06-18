@@ -278,7 +278,7 @@ function formatFilterName(key) {
 
 function loadResidentsForPrint(filters) {
     $.ajax({
-        url: "../backend/admin/report.php",
+        url: "../views/admin/report.php",
         type: "POST",
         data: filters,
         dataType: "json",

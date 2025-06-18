@@ -397,7 +397,7 @@ li a p{
 
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
-          <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
             <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
             <span style="color:black;">Sign Out</span>
           </a>
@@ -899,7 +899,7 @@ li a p{
   
   function loadResidents() {
       $.ajax({
-          url: "../backend/admin/report.php",
+          url: "../views/admin/report.php",
           type: "POST",
           data: $("#filterForm").serialize(),
           dataType: "json",
@@ -965,7 +965,7 @@ li a p{
     const ctx = canvas.getContext('2d');
     const dynamicColors = ['#023948', '#116278', '#007D9E', '#2BB2D7', '#4CB9D6', '#59DAFC', '#A5ECFF'];
 
-    fetch('../backend/admin/get_resident_each_zone.php') // adjust path if needed
+    fetch('../views/admin/get_resident_each_zone.php') // adjust path if needed
       .then(response => response.json())
       .then(data => {
         const labels = data.map(item => item.zone_name);
@@ -1064,7 +1064,7 @@ li a p{
 
       var ctx = pieChartCanvas.getContext('2d');
 
-      fetch('../backend/admin/get_sex_breakdown.php')
+      fetch('../views/admin/get_sex_breakdown.php')
         .then(response => response.json())
         .then(data => {
 
@@ -1128,7 +1128,7 @@ li a p{
 
     const colors = ['#CCD0CF', '#9BABAB', '#4AC86A', '#253745', '#11212D'];
 
-    fetch('../backend/admin/get_age_groups.php')
+    fetch('../views/admin/get_age_groups.php')
       .then(res => res.json())
       .then(data => {
 

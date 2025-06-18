@@ -179,7 +179,7 @@
                     <li><a class="dropdown-item" href="adminProfile_Settings.php">Buaya Profile Settings</a></li>
                 </ul>
               </div>
-              <a href="../backend/admin/sign_out.php" class="text-white text-decoration-none me-5"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+              <a href="../views/admin/sign_out.php" class="text-white text-decoration-none me-5"><i class="fas fa-sign-out-alt"></i> Sign out</a>
             </div>
 
           </div>
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Loading barangay data...');
     
     // Fetch data from your PHP script
-    fetch('../backend/superadmin/get_barangay.php')
+    fetch('../views/superadmin/get_barangay.php')
         .then(response => response.json())
         .then(data => {
             console.log('Data received:', data);

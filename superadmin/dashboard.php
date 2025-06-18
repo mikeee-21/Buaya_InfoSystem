@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../backend/admin/adminSession.php';
+require_once '../views/admin/adminSession.php';
 
 // Deserialize the admin object
 if (isset($_SESSION['admin_object'])) {
@@ -335,7 +335,7 @@ if (isset($_SESSION['login_success'])) {
                 <li><a class="dropdown-item" href="adminProfile_Settings.php">Buaya Profile Settings</a></li>
             </ul>
           </div>
-          <a href="../backend/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+          <a href="../views/admin/sign_out.php" class="text-white text-decoration-none"><i class="fas fa-sign-out-alt"></i> Sign out</a>
         </div>
       </div>
     </div>
@@ -571,7 +571,7 @@ if (isset($_SESSION['login_success'])) {
 <script>
     // Fetch admins and populate the avatars
     function fetchAdmins() {
-        fetch('../backend/superadmin/get_allAdmins.php')
+        fetch('../views/superadmin/get_allAdmins.php')
             .then(response => response.json())
             .then(data => {
                 const avatarList = document.getElementById('avatarList');
@@ -615,7 +615,7 @@ if (isset($_SESSION['login_success'])) {
 <script>
     $(document).ready(function () {
         $.ajax({
-            url: '../backend/superadmin/get_total_admins.php',  // Update this path if necessary
+            url: '../views/superadmin/get_total_admins.php',  // Update this path if necessary
             method: 'GET',
             dataType: 'json',
             success: function(response) {
@@ -639,7 +639,7 @@ if (isset($_SESSION['login_success'])) {
 $(document).ready(function() {
     $('#totalAdminsModal').on('show.bs.modal', function () {
         $.ajax({
-            url: '../backend/superadmin/get_allAdmin_db.php', // adjust if needed
+            url: '../views/superadmin/get_allAdmin_db.php', // adjust if needed
             method: 'GET',
             dataType: 'json',
             success: function(admins) {
@@ -681,7 +681,7 @@ $(document).ready(function() {
 <!-- GET ALL DEACTIVATED ADMINS -->
 <script>
 // Fetch the deactivated admin count
-fetch('../backend/superadmin/get_all_total_inactive_admins.php')
+fetch('../views/superadmin/get_all_total_inactive_admins.php')
     .then(response => response.json())
     .then(data => {
         // Update the Deactivated Admins count on the frontend
@@ -702,7 +702,7 @@ $('#deactivatedAdminsModal').on('show.bs.modal', function () {
 });
 
 function fetchDeactivatedAdmins() {
-    fetch('../backend/superadmin/get_all_inactive_admins.php')
+    fetch('../views/superadmin/get_all_inactive_admins.php')
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('deactivatedAdminsTable');
@@ -741,7 +741,7 @@ document.getElementById('deactivatedAdminsTable').addEventListener('click', func
 
 // Function to reactivate an admin with SweetAlert
 function reactivateAdmin(adminId) {
-    fetch('../backend/superadmin/reactivate_admin.php', {
+    fetch('../views/superadmin/reactivate_admin.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -791,7 +791,7 @@ function reactivateAdmin(adminId) {
 
 // Function to update the total deactivated admins count
 function updateDeactivatedAdminCount() {
-    fetch('../backend/superadmin/get_all_total_inactive_admins.php')
+    fetch('../views/superadmin/get_all_total_inactive_admins.php')
         .then(response => response.json())
         .then(data => {
             // Update the Deactivated Admins count on the frontend
@@ -814,7 +814,7 @@ function updateDeactivatedAdminCount() {
 <script>
 // Unified function to fetch total and all active admin details
 function fetchAllActiveAdmins() {
-    fetch('../backend/superadmin/get_all_active_admins.php')  // your new PHP file
+    fetch('../views/superadmin/get_all_active_admins.php')  // your new PHP file
         .then(response => response.json())
         .then(data => {
             // Update total count
@@ -859,7 +859,7 @@ $('#activeAdminsModal').on('show.bs.modal', fetchAllActiveAdmins);
 <!-- recent log ins -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('../backend/superadmin/get_count_recent_login.php')
+    fetch('../views/superadmin/get_count_recent_login.php')
         .then(response => response.json())
         .then(data => {
             if (data.count !== undefined) {
@@ -884,7 +884,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function fetchRecentLogins() {
-        fetch('../backend/superadmin/get_recent_login.php')
+        fetch('../views/superadmin/get_recent_login.php')
             .then(response => {
                 if (!response.ok) throw new Error('Network error');
                 return response.json();
@@ -954,7 +954,7 @@ document.addEventListener("DOMContentLoaded", function() {
 $(document).ready(function() {
     // Fetch the recent activities (limit 10)
     $.ajax({
-        url: '../backend/superadmin/get_recent_log.php',
+        url: '../views/superadmin/get_recent_log.php',
         type: 'GET',
         dataType: 'json',
         success: function(data) {

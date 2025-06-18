@@ -373,7 +373,7 @@ border-collapse: separate; /* Important: To make border-spacing work */
 
   <!-- SIGN OUT -->
   <li class="nav-item mr-4 font-inter">
-    <a class="nav-link" href="../backend/admin/sign_out.php" role="button">
+    <a class="nav-link" href="../views/admin/sign_out.php" role="button">
       <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
       <span style="color:black;">Sign Out</span>
     </a>
@@ -691,7 +691,7 @@ border-collapse: separate; /* Important: To make border-spacing work */
         return;
     }
 
-    fetch('../backend/admin/add_zone.php', {
+    fetch('../views/admin/add_zone.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ zone_name: zoneName })
@@ -707,7 +707,7 @@ border-collapse: separate; /* Important: To make border-spacing work */
             document.getElementById('zoneName').value = '';
             loadZones();
         } else {
-            // Check if backend returned a duplicate warning
+            // Check if views returned a duplicate warning
             const errorMsg = data.message || data.error || 'Something went wrong!';
             const isDuplicate = errorMsg.toLowerCase().includes('already exists');
 
@@ -735,7 +735,7 @@ border-collapse: separate; /* Important: To make border-spacing work */
 <!-- Display All Zone -->
 <script>
 function loadZones() {
-    fetch('../backend/admin/get_all_zone.php')
+    fetch('../views/admin/get_all_zone.php')
         .then(res => res.json())
         .then(data => {
             const tbody = document.getElementById('zoneTableBody');
@@ -803,7 +803,7 @@ document.addEventListener('click', function(e) {
         }
 
         // Send the data via fetch to update the zone name in the database
-        fetch('../backend/admin/update_zone.php', {
+        fetch('../views/admin/update_zone.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({
@@ -853,8 +853,8 @@ document.addEventListener('click', function(e) {
 
 <!-- get all zone name -->
 <script>
-  // Fetch the zones from the backend
-  fetch('../backend/admin/get_all_zone_name.php')
+  // Fetch the zones from the views
+  fetch('../views/admin/get_all_zone_name.php')
     .then(response => response.json())
     .then(zones => {
 
@@ -966,7 +966,7 @@ function fetchAllResidents() {
     showLoading(true);
 
     // Your actual fetch code:
-    fetch('../backend/admin/all_resident.php')
+    fetch('../views/admin/all_resident.php')
         .then(response => response.json())
         .then(data => {
             allResidents = data;
@@ -1001,7 +1001,7 @@ function fetchResidents() {
         zone: zone
     }).toString();
 
-    fetch(`../backend/admin/filter_resident_in_zone.php?${query}`)
+    fetch(`../views/admin/filter_resident_in_zone.php?${query}`)
         .then(response => response.json())
         .then(data => {
             renderResidents(data);
