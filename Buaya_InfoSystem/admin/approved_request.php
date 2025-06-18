@@ -12,11 +12,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
   <!-- sweet alert -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
@@ -1201,51 +1201,6 @@ li a p{
                             <div class="card elevation-0" >
                                 <div class="card-body p-2" style="border: none;">
 
-                                    <!-- approved_requests.php -->
-                                    <!-- <fieldset>
-                                        <div class="p-2 w-100">
-                                            <div class="row p-2 mb-3 d-flex justify-content-between">
-                                                <div class="col-2 text-center p-2 mr-3 d-flex justify-content-between" style="border-radius:10px; background-color: #000155;">
-                                                    <p class="m-0 text-center text-white font-weight-bold mt-1">Approved</p>
-                                                    <div class="bg-white p-1 font-weight-bold" style="width: 30px; height: 30px; border-radius: 5px;">
-                                                        <p id="approvedCount">0</p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="a-container col-4 pt-2 pr-5 d-flex justify-content-end">
-                                                    <div class="tooltip-container">
-                                                        <a href="claimed_certificatet_set.php" style="color: #1F6155; font-size:25px;">
-                                                            <i class="fa-solid fa-check-to-slot"></i>
-                                                        </a>
-                                                        <div class="tooltip-text">Claimed Requests</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row p-2 d-flex justify-content-between">
-                                                <div class="col-5 d-flex justify-content-between align-items-center">
-                                                    <i class="ml-3 mr-3 fa-solid fa-magnifying-glass"></i>
-                                                    <input type="text" id="searching" class="form-control" placeholder="Search..." autocomplete="off">
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="table-responsive" style="max-height: 365px; overflow: auto;">
-                                            <table class="table table-striped table-hover" id="officialTable">
-                                                <thead class="text-uppercase text-white" style="background-color: #000155; position: sticky; top: 0; z-index: 10;">
-                                                    <tr>
-                                                        <th class="px-3 text-center" style="width: 20%; ">Full Name</th>
-                                                        <th class="px-3 text-center" style="width: 15%; ">Purpose</th>
-                                                        <th class="px-3 text-center" style="width: 20%; ">Date Requested</th>
-                                                        <th class="px-3 text-center" style="width: 20%; ">Certificate</th>
-                                                        <th class="px-3 text-center" style="width: 15%; ">Status</th>
-                                                        <th class="px-3 text-center" style="width: 10%; ">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="requestsTableBody">
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </fieldset> -->
-
                                     <fieldset>
                                                 <div class="p-2 w-100">
                                                     <div class="row p-2 mb-3">
@@ -1521,11 +1476,11 @@ li a p{
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
-<script src="dist/js/adminlte.js"></script>
+<script src="../assets/dist/js/adminlte.js"></script>
 <!-- Include SweetAlert JS -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

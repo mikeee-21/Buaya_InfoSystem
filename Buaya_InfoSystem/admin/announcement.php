@@ -20,7 +20,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
   <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -1289,8 +1289,12 @@ li a p{
   </div>
 </div>
 
+
+
+
+
   <!-- AdminLTE App -->
-  <script src="dist/js/adminlte.min.js"></script>
+  <script src="../assets/dist/js/adminlte.min.js"></script>
   
 
 

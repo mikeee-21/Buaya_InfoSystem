@@ -10,11 +10,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
   <!-- SweetAlert2 CSS (optional, for styling) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <!-- SweetAlert2 JS -->
@@ -809,56 +809,6 @@ li a p{
     <!-- /.end of wrapper -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 <!-- Modal -->
 <div class="modal font-inter" id="viewResidenceModal"  role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -1166,243 +1116,212 @@ li a p{
             </form>
           </div>
         </div>
-      </div>
+</div>
+
+
+
+
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap -->
+<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
+<!-- AdminLTE -->
+<script src="../assets/dist/js/adminlte.js"></script>
+
 
 
 
 <script>
  let isEditing = false;
 
-// Simulate your data (replace this with real data dynamically later)
-const sampleData = {
-  first_name: "John",
-  middle_name: "Doe",
-  last_name: "Smith",
-  suffix: "Jr.",
-  voters: "Yes",
-  birth_date: "1990-01-01",
-  birth_place: "Cityville",
-  age: 35,
-  single_parent: "No",
-  pwd: "Yes",
-  pwd_info: "Some info",
-  gender: "Male",
-  civil_status: "Single",
-  religion: "Christian",
-  nationality: "Filipino",
-  province: "Cebu",
-  municipality: "Talisay",
-  zip: "1234",
-  barangay: "Poblacion",
-  zone: "Zone 2",
-  house_number: "123",
-  street: "Main St",
-  address: "123 Main St, Poblacion, Talisay",
-  email_address: "johndoe@example.com",
-  contact_number: "09123456789",
-  fathers_name: "Father Name",
-  mothers_name: "Mother Name",
-  guardian: "Guardian Name",
-  guardian_contact: "09123456789"
-};
+  // Simulate your data (replace this with real data dynamically later)
+  const sampleData = {
+    first_name: "John",
+    middle_name: "Doe",
+    last_name: "Smith",
+    suffix: "Jr.",
+    voters: "Yes",
+    birth_date: "1990-01-01",
+    birth_place: "Cityville",
+    age: 35,
+    single_parent: "No",
+    pwd: "Yes",
+    pwd_info: "Some info",
+    gender: "Male",
+    civil_status: "Single",
+    religion: "Christian",
+    nationality: "Filipino",
+    province: "Cebu",
+    municipality: "Talisay",
+    zip: "1234",
+    barangay: "Poblacion",
+    zone: "Zone 2",
+    house_number: "123",
+    street: "Main St",
+    address: "123 Main St, Poblacion, Talisay",
+    email_address: "johndoe@example.com",
+    contact_number: "09123456789",
+    fathers_name: "Father Name",
+    mothers_name: "Mother Name",
+    guardian: "Guardian Name",
+    guardian_contact: "09123456789"
+  };
 
-function openEditModal(data) {
-  // Prefill form with sample data
-  document.getElementById('edit_first_name').value = data.first_name;
-  document.getElementById('edit_middle_name').value = data.middle_name;
-  document.getElementById('edit_last_name').value = data.last_name;
-  document.getElementById('edit_suffix').value = data.suffix;
-  document.getElementById('edit_voters').value = data.voters;
-  document.getElementById('edit_birth_date').value = data.birth_date;
-  document.getElementById('edit_birth_place').value = data.birth_place;
-  document.getElementById('edit_age').value = data.age;
-  document.getElementById('edit_single_parent').value = data.single_parent;
-  document.getElementById('edit_pwd').value = data.pwd;
-  document.getElementById('edit_pwd_info').value = data.pwd_info;
-  document.getElementById('edit_gender').value = data.gender;
-  document.getElementById('edit_civil_status').value = data.civil_status;
-  document.getElementById('edit_religion').value = data.religion;
-  document.getElementById('edit_nationality').value = data.nationality;
-  document.getElementById('edit_province').value = data.province;
-  document.getElementById('edit_municipality').value = data.municipality;
-  document.getElementById('edit_zip').value = data.zip;
-  document.getElementById('edit_barangay').value = data.barangay;
-  document.getElementById('edit_zone').value = data.zone;
-  document.getElementById('edit_house_number').value = data.house_number;
-  document.getElementById('edit_street').value = data.street;
-  document.getElementById('edit_address').value = data.address;
-  document.getElementById('edit_email_address').value = data.email_address;
-  document.getElementById('edit_contact_number').value = data.contact_number;
-  document.getElementById('edit_fathers_name').value = data.fathers_name;
-  document.getElementById('edit_mothers_name').value = data.mothers_name;
-  document.getElementById('edit_guardian').value = data.guardian;
-  document.getElementById('edit_guardian_contact').value = data.guardian_contact;
+  function openEditModal(data) {
+    // Prefill form with sample data
+    document.getElementById('edit_first_name').value = data.first_name;
+    document.getElementById('edit_middle_name').value = data.middle_name;
+    document.getElementById('edit_last_name').value = data.last_name;
+    document.getElementById('edit_suffix').value = data.suffix;
+    document.getElementById('edit_voters').value = data.voters;
+    document.getElementById('edit_birth_date').value = data.birth_date;
+    document.getElementById('edit_birth_place').value = data.birth_place;
+    document.getElementById('edit_age').value = data.age;
+    document.getElementById('edit_single_parent').value = data.single_parent;
+    document.getElementById('edit_pwd').value = data.pwd;
+    document.getElementById('edit_pwd_info').value = data.pwd_info;
+    document.getElementById('edit_gender').value = data.gender;
+    document.getElementById('edit_civil_status').value = data.civil_status;
+    document.getElementById('edit_religion').value = data.religion;
+    document.getElementById('edit_nationality').value = data.nationality;
+    document.getElementById('edit_province').value = data.province;
+    document.getElementById('edit_municipality').value = data.municipality;
+    document.getElementById('edit_zip').value = data.zip;
+    document.getElementById('edit_barangay').value = data.barangay;
+    document.getElementById('edit_zone').value = data.zone;
+    document.getElementById('edit_house_number').value = data.house_number;
+    document.getElementById('edit_street').value = data.street;
+    document.getElementById('edit_address').value = data.address;
+    document.getElementById('edit_email_address').value = data.email_address;
+    document.getElementById('edit_contact_number').value = data.contact_number;
+    document.getElementById('edit_fathers_name').value = data.fathers_name;
+    document.getElementById('edit_mothers_name').value = data.mothers_name;
+    document.getElementById('edit_guardian').value = data.guardian;
+    document.getElementById('edit_guardian_contact').value = data.guardian_contact;
 
-  $('#viewResidenceModal').modal('show');
-  resetFooter();  // Ensure footer is reset when opening
-}
-
-// When the pencil icon is clicked
-document.querySelectorAll('.editBtn').forEach(function(button) {
-  button.addEventListener('click', function () {
-    openEditModal(sampleData); // Or pass the actual data
-  });
-});
-
-// Toggle between Edit and View modes
-document.addEventListener('click', function (e) {
-  if (e.target && e.target.id === 'editDetailsBtn') {
-    if (!isEditing) {
-      // Set modal to editing mode
-      isEditing = true;
-      const footer = document.querySelector(".modal-footer");
-      footer.innerHTML = `
-        <button type="button" class="btn btn-secondary" id="cancelEditBtn"  style="border-radius: 20px;"><i class="fas fa-times-circle"></i> CANCEL</button>
-        <button type="button" class="btn btn-primary" id="finalEditBtn" style="border-radius: 20px;"><i class="fas fa-check-circle"></i> SAVE CHANGES</button>
-      `;
-      // Enable editing on the form fields
-      document.querySelectorAll('.modal-body input').forEach(function(input) {
-        input.disabled = false;
-      });
-    }
+    $('#viewResidenceModal').modal('show');
+    resetFooter();  // Ensure footer is reset when opening
   }
-});
 
-
-
-// CANCEL Edit
-document.addEventListener('click', function (e) {
-  if (e.target && e.target.id === 'cancelEditBtn') {
-    $('#viewResidenceModal').modal('hide');
-    isEditing = false;
-    resetFooter();
-  }
-});
-
-// // Finalize Edit (Save changes)
-// document.addEventListener('click', function (e) {
-//   if (e.target && e.target.id === 'finalEditBtn') {
-//     // Collect updated data from form
-//     const updatedData = {
-//       first_name: document.getElementById('edit_first_name').value,
-//       last_name: document.getElementById('edit_last_name').value,
-//       email_address: document.getElementById('edit_email_address').value,
-//       contact_number: document.getElementById('edit_contact_number').value
-//     };
-
-//     console.log("Final Data Submitted:", updatedData);
-
-//     // You can send this data to your views here if necessary
-//     alert("Form has been updated!");
-//     $('#viewResidenceModal').modal('hide');
-//     isEditing = false;
-//     resetFooter();
-//   }
-// });
-
-
-document.addEventListener('click', function (e) {
-  if (e.target && e.target.id === 'finalEditBtn') {
-    const updatedData = {
-      first_name: document.getElementById('edit_first_name').value,
-      last_name: document.getElementById('edit_last_name').value,
-      email_address: document.getElementById('edit_email_address').value,
-      contact_number: document.getElementById('edit_contact_number').value
-    };
-
-    console.log("Final Data Submitted:", updatedData);
-
-    // Confirmation alert
-    Swal.fire({
-        title: "ARE YOU SURE?",
-        text: "You are about to update this information.",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#28a745", // green
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, update it!"
-    }).then((result) => {
-        if (result.isConfirmed) {    
-            
-            Swal.fire({
-            title: "UPDATED",
-            text: "Updated successfully!",
-            icon: "success"
-            });
-
-            $('#viewResidenceModal').modal('hide');
-                isEditing = false;
-                resetFooter();
-    
-        }
+  // When the pencil icon is clicked
+  document.querySelectorAll('.editBtn').forEach(function(button) {
+    button.addEventListener('click', function () {
+      openEditModal(sampleData); // Or pass the actual data
     });
+  });
 
+  // Toggle between Edit and View modes
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'editDetailsBtn') {
+      if (!isEditing) {
+        // Set modal to editing mode
+        isEditing = true;
+        const footer = document.querySelector(".modal-footer");
+        footer.innerHTML = `
+          <button type="button" class="btn btn-secondary" id="cancelEditBtn"  style="border-radius: 20px;"><i class="fas fa-times-circle"></i> CANCEL</button>
+          <button type="button" class="btn btn-primary" id="finalEditBtn" style="border-radius: 20px;"><i class="fas fa-check-circle"></i> SAVE CHANGES</button>
+        `;
+        // Enable editing on the form fields
+        document.querySelectorAll('.modal-body input').forEach(function(input) {
+          input.disabled = false;
+        });
+      }
+    }
+  });
+
+
+
+  // CANCEL Edit
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'cancelEditBtn') {
+      $('#viewResidenceModal').modal('hide');
+      isEditing = false;
+      resetFooter();
+    }
+  });
+
+
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'finalEditBtn') {
+      const updatedData = {
+        first_name: document.getElementById('edit_first_name').value,
+        last_name: document.getElementById('edit_last_name').value,
+        email_address: document.getElementById('edit_email_address').value,
+        contact_number: document.getElementById('edit_contact_number').value
+      };
+
+      console.log("Final Data Submitted:", updatedData);
+
+      // Confirmation alert
+      Swal.fire({
+          title: "ARE YOU SURE?",
+          text: "You are about to update this information.",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#28a745", // green
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, update it!"
+      }).then((result) => {
+          if (result.isConfirmed) {    
+              
+              Swal.fire({
+              title: "UPDATED",
+              text: "Updated successfully!",
+              icon: "success"
+              });
+
+              $('#viewResidenceModal').modal('hide');
+                  isEditing = false;
+                  resetFooter();
+      
+          }
+      });
+
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'closeModal') {
+      $('#viewResidenceModal').modal('hide');
+    }
+  });
+
+
+  function resetFooter() {
+    const footer = document.querySelector(".modal-footer");
+    footer.innerHTML = `
+      <button type="button" id="closeModal" class="btn btn-secondary btn-flat elevation-5" data-bs-dismiss="modal" style="background-color: #DE0909; width: 10%; border-radius: 20px; border-color: #DE0909;"><i class="fas fa-times"></i> CLOSE</button>
+      <button type="button" class="btn btn-primary elevation-5" id="editDetailsBtn" style="border-radius: 20px;"><i class="fas fa-edit"></i> EDIT DETAILS</button>
+    `;
+    document.querySelectorAll('.modal-body input').forEach(input => input.disabled = true);
   }
-});
 
-document.addEventListener('click', function (e) {
-  if (e.target && e.target.id === 'closeModal') {
-    $('#viewResidenceModal').modal('hide');
-  }
-});
-
-
-function resetFooter() {
-  const footer = document.querySelector(".modal-footer");
-  footer.innerHTML = `
-    <button type="button" id="closeModal" class="btn btn-secondary btn-flat elevation-5" data-bs-dismiss="modal" style="background-color: #DE0909; width: 10%; border-radius: 20px; border-color: #DE0909;"><i class="fas fa-times"></i> CLOSE</button>
-    <button type="button" class="btn btn-primary elevation-5" id="editDetailsBtn" style="border-radius: 20px;"><i class="fas fa-edit"></i> EDIT DETAILS</button>
-  `;
-  document.querySelectorAll('.modal-body input').forEach(input => input.disabled = true);
-}
-
-  
+    
 </script>
 
 
 
-
-
-
-
-
-
-    <!-- REQUIRED SCRIPTS -->
-
-    <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-<!-- jQuery and Bootstrap JS (required for modal to function) -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-
-    
-    <!-- AdminLTE -->
-    <script src="dist/js/adminlte.js"></script>
-
-
 <!-- dropdown directory management -->
-    <script>
-      $(function () {
-        // Prevent the dropdown from closing when clicking inside
-        $('.dropdown-menu').on('click', function (e) {
-          e.stopPropagation();
-        });
+<script>
+  $(function () {
+    // Prevent the dropdown from closing when clicking inside
+    $('.dropdown-menu').on('click', function (e) {
+      e.stopPropagation();
+    });
 
-        // Toggle submenu visibility
-        $("#directoryToggle").on("click", function (e) {
-          e.preventDefault();
-          $("#directorySubmenu").slideToggle("fast");
-        });
-      });
-    </script>
+    // Toggle submenu visibility
+    $("#directoryToggle").on("click", function (e) {
+      e.preventDefault();
+      $("#directorySubmenu").slideToggle("fast");
+    });
+  });
+</script>
 
 
 

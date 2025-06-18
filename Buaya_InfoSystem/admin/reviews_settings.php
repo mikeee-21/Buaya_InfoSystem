@@ -10,11 +10,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
 
 
   
@@ -191,133 +191,121 @@ li a p{
 
 
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">
+<div class="wrapper">
   
      <!-- Navbar -->
-   <nav class="main-header navbar navbar-expand navbar-white" style="border: none; box-shadow: none;">
+    <nav class="main-header navbar navbar-expand navbar-white" style="border: none; box-shadow: none;">
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
 
-
-
-
-<!-- Right navbar links -->
-<ul class="navbar-nav ml-auto">
-
-  <!-- HOME -->
-  <li class="nav-item mr-4">
-    <a href="dashboard.php" class="nav-link">
-      <i class="fa-solid fa-house" style="color:black;"></i>
-    </a>
-  </li>
-
-  <!-- REVIEWS -->
-  <li class="nav-item mr-3">
-    <a class="nav-link"  href="reviews_settings.php">
-      <i class="fa-solid fa-comment-dots" style="color:black;"></i>
-    </a>
-  </li>
-
-  <!-- SETTINGS -->
-  <li class="nav-item dropdown mr-3">
-    <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <i class="fa-solid fa-gear" style="color:black;"></i>
-    </a>
-
-    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-      
-      <!-- Directory Management -->
-      <li class="dropdown-item">
-        <a href="#" class="d-block w-100" id="directoryToggle">
-          Directory Management <i class="fas fa-caret-down float-right"></i>
+      <!-- HOME -->
+      <li class="nav-item mr-4">
+        <a href="dashboard.php" class="nav-link">
+          <i class="fa-solid fa-house" style="color:black;"></i>
         </a>
-
-          <!-- Submenu -->
-        <div id="directorySubmenu" style="display: none;" class="sub mt-2">
-          <a class="dropdown-item ml-3 font-inter" href="settings_addNew_off.php">Add New Official</a>
-          <a class="dropdown-item ml-3 font-inter" href="settings_list_official.php">List of Officials</a>
-          <a class="dropdown-item ml-3 font-inter" href="settings_officials_endterm.php">Officials End Terms</a>
-        </div>
-
       </li>
 
-      <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
-      <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
+      <!-- REVIEWS -->
+      <li class="nav-item mr-3">
+        <a class="nav-link"  href="reviews_settings.php">
+          <i class="fa-solid fa-comment-dots" style="color:black;"></i>
+        </a>
+      </li>
+
+      <!-- SETTINGS -->
+      <li class="nav-item dropdown mr-3">
+        <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-solid fa-gear" style="color:black;"></i>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
+          
+          <!-- Directory Management -->
+          <li class="dropdown-item">
+            <a href="#" class="d-block w-100" id="directoryToggle">
+              Directory Management <i class="fas fa-caret-down float-right"></i>
+            </a>
+
+              <!-- Submenu -->
+            <div id="directorySubmenu" style="display: none;" class="sub mt-2">
+              <a class="dropdown-item ml-3 font-inter" href="settings_addNew_off.php">Add New Official</a>
+              <a class="dropdown-item ml-3 font-inter" href="settings_list_official.php">List of Officials</a>
+              <a class="dropdown-item ml-3 font-inter" href="settings_officials_endterm.php">Officials End Terms</a>
+            </div>
+
+          </li>
+
+          <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
+          <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
+        </ul>
+      </li>
+
+
+
+      <!-- FULL SCREEN -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" data-widget="fullscreen" href="notification." role="button">
+          <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
+        </a>
+      </li>
+
+      <!-- ADMIN -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="admin_profile.php" >
+          <i class="fa-solid fa-user mr-1" style="color:black;"></i>
+          <span style="color:black;">Admin</span>
+        </a>
+      </li>
+
+      <!-- SIGN OUT -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="../views/admin/sign_out.php" role="button">
+          <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
+          <span style="color:black;">Sign Out</span>
+        </a>
+      </li>
+
     </ul>
-  </li>
-
-
-
-  <!-- FULL SCREEN -->
-  <li class="nav-item mr-4">
-    <a class="nav-link" data-widget="fullscreen" href="notification." role="button">
-      <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
-    </a>
-  </li>
-
-  <!-- ADMIN -->
-  <li class="nav-item mr-4">
-    <a class="nav-link" href="admin_profile.php" >
-      <i class="fa-solid fa-user mr-1" style="color:black;"></i>
-      <span style="color:black;">Admin</span>
-    </a>
-  </li>
-
-  <!-- SIGN OUT -->
-  <li class="nav-item mr-4">
-    <a class="nav-link" href="../views/admin/sign_out.php" role="button">
-      <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
-      <span style="color:black;">Sign Out</span>
-    </a>
-  </li>
-
-</ul>
-</nav>
-
-
-
-
-
-
-
-
-
-        <!-- main content -->
-        <div class="content-wrapper mr-5 ml-5 bg-white">   
-            <div class="content p-2" >
-                <div class="container-fluid p-2 center " >
-                  <div class="card w-50 mx-auto font-inter elevation-2">
-                      <div class="card-header text-white" style="background-color: #000155;">
-                          <h5>Reviews</h5>
-                      </div>
-                      <div class="card-body" style="max-height: 600px; overflow-y: auto;" id="reviews-container">
-                          <!-- Reviews will be loaded here dynamically -->
-                          <div class="text-center py-5">
-                              <div class="spinner-border text-primary" role="status">
-                                  <span class="sr-only">Loading reviews...</span>
-                              </div>
+    </nav>
+    <!-- main content -->
+    <div class="content-wrapper mr-5 ml-5 bg-white">   
+        <div class="content p-2" >
+            <div class="container-fluid p-2 center " >
+              <div class="card w-50 mx-auto font-inter elevation-2">
+                  <div class="card-header text-white" style="background-color: #000155;">
+                      <h5>Reviews</h5>
+                  </div>
+                  <div class="card-body" style="max-height: 600px; overflow-y: auto;" id="reviews-container">
+                      <!-- Reviews will be loaded here dynamically -->
+                      <div class="text-center py-5">
+                          <div class="spinner-border text-primary" role="status">
+                              <span class="sr-only">Loading reviews...</span>
                           </div>
                       </div>
                   </div>
-                </div>
-                <!-- end of container fluid -->
+              </div>
             </div>
-            <!-- end of content -->
+            <!-- end of container fluid -->
         </div>
-        <!-- end of content-wrapper -->
-
-
+        <!-- end of content -->
     </div>
-    <!-- end of wrapper -->
+    <!-- end of content-wrapper -->
+
+</div>
+<!-- end of wrapper -->
+
+
 
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
-<script src="dist/js/adminlte.js"></script>
+<script src="../assets/dist/js/adminlte.js"></script>
 
 
 

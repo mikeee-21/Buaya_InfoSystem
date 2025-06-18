@@ -10,11 +10,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
   <!-- IonIcons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
 
 <!-- SweetAlert2 CSS (optional, for styling) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -1023,71 +1023,46 @@ li a p{
 <!-- ./wrapper -->
 
 
-                <!-- EDIT CERTIFICATE MODAL -->
-                <div class="modal fade font-inter" id="editCertificateModal" data-backdrop="static" data-keyboard="false" 
-                    tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+<!-- EDIT CERTIFICATE MODAL -->
+<div class="modal fade font-inter" id="editCertificateModal" data-backdrop="static" data-keyboard="false" 
+    tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
 
-                    
-                    <div  class="modal-dialog modal-lg modal-dialog-centered p-3" role="document" >
-                        <div class="modal-content p-3 bg-white w-75 mx-auto  elevation-2" style="border-radius: 20px;">
+    
+    <div  class="modal-dialog modal-lg modal-dialog-centered p-3" role="document" >
+        <div class="modal-content p-3 bg-white w-75 mx-auto  elevation-2" style="border-radius: 20px;">
 
-                                <div class="row-4 p-3 mb-3">
-                                    <div class="row-2 mb-3 ">
-                                        <div class="d-flex align-items-center justify-content-center p-2 w-50 font-inter text-white font-weight-bold" 
-                                            style="height: 50px; background-color: #000155; border-radius: 10px;">   
+                <div class="row-4 p-3 mb-3">
+                    <div class="row-2 mb-3 ">
+                        <div class="d-flex align-items-center justify-content-center p-2 w-50 font-inter text-white font-weight-bold" 
+                            style="height: 50px; background-color: #000155; border-radius: 10px;">   
 
-                                            <i class="mr-2  fa-solid fa-pen-to-square"></i>
-                                            <p class="m-0">Edit Certificate</p>
-                                            
-                                        </div>
-                                    </div>
-
-
-                                    
-                                    <div class="row mb-3" style="border: 1px solid rgb(135, 135, 135); border-radius: 10px; height: 60px;">
-                                        <!-- Hidden input to store ID -->
-                                        <input type="hidden" id="edit_cert_id">
-                                        <!-- Input for new zone name -->
-                                        <input type="text"   id="edit_cert_name" class="p-2 pl-4 pr-4 w-100 h-100" style="background-color:rgb(255, 255, 255); border:none; border-radius: 10px;" 
-                                                placeholder="Enter the new name" >
-                                    
-                                    </div>
-
-                                    <div class="row-2 d-flex justify-content-end font-inter" >
-                                        <button type="button" class="btn px-3 elevation-5 mr-2" style="background-color: #FFF153; border-radius: 20px;" id="closeBtn" data-dismiss="modal"><i class="mr-2  fas fa-times"></i> Close</button>
-                                        <button type="submit" class="btn px-3 elevation-5" style="background-color: #81D5C6; border-radius: 20px;" id="saveBtn"> <i class="mr-2  fa-solid fa-share"></i>Save</button>
-                                    </div>
-                                </div>
-
+                            <i class="mr-2  fa-solid fa-pen-to-square"></i>
+                            <p class="m-0">Edit Certificate</p>
+                            
                         </div>
                     </div>
 
+
+                    
+                    <div class="row mb-3" style="border: 1px solid rgb(135, 135, 135); border-radius: 10px; height: 60px;">
+                        <!-- Hidden input to store ID -->
+                        <input type="hidden" id="edit_cert_id">
+                        <!-- Input for new zone name -->
+                        <input type="text"   id="edit_cert_name" class="p-2 pl-4 pr-4 w-100 h-100" style="background-color:rgb(255, 255, 255); border:none; border-radius: 10px;" 
+                                placeholder="Enter the new name" >
+                    
+                    </div>
+
+                    <div class="row-2 d-flex justify-content-end font-inter" >
+                        <button type="button" class="btn px-3 elevation-5 mr-2" style="background-color: #FFF153; border-radius: 20px;" id="closeBtn" data-dismiss="modal"><i class="mr-2  fas fa-times"></i> Close</button>
+                        <button type="submit" class="btn px-3 elevation-5" style="background-color: #81D5C6; border-radius: 20px;" id="saveBtn"> <i class="mr-2  fa-solid fa-share"></i>Save</button>
+                    </div>
                 </div>
 
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 
@@ -1095,13 +1070,15 @@ li a p{
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
-<script src="dist/js/adminlte.js"></script>
+<script src="../assets/dist/js/adminlte.js"></script>
+
+
 
 
 
