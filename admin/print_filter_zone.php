@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barangay Zone Residents Report</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    body {
+      background-color: #fff;
+      color: #333;
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.5;
+    }
+    .barangay-header {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #000155;
+    }
+    .barangay-logo img {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .barangay-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #000155;
+      margin: 5px 0;
+    }
+    .barangay-subtitle {
+      font-size: 16px;
+      margin: 3px 0;
+    }
+    .barangay-address {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .report-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000155;
+      margin: 15px 0;
+      text-transform: uppercase;
+    }
+    .report-meta {
+      background: #f8f9fa;
+      padding: 12px;
+      border-radius: 5px;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+    .filters-applied {
+      background: #e3f2fd;
+      padding: 12px;
+      border-radius: 5px;
+      margin: 15px 0;
+      border-left: 4px solid #0FCDA7;
+    }
+    .residents-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 13px;
+    }
+    .residents-table th {
+      background: #000155;
+      color: white;
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    .residents-table td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    .residents-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .text-left {
+      text-align: left !important;
+    }
+    .status-yes {
+      color: #28a745;
+      font-weight: bold;
+    }
+    .status-no {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    .report-footer {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #dee2e6;
+      font-size: 12px;
+    }
+    .signature-line {
+      border-top: 1px solid #333;
+      width: 180px;
+      display: inline-block;
+      margin: 50px 0 5px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .badge-primary {
+      background-color: #0FCDA7;
+      color: white;
+    }
+    .signature-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .signature-box {
+      text-align: center;
+    }
+    @media print {
+      body { 
+        margin: 0.5cm;
+        font-size: 10pt;
+      }
+      .no-print { 
+        display: none !important; 
+      }
+      .barangay-header, .report-meta, .filters-applied { 
+        page-break-after: avoid; 
+      }
+      .residents-table {
+        font-size: 9pt;
+        page-break-inside: auto;
+      }
+      .residents-table tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+      .report-footer {
+        page-break-before: avoid;
+      }
+      .signature-container {
+        page-break-inside: avoid;
+     }
+        .report-footer {
+        page-break-before: avoid;
+        page-break-inside: avoid;
+    }
+
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <section class="invoice">
+    <!-- Barangay Header -->
+    <div class="barangay-header">
+      <div class="barangay-logo">
+        <img src="../server_imgs/logo.jpg" alt="Barangay Logo">
+      </div>
+      <div class="barangay-title">REPUBLIC OF THE PHILIPPINES</div>
+      <div class="barangay-subtitle">Province of Cebu</div>
+      <div class="barangay-subtitle">City of Lapu-Lapu</div>
+      <div class="barangay-title" style="color: #000155;">BARANGAY BUAYA</div>
+      <div class="barangay-address">
+        Barangay Buaya, Lapu-Lapu City, Cebu<br>
+        Tel. No.: 09753234227 | Email: barangaybuaya23@gmail.com
+      </div>
+      <div class="report-title">ZONE RESIDENTS REPORT</div>
+    </div>
+
+    <!-- Report Meta Information -->
+    <div class="report-meta">
+      <div class="row">
+        <div class="col-sm-6">
+          <strong><i class="fas fa-calendar-alt mr-1"></i>Report Generated:</strong> <span id="reportDate"></span><br>
+          <strong><i class="fas fa-user-tie mr-1"></i>Generated By:</strong> Barangay Administrator
+        </div>
+        <div class="col-sm-6 text-right">
+          <strong><i class="fas fa-users mr-1"></i>Total Residents:</strong> <span id="totalRecords">Loading...</span><br>
+          <strong><i class="fas fa-info-circle mr-1"></i>Status:</strong> <span class="badge badge-primary">Official Document</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Residents Table -->
+    <div class="row">
+      <div class="col-12">
+        <table class="residents-table" id="residentsTable">
+          <thead>
+            <tr>
+              <th style="width: 5%;">#</th>
+              <th style="width: 25%;">Full Name</th>
+              <th style="width: 10%;">Gender</th>
+              <th style="width: 10%;">Age</th>
+              <th style="width: 20%;">Zone</th>
+              <th style="width: 10%;">PWD</th>
+              <th style="width: 10%;">Senior</th>
+              <th style="width: 10%;">Voter</th>
+            </tr>
+          </thead>
+          <tbody id="residentsData">
+            <tr>
+              <td colspan="8" class="text-center py-3">
+                <i class="fas fa-spinner fa-spin mr-1"></i> Loading residents data...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Report Footer -->
+    <div class="report-footer">
+        <div class="signature-container" style="page-break-inside: avoid;">
+            <div class="signature-box">
+            <p><strong>Prepared by:</strong></p>
+            <div class="signature-line"></div>
+            <p><strong>Sec. Ivan B. Timcang</strong><br>Barangay Secretary</p>
+            </div>
+            <div class="signature-box">
+            <p><strong>Certified by:</strong></p>
+            <div class="signature-line"></div>
+            <p><strong>Hon. Jay Mike E. Palang</strong><br>Barangay Captain</p>
+            </div>
+        </div>
+        <div style="margin-top: 15px; text-align: center; page-break-inside: avoid;">
+            <small>
+            <i class="fas fa-info-circle mr-1"></i> This document is generated electronically.<br>
+            Unauthorized distribution is prohibited under RA 10173 (Data Privacy Act).<br>
+            Generated on: <span id="footerDate"></span>
+            </small>
+        </div>
+    </div>
+  </section>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    // Set current date and time
+    const now = new Date();
+    const options = { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    };
+    const dateString = now.toLocaleDateString('en-US', options);
+    
+    $('#reportDate').text(dateString);
+    $('#footerDate').text(dateString);
+    
+    // Get filters from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const filters = {};
+    
+    // Extract all filter parameters
+    for (const [key, value] of urlParams.entries()) {
+        if (value && value.trim() !== '') {
+            filters[key] = value;
+        }
+    }
+    
+    // Display applied filters
+    displayAppliedFilters(filters);
+    
+    // Load residents data with filters
+    loadResidentsForPrint(filters);
+    
+    // Auto print after data loads
+    setTimeout(function() {
+        window.print();
+        setTimeout(function() {
+            window.close();
+        }, 500);
+    }, 1000);
+});
+
+function displayAppliedFilters(filters) {
+    let hasFilters = false;
+    let filtersHtml = '';
+    
+    const filterLabels = {
+        'last_name': 'Last Name',
+        'first_name': 'First Name',
+        'zone': 'Zone',
+        'res_sex': 'Gender',
+        'res_civil_status': 'Civil Status',
+        'res_pwd_status': 'PWD Status',
+        'res_senior_status': 'Senior Status',
+        'res_voter_status': 'Voter Status'
+    };
+    
+    for (const [key, value] of Object.entries(filters)) {
+        if (value && value.trim() !== '') {
+            hasFilters = true;
+            const label = filterLabels[key] || key.replace(/_/g, ' ').toUpperCase();
+            filtersHtml += `
+                <div class="col-md-4" style="margin-bottom: 5px;">
+                    <strong>${label}:</strong> 
+                    <span class="badge badge-primary">${value}</span>
+                </div>
+            `;
+        }
+    }
+    
+    if (hasFilters) {
+        $('#filtersList').html(filtersHtml);
+        $('#filtersApplied').show();
+    }
+}
+
+function loadResidentsForPrint(filters) {
+    $.ajax({
+        url: "../backend/admin/filter_resident_in_zone.php",
+        type: "GET",
+        data: filters,
+        dataType: "json",
+        success: function(response) {
+            let html = '';
+            let counter = 1;
+            
+            if (Array.isArray(response) && response.length > 0) {
+                response.forEach(resident => {
+                    // Get zone name or use 'N/A' if not available
+                    const zoneName = resident.zone_name || 'N/A';
+                    
+                    html += `
+                        <tr>
+                            <td>${counter}</td>
+                            <td class="text-left">
+                                ${resident.res_last_name}, ${resident.res_first_name}
+                                ${resident.res_middle_name ? ' ' + resident.res_middle_name.charAt(0).toUpperCase() + '.' : ''}
+                            </td>
+                            <td>${resident.res_sex || 'N/A'}</td>
+                            <td>${calculateAge(resident.res_date_of_birth)}</td>
+                            <td>${zoneName}</td>
+                            <td class="${resident.res_pwd_status ? 'status-yes' : 'status-no'}">
+                                ${resident.res_pwd_status ? 'YES' : 'NO'}
+                            </td>
+                            <td class="${resident.res_senior_status ? 'status-yes' : 'status-no'}">
+                                ${resident.res_senior_status ? 'YES' : 'NO'}
+                            </td>
+                            <td class="${resident.res_voter_status ? 'status-yes' : 'status-no'}">
+                                ${resident.res_voter_status ? 'YES' : 'NO'}
+                            </td>
+                        </tr>
+                    `;
+                    counter++;
+                });
+                
+                $('#totalRecords').text(response.length);
+            } else {
+                html = `
+                    <tr>
+                        <td colspan="8" class="text-center py-3 text-muted">
+                            <i class="fas fa-info-circle mr-1"></i> No residents found
+                        </td>
+                    </tr>
+                `;
+                $('#totalRecords').text('0');
+            }
+            
+            $("#residentsData").html(html);
+        },
+        error: function(xhr, status, error) {
+            $("#residentsData").html(`
+                <tr>
+                    <td colspan="8" class="text-center py-3 text-danger">
+                        <i class="fas fa-exclamation-triangle mr-1"></i> Error loading data
+                    </td>
+                </tr>
+            `);
+            $('#totalRecords').text('Error');
+        }
+    });
+}
+
+function calculateAge(dob) {
+    if (!dob) return 'N/A';
+    const birthDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+</script>
+</body>
+</html>

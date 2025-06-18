@@ -1,0 +1,8 @@
+[2025-06-09 13:01:14] POST request received
+[2025-06-09 13:01:14] Processing resident ID: 10055
+[2025-06-09 13:01:14] Received image data type: base64
+[2025-06-09 13:01:14] Processing base64 image
+[2025-06-09 13:01:14] Generated path: C:\xampp\htdocs\Buaya_InfoSystem\backend\admin/../../server_imgs/130114_puefi9.jpeg
+[2025-06-09 13:01:14] Successfully saved base64 image to: server_imgs/130114_puefi9.jpeg
+[2025-06-09 13:01:14] Final image path for database: server_imgs/130114_puefi9.jpeg
+[2025-06-09 13:01:14] Database update successful
