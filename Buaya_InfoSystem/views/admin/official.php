@@ -7,8 +7,7 @@ try {
                            FROM official o 
                            JOIN resident r ON o.res_id = r.res_id
                            JOIN position p ON p.pos_id = o.pos_id
-                           WHERE o.off_is_deleted = false
-                           LIMIT 5");
+                           WHERE o.off_is_deleted = false");
 
     $stmt->execute();
     $officials = $stmt->fetchAll(PDO::FETCH_ASSOC);
