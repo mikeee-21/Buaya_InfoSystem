@@ -159,64 +159,50 @@ li a p{
 
 
 <body class="hold-transition sidebar-mini">
-  
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white " style="border: none; box-shadow: none;">
-
-
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-
         <!-- HOME -->
         <li class="nav-item mr-4">
           <a href="dashboard.php" class="nav-link">
             <i class="nav-icon fa-solid fa-house"></i>
           </a>
         </li>
-
         <!-- REVIEWS -->
         <li class="nav-item mr-3">
           <a class="nav-link" href="reviews_settings.php">
             <i class="nav-icon fa-solid fa-comment-dots"></i>
           </a>
         </li>
-
         <!-- SETTINGS -->
         <li class="nav-item dropdown mr-3">
           <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="nav-icon fa-solid fa-gear" ></i>
           </a>
-
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-            
             <!-- Directory Management -->
             <li class="dropdown-item ">
               <a href="#" class="d-block w-100" id="directoryToggle">
                 Directory Management <i class="nav-icon fas fa-caret-down float-right"></i>
               </a>
-
-                <!-- Submenu -->
+              <!-- Submenu -->
               <div id="directorySubmenu" style="display: none;" class="sub mt-2">
                 <a class="dropdown-item ml-3 font-inter" href="settings_addNew_off.php">Add New Official</a>
                 <a class="dropdown-item ml-3 font-inter" href="settings_list_official.php">List of Officials</a>
                 <a class="dropdown-item ml-3 font-inter" href="settings_officials_endterm.php">Officials End Terms</a>
               </div>
-
             </li>
-
             <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
             <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
           </ul>
         </li>
-
-
         <!-- FULL SCREEN -->
         <li class="nav-item mr-4">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="nav-icon fas fa-expand-arrows-alt"></i>
           </a>
         </li>
-
         <!-- ADMIN -->
         <li class="nav-item mr-4 font-inter ">
           <a href="admin_profile.php" class="nav-link" role="button">
@@ -224,7 +210,6 @@ li a p{
             <span style="color:black; ">Admin</span>
           </a>
         </li>
-
         <!-- SIGN OUT -->
         <li class="nav-item mr-4 font-inter">
           <a class="nav-link" href="../views/admin/sign_out.php" role="button">
@@ -232,402 +217,393 @@ li a p{
             <span style="color:black;">Sign Out</span>
           </a>
         </li>
-
       </ul>
     </nav>
 
+    <!-- MAIN CONTENT -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper bg-white ml-5 mr-5 font-inter">
+        <!-- Main content -->
+        <section class="content ">
+            <div class="container-fluid  pt-5 p-2" style="height: 670px;">
 
 
+                <form id="editOfficialForm" method="POST" enctype="multipart/form-data" autocomplete="off">
+                    <div class="row mb-3 elevation-1 p-3">
+                        <div class="col" style="max-height: 580px; overflow-y: auto;">
 
-
-  <!-- MAIN CONTENT -->
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper bg-white ml-5 mr-5 font-inter">
-    <!-- Main content -->
-    <section class="content ">
-        <div class="container-fluid  pt-5 p-2" style="height: 670px;">
-
-
-            <form id="editOfficialForm" method="POST" enctype="multipart/form-data" autocomplete="off">
-                <div class="row mb-3 elevation-1 p-3">
-                    <div class="col" style="max-height: 580px; overflow-y: auto;">
-
-                        <div class="card card-outline " style="background-color:rgb(255, 255, 255);">
-                            <div class="card-header">
-                                <div class="card-title" style="font-family: 'Inter', sans-serif; font-size: 18px;">
-                                    View Details Official
-                                </div>
-                            </div>
-                            <div class="card-body box-profile" style="font-family: 'Inter', sans-serif; font-size: 18px;">
-
-                                <div class="text-center mb-3" style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid rgb(220, 220, 220); margin: 0 auto;">
-                                    <label for="imageUploader" style="cursor: pointer;">
-                                        <img class="profile-user-img img-fluid img-thumbnail"
-                                            src="img/default_user_img.jpg"
-                                            alt="User profile picture"
-                                            id="image_official"
-                                            style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #000155;" />
-                                    </label>
-                                    <input type="file" id="imageUploader" accept="image/*" style="display: none;"  disabled/>
-                                </div>
-
-
-
-
-                                <h3 class="profile-username text-center" style=" margin: 0 10; font-size: 15px; font-weight: 15px;"><span id="keyup_first_name"></span> <span id="keyup_last_name"></span></h3>
-
-                                <div class="row">
-                                <div class="col">
-                                    <input type="hidden" name="official_id" value="">
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                    <label>Position</label>
-                                        <select name="edit_position" id="edit_position" class="form-control  text-uppercase" readonly>                        
-                                        </select>
-                                        <input type="hidden" id="edit_position_check" value="false">
+                            <div class="card card-outline " style="background-color:rgb(255, 255, 255);">
+                                <div class="card-header">
+                                    <div class="card-title" style="font-family: 'Inter', sans-serif; font-size: 18px;">
+                                        View Details Official
                                     </div>
                                 </div>
+                                <div class="card-body box-profile" style="font-family: 'Inter', sans-serif; font-size: 18px;">
 
-                                <div class="col-sm-12">
-                                        <div class="form-group font-inter">
-                                            <label>Assigned Committee</label>
-                                            <input type="text" name="add_committee" id="add_committee" class="form-control" required>
-                                            <input type="hidden" id="edit_committee" value="false">
+                                    <div class="text-center mb-3" style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid rgb(220, 220, 220); margin: 0 auto;">
+                                        <label for="imageUploader" style="cursor: pointer;">
+                                            <img class="profile-user-img img-fluid img-thumbnail"
+                                                src="img/default_user_img.jpg"
+                                                alt="User profile picture"
+                                                id="image_official"
+                                                style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #000155;" />
+                                        </label>
+                                        <input type="file" id="imageUploader" accept="image/*" style="display: none;"  disabled/>
+                                    </div>
+
+
+
+
+                                    <h3 class="profile-username text-center" style=" margin: 0 10; font-size: 15px; font-weight: 15px;"><span id="keyup_first_name"></span> <span id="keyup_last_name"></span></h3>
+
+                                    <div class="row">
+                                    <div class="col">
+                                        <input type="hidden" name="official_id" value="">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                        <label>Position</label>
+                                            <select name="edit_position" id="edit_position" class="form-control  text-uppercase" readonly>                        
+                                            </select>
+                                            <input type="hidden" id="edit_position_check" value="false">
                                         </div>
-                                </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                            <div class="form-group font-inter">
+                                                <label>Assigned Committee</label>
+                                                <input type="text" name="add_committee" id="add_committee" class="form-control" required>
+                                                <input type="hidden" id="edit_committee" value="false">
+                                            </div>
+                                    </div>
+
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group font-inter">
+                                                <label>Short Description:</label>
+                                                <textarea name="add_description" id="add_description" class="form-control rounded" style="height: 150px;" required></textarea>
+                                            </div>
+                                        </div>
+
+
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group ">
+                                        <label >Start</label>
+                                        <input type="date" class="form-control" id="edit_term_from" name="edit_term_from" value="">
+                                        <input type="hidden" name="start_term" id="edit_term_from_check" value="false">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group ">
+                                        <label >End</label>
+                                        <input type="date" class="form-control" id="edit_term_to" name="edit_term_to" value="">
+                                        <input type="hidden" name="end_term" id="edit_term_to_check" value="false">
+                                        </div>
+                                    </div>
+
 
 
                                     <div class="col-sm-12">
-                                        <div class="form-group font-inter">
-                                            <label>Short Description:</label>
-                                            <textarea name="add_description" id="add_description" class="form-control rounded" style="height: 150px;" required></textarea>
-                                        </div>
-                                    </div>
-
-
-
-                                <div class="col-sm-6">
-                                    <div class="form-group ">
-                                    <label >Start</label>
-                                    <input type="date" class="form-control" id="edit_term_from" name="edit_term_from" value="">
-                                    <input type="hidden" name="start_term" id="edit_term_from_check" value="false">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group ">
-                                    <label >End</label>
-                                    <input type="date" class="form-control" id="edit_term_to" name="edit_term_to" value="">
-                                    <input type="hidden" name="end_term" id="edit_term_to_check" value="false">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Voters</label>
-                                        <select name="edit_voters" id="edit_voters" class="form-control"readonly>
-                                            <option value="false">NO</option>
-                                            <option value="true">YES</option>
-                                        </select>
-                                        <input type="hidden" value="false" id="edit_voters_check">
-                                    </div>
-                                </div>
-
-                                 <div class="col-sm-12" id="precinct_container" >
                                         <div class="form-group">
-                                            <label>Precinct Number</label>
-                                            <input type="text" name="add_precinct_number" id="add_precinct_number" class="form-control" readonly>
+                                            <label>Voters</label>
+                                            <select name="edit_voters" id="edit_voters" class="form-control"readonly>
+                                                <option value="false">NO</option>
+                                                <option value="true">YES</option>
+                                            </select>
+                                            <input type="hidden" value="false" id="edit_voters_check">
                                         </div>
                                     </div>
-                                
 
-                                <div class="col-sm-12">
-                                    <div class="form-group ">
-                                    <label >Date of Birth</label>
-                                    <input type="date" class="form-control" id="edit_birth_date" name="edit_birth_date" value=""readonly>
-                                    <input type="hidden" id="edit_birth_date_check" value='false'>
+                                    <div class="col-sm-12" id="precinct_container" >
+                                            <div class="form-group">
+                                                <label>Precinct Number</label>
+                                                <input type="text" name="add_precinct_number" id="add_precinct_number" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                    
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group ">
+                                        <label >Date of Birth</label>
+                                        <input type="date" class="form-control" id="edit_birth_date" name="edit_birth_date" value=""readonly>
+                                        <input type="hidden" id="edit_birth_date_check" value='false'>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group ">
+                                        <label >Place of Birth</label>
+                                        <input type="text" class="form-control" id="edit_birth_place" name="edit_birth_place" value=""readonly>
+                                        <input type="hidden" id="edit_birth_place_check" value="false">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Pwd</label>
+                                            <select name="edit_pwd" id="edit_pwd" class="form-control"readonly>
+                                                <option value="false">NO</option>
+                                                <option value="true">YES</option>
+                                            </select>
+                                            <input type="hidden" id="edit_pwd_check" value="false">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12" id="pwd_check">
+                                        <div class="form-group ">
+                                            <label >TYPE OF PWD</label>
+                                            <input type="text" class="form-control" id="edit_pwd_info" name="edit_pwd_info" value=""readonly>
+                                            <input type="hidden" id="edit_pwd_info_check" value="false">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Single Parent</label>
+                                            <select name="edit_single_parent" id="edit_single_parent" class="form-control" readonly>
+                                                <option value="false">NO</option>
+                                                <option value="true">YES</option>
+                                            </select>
+                                            <input type="hidden" id="edit_single_parent_check" value="false">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group ">
-                                    <label >Place of Birth</label>
-                                    <input type="text" class="form-control" id="edit_birth_place" name="edit_birth_place" value=""readonly>
-                                    <input type="hidden" id="edit_birth_place_check" value="false">
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Pwd</label>
-                                        <select name="edit_pwd" id="edit_pwd" class="form-control"readonly>
-                                            <option value="false">NO</option>
-                                            <option value="true">YES</option>
-                                        </select>
-                                        <input type="hidden" id="edit_pwd_check" value="false">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12" id="pwd_check">
-                                    <div class="form-group ">
-                                        <label >TYPE OF PWD</label>
-                                        <input type="text" class="form-control" id="edit_pwd_info" name="edit_pwd_info" value=""readonly>
-                                        <input type="hidden" id="edit_pwd_info_check" value="false">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label>Single Parent</label>
-                                        <select name="edit_single_parent" id="edit_single_parent" class="form-control" readonly>
-                                            <option value="false">NO</option>
-                                            <option value="true">YES</option>
-                                        </select>
-                                        <input type="hidden" id="edit_single_parent_check" value="false">
-                                    </div>
-                                </div>
+                                <!-- /.card-body -->
                             </div>
-                            <!-- /.card-body -->
                         </div>
-                    </div>
 
 
-                    <div class="col-sm-8 p-3"  style="max-height: 600px; overflow-y: auto; font-family: 'Inter', sans-serif; font-size:15px;">
+                        <div class="col-sm-8 p-3"  style="max-height: 600px; overflow-y: auto; font-family: 'Inter', sans-serif; font-size:15px;">
 
-                        <div class="card card-tabs" style="background-color:rgb(255, 255, 255);">
-                            <div class="card-header p-2">
-                                <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist" >
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="basic-info-tab" data-toggle="pill" href="#basic-info" role="tab" aria-controls="basic-info" aria-selected="true">Basic Info</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="other-info-tab" data-toggle="pill" href="#other-info" role="tab" aria-controls="other-info" aria-selected="false">Other Info</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="guardian-tab" data-toggle="pill" href="#guardian" role="tab" aria-controls="guardian" aria-selected="false">Guardian</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <div class="card card-tabs" style="background-color:rgb(255, 255, 255);">
+                                <div class="card-header p-2">
+                                    <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist" >
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="basic-info-tab" data-toggle="pill" href="#basic-info" role="tab" aria-controls="basic-info" aria-selected="true">Basic Info</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="other-info-tab" data-toggle="pill" href="#other-info" role="tab" aria-controls="other-info" aria-selected="false">Other Info</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="guardian-tab" data-toggle="pill" href="#guardian" role="tab" aria-controls="guardian" aria-selected="false">Guardian</a>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                            <div class="card-body" style="font-family: 'Inter', sans-serif; font-size: 18px;" >
+                                <div class="card-body" style="font-family: 'Inter', sans-serif; font-size: 18px;" >
 
-                                <div class="tab-content" id="custom-tabs-one-tabContent">
+                                    <div class="tab-content" id="custom-tabs-one-tabContent">
 
-                                    <div class="tab-pane fade active show" id="basic-info" role="tabpanel" aria-labelledby="basic-info-tab">
-                                        <p class="lead text-center mb-0">Personal Details</p>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group ">
-                                                    <label>First Name </label>
-                                                    <input type="text" class="form-control" id="edit_first_name" name="edit_first_name" value=""readonly>
-                                                    <input type="hidden" value="false" id="edit_first_name_check">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group ">
-                                                    <label>Middle Name </label>
-                                                    <input type="text" class="form-control" id="edit_middle_name" name="edit_middle_name" value=""readonly>
-                                                    <input type="hidden" id="edit_middle_name_check" value="false">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group ">
-                                                    <label>Last Name </label>
-                                                    <input type="text" class="form-control" id="edit_last_name" name="edit_last_name" value=""readonly>
-                                                    <input type="hidden" value="false" id="edit_last_name_check">
-                                                </div>  
-                                            </div>
-                                        </div>
+                                        <div class="tab-pane fade active show" id="basic-info" role="tabpanel" aria-labelledby="basic-info-tab">
+                                            <p class="lead text-center mb-0">Personal Details</p>
                                             <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group ">
-                                                    <label >Suffix </label>
-                                                    <input type="text" class="form-control" id="edit_suffix" name="edit_suffix" value=""readonly>
-                                                    <input type="hidden" id="edit_suffix_check" value="false">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group ">
+                                                        <label>First Name </label>
+                                                        <input type="text" class="form-control" id="edit_first_name" name="edit_first_name" value=""readonly>
+                                                        <input type="hidden" value="false" id="edit_first_name_check">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group ">
+                                                        <label>Middle Name </label>
+                                                        <input type="text" class="form-control" id="edit_middle_name" name="edit_middle_name" value=""readonly>
+                                                        <input type="hidden" id="edit_middle_name_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group ">
+                                                        <label>Last Name </label>
+                                                        <input type="text" class="form-control" id="edit_last_name" name="edit_last_name" value=""readonly>
+                                                        <input type="hidden" value="false" id="edit_last_name_check">
+                                                    </div>  
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group ">
-                                                    <label >Age </label>
-                                                    <input type="text" class="form-control" id="edit_age" value="" readonly>
+                                                <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group ">
+                                                        <label >Suffix </label>
+                                                        <input type="text" class="form-control" id="edit_suffix" name="edit_suffix" value=""readonly>
+                                                        <input type="hidden" id="edit_suffix_check" value="false">
+                                                    </div>
                                                 </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group ">
+                                                        <label >Age </label>
+                                                        <input type="text" class="form-control" id="edit_age" value="" readonly>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-sm-6">
+                                                    <div class="form-group ">
+                                                        <label >Gender</label>
+                                                        <select name="edit_gender" id="edit_gender" class="form-control"readonly>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female" >Female</option>
+                                                        </select>
+                                                        <input type="hidden" id="edit_gender_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group ">
+                                                        <label >Civil Status</label>
+                                                        <select name="edit_civil_status" id="edit_civil_status" class="form-control"readonly>
+                                                            <option value="Single">Single</option>
+                                                            <option value="Married">Married</option>
+                                                            <option value="Widowed">Widowed</option>
+                                                            <option value="Divorced">Divorced</option>
+                                                        </select>
+                                                        <input type="hidden" id="edit_civil_status_check" value="false">
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                <div class="col-sm-6">
+                                                    <div class="form-group ">
+                                                        <label >Religion</label>
+                                                        <input type="text" class="form-control" id="edit_religion" name="edit_religion" value=""readonly>
+                                                        <input type="hidden" id="edit_religion_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group ">
+                                                        <label >Nationality</label>
+                                                        <input type="text" class="form-control" id="edit_nationality" name="edit_nationality" value=""readonly>
+                                                        <input type="hidden" id="edit_nationality_check" value="false">
+                                                    </div>
+                                                </div>                              
                                             </div>
-                                            
-                                            <div class="col-sm-6">
-                                                <div class="form-group ">
-                                                    <label >Gender</label>
-                                                    <select name="edit_gender" id="edit_gender" class="form-control"readonly>
-                                                        <option value="Male">Male</option>
-                                                        <option value="Female" >Female</option>
-                                                    </select>
-                                                    <input type="hidden" id="edit_gender_check" value="false">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group ">
-                                                    <label >Civil Status</label>
-                                                    <select name="edit_civil_status" id="edit_civil_status" class="form-control"readonly>
-                                                        <option value="Single">Single</option>
-                                                        <option value="Married">Married</option>
-                                                        <option value="Widowed">Widowed</option>
-                                                        <option value="Divorced">Divorced</option>
-                                                    </select>
-                                                    <input type="hidden" id="edit_civil_status_check" value="false">
-                                                </div>
-                                            </div>
-                                            
-                                            
-                                            <div class="col-sm-6">
-                                                <div class="form-group ">
-                                                    <label >Religion</label>
-                                                    <input type="text" class="form-control" id="edit_religion" name="edit_religion" value=""readonly>
-                                                    <input type="hidden" id="edit_religion_check" value="false">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group ">
-                                                    <label >Nationality</label>
-                                                    <input type="text" class="form-control" id="edit_nationality" name="edit_nationality" value=""readonly>
-                                                    <input type="hidden" id="edit_nationality_check" value="false">
-                                                </div>
-                                            </div>                              
                                         </div>
-                                    </div>
 
-                                    
-                                    <div class="tab-pane fade" id="other-info" role="tabpanel" aria-labelledby="other-info-tab">
-                                         <p class="lead text-center mb-0">Address</p>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-
-                                                 <div class="form-group">
-                                                    <label>Province</label>
-                                                    <input type="text" class="form-control" id="edit_province" name="edit_province" value="" readonly>
-                                                    <input type="hidden" id="edit_province_check" value="false">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Municipality</label>
-                                                    <input type="text" class="form-control" id="edit_municipality" name="edit_municipality" value="" readonly>
-                                                    <input type="hidden" id="edit_municipality_check" value="false">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Zip</label>
-                                                    <input type="text" class="form-control" id="edit_zip" name="edit_zip" value="" readonly>
-                                                    <input type="hidden" id="edit_zip_check" value="false">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Barangay</label>
-                                                    <input type="text" class="form-control" id="edit_barangay" name="edit_barangay" value="" readonly>
-                                                    <input type="hidden" id="edit_barangay_check" value="false">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Street</label>
-                                                    <input type="text" class="form-control" id="edit_street" name="edit_street" value=""readonly>
-                                                    <input type="hidden" id="edit_street_check" value="false">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>House Number</label>
-                                                    <input type="text" class="form-control" id="edit_house_number" name="edit_house_number" value=""readonly>
-                                                    <input type="hidden" id="edit_house_number_check" value="false">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Full Address</label>
-                                                    <input type="text" class="form-control" id="edit_address" name="edit_address" value="" readonly>
-                                                    <input type="hidden" id="edit_address_check" value="false">
-                                                </div>
-                                            </div>
-                                             <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label >Contact Number</label>
-                                                    <input type="text" class="form-control" maxlength="11" id="edit_contact_number" name="edit_contact_number" value=""readonly>
-                                                    <input type="hidden" id="edit_contact_number_check" value="false">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Email Address</label>
-                                                    <input type="text" class="form-control" id="edit_email_address" name="edit_email_address" value="" readonly>
-                                                    <input type="hidden" id="edit_email_address_check" value="false">
-                                                </div>
-                                            </div>
-                                           
-                                        </div>
-                                    </div>
-
-                                    <div class="tab-pane fade" id="guardian" role="tabpanel" aria-labelledby="guardian-tab">
-                                    
-                                        <p class="lead text-center mb-0">Guardian</p>
-                                        <div class="row">
-
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Father's Name</label>
-                                                    <input type="text" class="form-control" id="edit_fathers_name" name="edit_fathers_name" value="" readonly>
-                                                    <input type="hidden" id="edit_fathers_name_check" value="false">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Mother's Name</label>
-                                                    <input type="text" class="form-control" id="edit_mothers_name" name="edit_mothers_name" value="" readonly>
-                                                    <input type="hidden" id="edit_mothers_name_check" value="false">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Guardian</label>
-                                                    <input type="text" class="form-control" id="edit_guardian" name="edit_guardian" value="" readonly>
-                                                    <input type="hidden" id="edit_guardian_check" value="false">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Guardian Contact</label>
-                                                    <input type="text" class="form-control" maxlength="11" id="edit_guardian_contact" name="edit_guardian_contact" value="" readonly>
-                                                    <input type="hidden" id="edit_guardian_contact_check" value="false">
-                                                </div>
-                                            </div>
-
-                                        </div>
                                         
+                                        <div class="tab-pane fade" id="other-info" role="tabpanel" aria-labelledby="other-info-tab">
+                                            <p class="lead text-center mb-0">Address</p>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+
+                                                    <div class="form-group">
+                                                        <label>Province</label>
+                                                        <input type="text" class="form-control" id="edit_province" name="edit_province" value="" readonly>
+                                                        <input type="hidden" id="edit_province_check" value="false">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Municipality</label>
+                                                        <input type="text" class="form-control" id="edit_municipality" name="edit_municipality" value="" readonly>
+                                                        <input type="hidden" id="edit_municipality_check" value="false">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Zip</label>
+                                                        <input type="text" class="form-control" id="edit_zip" name="edit_zip" value="" readonly>
+                                                        <input type="hidden" id="edit_zip_check" value="false">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Barangay</label>
+                                                        <input type="text" class="form-control" id="edit_barangay" name="edit_barangay" value="" readonly>
+                                                        <input type="hidden" id="edit_barangay_check" value="false">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Street</label>
+                                                        <input type="text" class="form-control" id="edit_street" name="edit_street" value=""readonly>
+                                                        <input type="hidden" id="edit_street_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>House Number</label>
+                                                        <input type="text" class="form-control" id="edit_house_number" name="edit_house_number" value=""readonly>
+                                                        <input type="hidden" id="edit_house_number_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Full Address</label>
+                                                        <input type="text" class="form-control" id="edit_address" name="edit_address" value="" readonly>
+                                                        <input type="hidden" id="edit_address_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label >Contact Number</label>
+                                                        <input type="text" class="form-control" maxlength="11" id="edit_contact_number" name="edit_contact_number" value=""readonly>
+                                                        <input type="hidden" id="edit_contact_number_check" value="false">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Email Address</label>
+                                                        <input type="text" class="form-control" id="edit_email_address" name="edit_email_address" value="" readonly>
+                                                        <input type="hidden" id="edit_email_address_check" value="false">
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="guardian" role="tabpanel" aria-labelledby="guardian-tab">
+                                        
+                                            <p class="lead text-center mb-0">Guardian</p>
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Father's Name</label>
+                                                        <input type="text" class="form-control" id="edit_fathers_name" name="edit_fathers_name" value="" readonly>
+                                                        <input type="hidden" id="edit_fathers_name_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Mother's Name</label>
+                                                        <input type="text" class="form-control" id="edit_mothers_name" name="edit_mothers_name" value="" readonly>
+                                                        <input type="hidden" id="edit_mothers_name_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Guardian</label>
+                                                        <input type="text" class="form-control" id="edit_guardian" name="edit_guardian" value="" readonly>
+                                                        <input type="hidden" id="edit_guardian_check" value="false">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Guardian Contact</label>
+                                                        <input type="text" class="form-control" maxlength="11" id="edit_guardian_contact" name="edit_guardian_contact" value="" readonly>
+                                                        <input type="hidden" id="edit_guardian_contact_check" value="false">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            
+                                        </div>
                                     </div>
+
+                                    
+                                    <div class="card-footer" style="background-color:rgb(255, 255, 255);">
+                                        <input type="text" hidden name="off_id" id="off_id">
+                                        <button type="submit"  id="updateBtn" class="btn btn-success px-4 elevation-3"> <i class="fas fa-edit"></i> UPDATE</button>
+                                    </div> 
+                                    
                                 </div>
 
-                                
-                                <div class="card-footer" style="background-color:rgb(255, 255, 255);">
-                                    <input type="text" hidden name="off_id" id="off_id">
-                                    <button type="submit"  id="updateBtn" class="btn btn-success px-4 elevation-3"> <i class="fas fa-edit"></i> UPDATE</button>
-                                </div> 
-                                
+
+                                <!-- /.card -->
                             </div>
 
-
-                            <!-- /.card -->
                         </div>
-
                     </div>
-                </div>
-            </form>
-
-
-
-
-        </div><!--/. container-fluid -->
-    </section>
-    <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+                </form>
+            </div><!--/. container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 
 
 <!-- REQUIRED SCRIPTS -->

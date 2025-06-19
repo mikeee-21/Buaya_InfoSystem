@@ -243,68 +243,52 @@ li a p{
 </style>
 
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">
+  <div class="wrapper">
         
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white " style="border: none; box-shadow: none;">
-
-
-
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-
         <!-- HOME -->
         <li class="nav-item mr-4">
           <a href="dashboard.php" class="nav-link">
             <i class="fa-solid fa-house" style="color:black;"></i>
           </a>
         </li>
-
         <!-- REVIEWS -->
         <li class="nav-item mr-3">
           <a class="nav-link"  href="reviews_settings.php">
             <i class="fa-solid fa-comment-dots" style="color:black;"></i>
           </a>
         </li>
-
         <!-- SETTINGS -->
         <li class="nav-item dropdown mr-3">
           <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-gear" style="color:black;"></i>
           </a>
-
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-            
             <!-- Directory Management -->
             <li class="dropdown-item">
               <a href="#" class="d-block w-100" id="directoryToggle">
                 Directory Management <i class="fas fa-caret-down float-right"></i>
               </a>
-
-                <!-- Submenu -->
+              <!-- Submenu -->
               <div id="directorySubmenu" style="display: none;" class="sub mt-2 font-inter">
                 <a class="dropdown-item ml-3" href="settings_addNew_off.php">Add New Official</a>
                 <a class="dropdown-item ml-3" href="settings_list_official.php">List of Officials</a>
                 <a class="dropdown-item ml-3" href="settings_officials_endterm.php">Officials End Terms</a>
               </div>
-
             </li>
-
             <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
             <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
           </ul>
         </li>
-
-
-
-
         <!-- FULL SCREEN -->
         <li class="nav-item mr-4">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
           </a>
         </li>
-
         <!-- ADMIN -->
         <li class="nav-item mr-4">
           <a class="nav-link" href="admin_profile.php" >
@@ -312,7 +296,6 @@ li a p{
             <span style="color:black;">Admin</span>
           </a>
         </li>
-
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
           <a class="nav-link" href="../views/admin/sign_out.php" role="button">
@@ -320,12 +303,11 @@ li a p{
             <span style="color:black;">Sign Out</span>
           </a>
         </li>
-
       </ul>
     </nav>
 
  
-      <!-- main content -->
+    <!-- main content -->
     <div class="content-wrapper ml-0 mr-0 bg-white pt-5">   
         <div class="content">
             <div class="container-fluid">
@@ -469,7 +451,8 @@ li a p{
         <!-- end of content -->
     </div>
     <!-- end of content-wrapper -->
-
+     
+  </div>
     
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->

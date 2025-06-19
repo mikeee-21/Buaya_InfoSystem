@@ -162,105 +162,79 @@ li a p{
 <div class="wrapper">
 
 
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white font-inter" style="border: none; box-shadow: none;">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item mr-3">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button">
-                  <i class="fas fa-bars" style="color:black;"></i>
-                </a>
-            </li>
-
-          <li class="nav-item">
-              <span class="navbar-text font-weight-bold" style="color:black; font-size: 18px;"> BARANGAY BUAYA</span>
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white font-inter" style="border: none; box-shadow: none;">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item mr-3">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+            <i class="fas fa-bars" style="color:black;"></i>
+          </a>
+      </li>
+      <li class="nav-item">
+          <span class="navbar-text font-weight-bold" style="color:black; font-size: 18px;"> BARANGAY BUAYA</span>
+      </li>
+    </ul>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- HOME -->
+      <li class="nav-item mr-4">
+        <a href="dashboard.php" class="nav-link">
+          <i class="fa-solid fa-house" style="color:black;"></i>
+        </a>
+      </li>
+      <!-- REVIEWS -->
+      <li class="nav-item mr-3">
+        <a class="nav-link"  href="reviews_settings.php">
+          <i class="fa-solid fa-comment-dots" style="color:black;"></i>
+        </a>
+      </li>
+      <!-- SETTINGS -->
+      <li class="nav-item dropdown mr-3">
+        <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-solid fa-gear" style="color:black;"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
+          <!-- Directory Management -->
+          <li class="dropdown-item">
+            <a href="#" class="d-block w-100" id="directoryToggle">
+              Directory Management <i class="fas fa-caret-down float-right"></i>
+            </a>
+            <!-- Submenu -->
+            <div id="directorySubmenu" style="display: none;" class="sub mt-2">
+              <a class="dropdown-item ml-3" href="settings_addNew_off.php">Add New Official</a>
+              <a class="dropdown-item ml-3" href="settings_list_official.php">List of Officials</a>
+              <a class="dropdown-item ml-3" href="settings_officials_endterm.php">Officials End Terms</a>
+            </div>
           </li>
-          
-          
+          <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
+          <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
         </ul>
+      </li>
+      <!-- FULL SCREEN -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
+        </a>
+      </li>
 
+      <!-- ADMIN -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="admin_profile.php" >
+          <i class="fa-solid fa-user mr-1" style="color:black;"></i>
+          <span style="color:black;">Admin</span>
+        </a>
+      </li>
 
-
-      <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-
-        <!-- HOME -->
-        <li class="nav-item mr-4">
-          <a href="dashboard.php" class="nav-link">
-            <i class="fa-solid fa-house" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- REVIEWS -->
-        <li class="nav-item mr-3">
-          <a class="nav-link"  href="reviews_settings.php">
-            <i class="fa-solid fa-comment-dots" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- SETTINGS -->
-        <li class="nav-item dropdown mr-3">
-          <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa-solid fa-gear" style="color:black;"></i>
-          </a>
-
-          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-            
-            <!-- Directory Management -->
-            <li class="dropdown-item">
-              <a href="#" class="d-block w-100" id="directoryToggle">
-                Directory Management <i class="fas fa-caret-down float-right"></i>
-              </a>
-
-                <!-- Submenu -->
-              <div id="directorySubmenu" style="display: none;" class="sub mt-2">
-                <a class="dropdown-item ml-3" href="settings_addNew_off.php">Add New Official</a>
-                <a class="dropdown-item ml-3" href="settings_list_official.php">List of Officials</a>
-                <a class="dropdown-item ml-3" href="settings_officials_endterm.php">Officials End Terms</a>
-              </div>
-
-            </li>
-
-            <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
-            <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
-          </ul>
-        </li>
-
-
-        <!-- FULL SCREEN -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-            <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- ADMIN -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" href="admin_profile.php" >
-            <i class="fa-solid fa-user mr-1" style="color:black;"></i>
-            <span style="color:black;">Admin</span>
-          </a>
-        </li>
-
-        <!-- SIGN OUT -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
-            <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
-            <span style="color:black;">Sign Out</span>
-          </a>
-        </li>
-
-      </ul>
-    </nav>
-
-
-
-
-
-
-
-
-
+      <!-- SIGN OUT -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="../views/admin/sign_out.php" role="button">
+          <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
+          <span style="color:black;">Sign Out</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
 
   <!-- Main Sidebar Container -->
@@ -274,14 +248,11 @@ li a p{
 
     <!-- Sidebar -->
     <div class="sidebar">
-      
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-
           <li class="nav-item menu-open">
             <a href="dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt" style="color:black;"></i>
@@ -290,9 +261,6 @@ li a p{
               </p>
             </a>
           </li>
-
-
-
           <li class="nav-item">
             <a href="announcement.php" class="nav-link">
             <i class="nav-icon fa-solid fa-circle-info" style="color:black;"></i>
@@ -301,11 +269,7 @@ li a p{
               </p>
             </a>
           </li>
-
-
-
           <li class="nav-item">
-
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy" style="color:black;"></i>
               <p style="color:black;">
@@ -313,29 +277,22 @@ li a p{
                 <i class="fas fa-angle-left right" ></i>
               </p>
             </a>
-
-                        <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                            <a href="pending_request.php" class="nav-link">
-                              <i class="nav-dr-icon nav-icon fa-solid fa-hourglass-end" ></i>
-                              <p class="nav-select" style="color:black; font-size: 15px; margin-left: 8px;">Pending Requests</p>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="approved_request.php" class="nav-link" style="color:black;">
-                            <i class="nav-dr-icon nav-icon fa-solid fa-person-circle-check"></i>
-                              <p class="nav-select" style="color:black; ">Approved Requests</p>
-                            </a>
-                          </li>
-                        </ul>
-
-            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pending_request.php" class="nav-link">
+                  <i class="nav-dr-icon nav-icon fa-solid fa-hourglass-end" ></i>
+                  <p class="nav-select" style="color:black; font-size: 15px; margin-left: 8px;">Pending Requests</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="approved_request.php" class="nav-link" style="color:black;">
+                <i class="nav-dr-icon nav-icon fa-solid fa-person-circle-check"></i>
+                  <p class="nav-select" style="color:black; ">Approved Requests</p>
+                </a>
+              </li>
+            </ul>
           </li>
-
-
-
           <li class="nav-item">
-
             <a href="#" class="nav-link">
               <i class="nav-icon fa-solid fa-users" style="color:black;"></i>
               <p style="color:black;">
@@ -343,32 +300,22 @@ li a p{
                 <i class="right fas fa-angle-left" ></i>
               </p>
             </a>
-
-
-                    <ul class="nav nav-treeview">
-
-                      <li class="nav-item">
-                        <a href="brgy_officials.php" class="nav-link">
-                          <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
-                          <p class="nav-select" style="color:black;">Barangay Officials</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="brgy_sk_officials.php" class="nav-link">
-                          <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
-                          <p class="nav-select" style="color:black;">SK Officials</p>
-                        </a>
-                      </li>
-
-                    </ul>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="brgy_officials.php" class="nav-link">
+                  <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
+                  <p class="nav-select" style="color:black;">Barangay Officials</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="brgy_sk_officials.php" class="nav-link">
+                  <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
+                  <p class="nav-select" style="color:black;">SK Officials</p>
+                </a>
+              </li>
+            </ul>
           </li>
-
-
-
-
           <li class="nav-item">
-            
             <a href="#" class="nav-link">
               <i class="nav-icon fa-solid fa-users-line" style="color:black;"></i>
               <p style="color:black;">
@@ -376,32 +323,26 @@ li a p{
                 <i class="fas fa-angle-left right" ></i>
               </p>
             </a>
-
               <ul class="nav nav-treeview">
-            
                 <li class="nav-item" >
                     <a href="admin_addNewResidence.php" class="nav-link" >
                       <i class=" nav-residence-icon nav-icon fa-solid fa-user-plus"></i>
                       <p class="nav-select" style="color:black;">New Residence</p>
                     </a>
                   </li>
-
                   <li class="nav-item">
                     <a href="admin_allResidence.php" class="nav-link">
                       <i class="nav-residence-icon nav-icon fa-solid fa-users-line"></i>
                       <p class="nav-select" style="color:black;">All Residence</p>
                     </a>
                   </li>
-
                   <li class="nav-item">
                     <a href="admin_archieveResidence.php" class="nav-link">
                       <i class="nav-residence-icon nav-icon fa-solid fa-users-slash" ></i>
                       <p class="nav-select" style="color:black;">Archive Residence</p>
                     </a>
                   </li>
-
               </ul>
-
           </li>
 
 
@@ -450,12 +391,8 @@ li a p{
     <!-- /.sidebar -->
   </aside>
 
-
-
-
-
-    <!-- STYLE -->
-    <style>
+<!-- STYLE -->
+<style>
     #total{
       background-color: #FFFFFF;
       border-color: #1F6155;
@@ -619,194 +556,195 @@ li a p{
 
 
 
-      <!-- MAIN CONTENT -->
-      <div class="content-wrapper bg-white"> 
-      <section class="content bg-white">
-        <div class="container-fluid bg-white"> 
+<!-- MAIN CONTENT -->
+<div class="content-wrapper bg-white"> 
+<section class="content bg-white">
+  <div class="container-fluid bg-white"> 
 
-          <div class="card" style="background-color: #E7F7F4;">
-            <div class="card-body">
-              <fieldset>
-                  <legend class="tot_residence mb-4 d-flex align-items-center">NUMBER OF RESIDENCE 
-                    <input type="text" id="total" class="form-control" readonly>
-                  </legend>
+    <div class="card" style="background-color: #E7F7F4;">
+      <div class="card-body">
+        <fieldset>
+            <legend class="tot_residence mb-4 d-flex align-items-center">NUMBER OF RESIDENCE 
+              <input type="text" id="total" class="form-control" readonly>
+            </legend>
 
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">FIRST NAME</span>
-                          </div>
-                              <input type="search" name="first_name" id="first_name" class="form-control"> 
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">MIDDLE NAME</span>
-                          </div>
-                              <input type="search" name="middle_name" id="middle_name" class="form-control"> 
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">LAST NAME</span>
-                          </div>
-                              <input type="search" name="last_name" id="last_name" class="form-control"> 
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">VOTERS</span>
-                          </div>
-                            <select name="voters" id="voters" class="form-control">
-                              <option value="">--SELECT VOTERS--</option>
-                              <option value="YES">YES</option>
-                              <option value="NO">NO</option>
-                            </select>
-                        </div>
-                      </div>
-                      
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">AGE</span>
-                          </div>
-                              <input type="number" name="age" id="age" class="form-control"> 
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">STATUS</span>
-                          </div>
-                            <select name="status" id="status" class="form-control">
-                              <option value="">--SELECT STATUS--</option>
-                              <option value="ACTIVE">ACTIVE</option>
-                              <option value="INACTIVE">INACTIVE</option>
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">PWD</span>
-                          </div>
-                            <select name="pwd" id="pwd" class="form-control">
-                              <option value="">--SELECT PWD--</option>
-                              <option value="YES">YES</option>
-                              <option value="NO">NO</option>
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">SINGLE PARENT</span>
-                          </div>
-                            <select name="single_parent" id="single_parent" class="form-control">
-                              <option value="">--SELECT PARENT STATUS--</option>
-                              <option value="YES">YES</option>
-                              <option value="NO">NO</option>
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">SENIOR</span>
-                          </div>
-                            <select name="senior" id="senior" class="form-control">
-                              <option value="">--SELECT SENIOR--</option>
-                              <option value="YES">YES</option>
-                              <option value="NO">NO</option>
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">RESIDENT NUMBER</span>
-                          </div>
-                              <input type="text" name="resident_id" id="resident_id" class="form-control">
-                            </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-4 text-center mb-4">
-                        <button type="button" class="btn btn-warning px-3 elevation-3 text-white me-2" id="search"><i class="fas fa-search"></i> SEARCH</button>
-                        <button type="button" class="btn btn-danger px-3 elevation-3" id="back"><i class="fas fa-undo"></i> BACK</button>
-                      </div>
-                      
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">FIRST NAME</span>
                     </div>
-                      
-                    
-                  <table class="table table-striped table-hover mt-4 w-100" id="allResidenceTable" style="table-layout: fixed;">
-                    <thead class="text-uppercase rounded-header">
-                      <tr>
-                        <th style="width: 6%;">Image</th>
-                        <th style="width: 15%;">Resident Number</th>
-                        <th style="width: 16%">Name</th>
-                        <th style="width: 6%">Age</th>
-                        <th style="width: 11%">Pwd</th>
-                        <th style="width: 12%">Single Parent</th>
-                        <th style="width: 10%">Voters</th>
-                        <th style="width: 8%">Status</th>
-                        <th style="width: 11%" class="text-center">Action</th>
-                      </tr>
-                    </thead>
+                        <input type="search" name="first_name" id="first_name" class="form-control"> 
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">MIDDLE NAME</span>
+                    </div>
+                        <input type="search" name="middle_name" id="middle_name" class="form-control"> 
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">LAST NAME</span>
+                    </div>
+                        <input type="search" name="last_name" id="last_name" class="form-control"> 
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">VOTERS</span>
+                    </div>
+                      <select name="voters" id="voters" class="form-control">
+                        <option value="">--SELECT VOTERS--</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                      </select>
+                  </div>
+                </div>
+                
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">AGE</span>
+                    </div>
+                        <input type="number" name="age" id="age" class="form-control"> 
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">STATUS</span>
+                    </div>
+                      <select name="status" id="status" class="form-control">
+                        <option value="">--SELECT STATUS--</option>
+                        <option value="ACTIVE">ACTIVE</option>
+                        <option value="INACTIVE">INACTIVE</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">PWD</span>
+                    </div>
+                      <select name="pwd" id="pwd" class="form-control">
+                        <option value="">--SELECT PWD--</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">SINGLE PARENT</span>
+                    </div>
+                      <select name="single_parent" id="single_parent" class="form-control">
+                        <option value="">--SELECT PARENT STATUS--</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">SENIOR</span>
+                    </div>
+                      <select name="senior" id="senior" class="form-control">
+                        <option value="">--SELECT SENIOR--</option>
+                        <option value="YES">YES</option>
+                        <option value="NO">NO</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">RESIDENT NUMBER</span>
+                    </div>
+                        <input type="text" name="resident_id" id="resident_id" class="form-control">
+                      </select>
+                  </div>
+                </div>
+                <div class="col-sm-4 text-center mb-4">
+                  <button type="button" class="btn btn-warning px-3 elevation-3 text-white me-2" id="search"><i class="fas fa-search"></i> SEARCH</button>
+                  <button type="button" class="btn btn-danger px-3 elevation-3" id="back"><i class="fas fa-undo"></i> BACK</button>
+                </div>
+                
+              </div>
+                
+              
+            <table class="table table-striped table-hover mt-4 w-100" id="allResidenceTable" style="table-layout: fixed;">
+              <thead class="text-uppercase rounded-header">
+                <tr>
+                  <th style="width: 6%;">Image</th>
+                  <th style="width: 15%;">Resident Number</th>
+                  <th style="width: 16%">Name</th>
+                  <th style="width: 6%">Age</th>
+                  <th style="width: 11%">Pwd</th>
+                  <th style="width: 12%">Single Parent</th>
+                  <th style="width: 10%">Voters</th>
+                  <th style="width: 8%">Status</th>
+                  <th style="width: 11%" class="text-center">Action</th>
+                </tr>
+              </thead>
 
-                    <tbody >
-                      <tr class=" align-middle " style="height:30px;">
-                        <td class="text-start align-middle rounded-row">
-                          <img src="img/m1.jpg" alt="Official Image" class="img-fluid rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
-                        </td>
-                        <td class="text-start align-middle">1432657893</td>
-                        <td class="text-start align-middle">Leilani Mendozahsjas hgsywqgdywg</td>
-                        <td class="text-start align-middle">89</td>
-                        <td class="text-start align-middle">Deaf</td>
-                        <td class="text-start align-middle"><span class="badge-no">NO</span></td>
-                        <td class="text-start align-middle"><span class="badge-yes">YES</span></td>
+              <tbody >
+                <tr class=" align-middle " style="height:30px;">
+                  <td class="text-start align-middle rounded-row">
+                    <img src="img/m1.jpg" alt="Official Image" class="img-fluid rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                  </td>
+                  <td class="text-start align-middle">1432657893</td>
+                  <td class="text-start align-middle">Leilani Mendozahsjas hgsywqgdywg</td>
+                  <td class="text-start align-middle">89</td>
+                  <td class="text-start align-middle">Deaf</td>
+                  <td class="text-start align-middle"><span class="badge-no">NO</span></td>
+                  <td class="text-start align-middle"><span class="badge-yes">YES</span></td>
 
-                        <td class="text-start align-middle" style="padding-left: 1px;">
-                          <div class="toggle-wrapper" onclick="toggleStatus()" id="statusToggle">
-                            <div class="toggle-circle" id="toggleCircle"></div>
-                            <span class="toggle-text" id="toggleText">Inactive</span>
-                          </div>
-                        </td>
-                        
-                        <!-- BUTTON DELETE AND EDIT -->
-                        <td class="text-center align-middle" >
-                          <button class="btn btn-sm editBtn" >
-                            <i class="nav-icon fa-solid fa-pen-to-square text-success"></i>
-                          </button>
+                  <td class="text-start align-middle" style="padding-left: 1px;">
+                    <div class="toggle-wrapper" onclick="toggleStatus()" id="statusToggle">
+                      <div class="toggle-circle" id="toggleCircle"></div>
+                      <span class="toggle-text" id="toggleText">Inactive</span>
+                    </div>
+                  </td>
+                  
+                  <!-- BUTTON DELETE AND EDIT -->
+                  <td class="text-center align-middle" >
+                    <button class="btn btn-sm editBtn" >
+                      <i class="nav-icon fa-solid fa-pen-to-square text-success"></i>
+                    </button>
 
-                          <button class="btn btn-sm rmvBtn"  type="submit">
-                            <i class="nav-icon fas fa-trash-alt text-danger"></i>
-                          </button>
-                        </td>
+                    <button class="btn btn-sm rmvBtn"  type="submit">
+                      <i class="nav-icon fas fa-trash-alt text-danger"></i>
+                    </button>
+                  </td>
 
-                      </tr> 
-                    </tbody>
-                  </table>
+                </tr> 
+              </tbody>
+            </table>
 
-              </fieldset>
-            </div>
-          </div>   
-
-
-        </div><!--/. container-fluid -->
-      </section>
-          <!-- /.content -->
+        </fieldset>
       </div>
-        <!-- /.content-wrapper -->
-    </div> 
-    <!-- /.end of wrapper -->
+    </div>   
+
+
+  </div><!--/. container-fluid -->
+</section>
+    <!-- /.content -->
+</div>
+  <!-- /.content-wrapper -->
+    
+</div> 
+<!-- /.end of wrapper -->
 
 
     

@@ -1299,7 +1299,7 @@ li a p{
             document.getElementById('pendingCount').textContent = count;
         }
 
-        // Enhanced Pie Chart Script
+        //  Pie Chart Script
         $(function () {
             const pieChartCanvas = $('#pieChart').get(0);
 
@@ -1393,7 +1393,7 @@ li a p{
                 });
         });
 
-        // Enhanced Officials Script
+        // Officials Script
         document.addEventListener("DOMContentLoaded", function () {
             fetch("../views/admin/official.php")
                 .then(response => response.json())
@@ -1499,6 +1499,8 @@ li a p{
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
-    </script>
+</script>
+
+
 </body>
 </html>

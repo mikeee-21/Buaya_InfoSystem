@@ -296,6 +296,7 @@
       background: #a1a1a1;
     }
   </style>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -402,12 +403,21 @@
       </div>
   </div>
 
+
+
+
+
+<!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Bootstrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
+
+
+
+
 
 <script>
   $(function() {
@@ -560,5 +570,9 @@
     fetchActivityLogs();
   });
 </script>
+
+
+
+
 </body>
 </html>

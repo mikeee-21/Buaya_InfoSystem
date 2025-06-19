@@ -314,107 +314,77 @@ li a p{
 <div class="wrapper">
 
 
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white " style="border: none; box-shadow: none;">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item mr-3">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button">
-                  <i class="fas fa-bars" style="color:black;"></i>
-                </a>
-            </li>
-
-          <li class="nav-item">
-              <span class="navbar-text font-weight-bold" style="color:black; font-size: 18px;"> BARANGAY BUAYA</span>
-          </li>
-          
-          
-        </ul>
-
-
-
-      <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-
-        <!-- HOME -->
-        <li class="nav-item mr-4">
-          <a href="dashboard.php" class="nav-link">
-            <i class="fa-solid fa-house" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- REVIEWS -->
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white " style="border: none; box-shadow: none;">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
         <li class="nav-item mr-3">
-          <a class="nav-link"  href="reviews_settings.php">
-            <i class="fa-solid fa-comment-dots" style="color:black;"></i>
-          </a>
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+              <i class="fas fa-bars" style="color:black;"></i>
+            </a>
         </li>
-
-        <!-- SETTINGS -->
-        <li class="nav-item dropdown mr-3">
-          <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa-solid fa-gear" style="color:black;"></i>
-          </a>
-
-          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-            
-            <!-- Directory Management -->
-            <li class="dropdown-item">
-              <a href="#" class="d-block w-100" id="directoryToggle">
-                Directory Management <i class="fas fa-caret-down float-right"></i>
-              </a>
-
-                <!-- Submenu -->
-              <div id="directorySubmenu" style="display: none;" class="sub mt-2">
-                <a class="dropdown-item ml-3 font-inter" href="settings_addNew_off.php">Add New Official</a>
-                <a class="dropdown-item ml-3 font-inter" href="settings_list_official.php">List of Officials</a>
-                <a class="dropdown-item ml-3 font-inter" href="settings_officials_endterm.php">Officials End Terms</a>
-              </div>
-
-            </li>
-
-            <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
-            <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
-          </ul>
-        </li>
-
-
-
-        <!-- FULL SCREEN -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-            <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- ADMIN -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" href="admin_profile.php" >
-            <i class="fa-solid fa-user mr-1" style="color:black;"></i>
-            <span style="color:black;">Admin</span>
-          </a>
-        </li>
-
-        <!-- SIGN OUT -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
-            <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
-            <span style="color:black;">Sign Out</span>
-          </a>
-        </li>
-
-      </ul>
-    </nav>
-
-
-
-
-
-
-
-
-
-
+      <li class="nav-item">
+          <span class="navbar-text font-weight-bold" style="color:black; font-size: 18px;"> BARANGAY BUAYA</span>
+      </li>
+    </ul>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- HOME -->
+      <li class="nav-item mr-4">
+        <a href="dashboard.php" class="nav-link">
+          <i class="fa-solid fa-house" style="color:black;"></i>
+        </a>
+      </li>
+      <!-- REVIEWS -->
+      <li class="nav-item mr-3">
+        <a class="nav-link"  href="reviews_settings.php">
+          <i class="fa-solid fa-comment-dots" style="color:black;"></i>
+        </a>
+      </li>
+      <!-- SETTINGS -->
+      <li class="nav-item dropdown mr-3">
+        <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-solid fa-gear" style="color:black;"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
+          <!-- Directory Management -->
+          <li class="dropdown-item">
+            <a href="#" class="d-block w-100" id="directoryToggle">
+              Directory Management <i class="fas fa-caret-down float-right"></i>
+            </a>
+            <!-- Submenu -->
+            <div id="directorySubmenu" style="display: none;" class="sub mt-2">
+              <a class="dropdown-item ml-3 font-inter" href="settings_addNew_off.php">Add New Official</a>
+              <a class="dropdown-item ml-3 font-inter" href="settings_list_official.php">List of Officials</a>
+              <a class="dropdown-item ml-3 font-inter" href="settings_officials_endterm.php">Officials End Terms</a>
+            </div>
+          </li>
+          <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
+          <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
+        </ul>
+      </li>
+      <!-- FULL SCREEN -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
+        </a>
+      </li>
+      <!-- ADMIN -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="admin_profile.php" >
+          <i class="fa-solid fa-user mr-1" style="color:black;"></i>
+          <span style="color:black;">Admin</span>
+        </a>
+      </li>
+      <!-- SIGN OUT -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="../views/admin/sign_out.php" role="button">
+          <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
+          <span style="color:black;">Sign Out</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar elevation-4" style="background:linear-gradient(135deg, #000155, #0FCDA7);">
@@ -434,8 +404,6 @@ li a p{
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-
           <li class="nav-item menu-open">
             <a href="dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt" style="color:black;"></i>
@@ -444,9 +412,6 @@ li a p{
               </p>
             </a>
           </li>
-
-
-
           <li class="nav-item">
             <a href="announcement.php" class="nav-link">
             <i class="nav-icon fa-solid fa-circle-info" style="color:black;"></i>
@@ -455,11 +420,7 @@ li a p{
               </p>
             </a>
           </li>
-
-
-
           <li class="nav-item">
-
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy" style="color:black;"></i>
               <p style="color:black;">
@@ -467,29 +428,22 @@ li a p{
                 <i class="fas fa-angle-left right" ></i>
               </p>
             </a>
-
-                        <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                            <a href="pending_request.php" class="nav-link">
-                              <i class="nav-dr-icon nav-icon fa-solid fa-hourglass-end" ></i>
-                              <p class="nav-select" style="color:black; font-size: 15px; margin-left: 8px;">Pending Requests</p>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="approved_request.php" class="nav-link" style="color:black;">
-                            <i class="nav-dr-icon nav-icon fa-solid fa-person-circle-check"></i>
-                              <p class="nav-select" style="color:black; ">Approved Requests</p>
-                            </a>
-                          </li>
-                        </ul>
-
-            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pending_request.php" class="nav-link">
+                  <i class="nav-dr-icon nav-icon fa-solid fa-hourglass-end" ></i>
+                  <p class="nav-select" style="color:black; font-size: 15px; margin-left: 8px;">Pending Requests</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="approved_request.php" class="nav-link" style="color:black;">
+                <i class="nav-dr-icon nav-icon fa-solid fa-person-circle-check"></i>
+                  <p class="nav-select" style="color:black; ">Approved Requests</p>
+                </a>
+              </li>
+            </ul>
           </li>
-
-
-
           <li class="nav-item">
-
             <a href="#" class="nav-link">
               <i class="nav-icon fa-solid fa-users" style="color:black;"></i>
               <p style="color:black;">
@@ -497,32 +451,22 @@ li a p{
                 <i class="right fas fa-angle-left" ></i>
               </p>
             </a>
-
-
-                    <ul class="nav nav-treeview">
-
-                      <li class="nav-item">
-                        <a href="brgy_officials.php" class="nav-link">
-                          <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
-                          <p class="nav-select" style="color:black;">Barangay Officials</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="brgy_sk_officials.php" class="nav-link">
-                          <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
-                          <p class="nav-select" style="color:black;">SK Officials</p>
-                        </a>
-                      </li>
-
-                    </ul>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="brgy_officials.php" class="nav-link">
+                  <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
+                  <p class="nav-select" style="color:black;">Barangay Officials</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="brgy_sk_officials.php" class="nav-link">
+                  <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
+                  <p class="nav-select" style="color:black;">SK Officials</p>
+                </a>
+              </li>
+            </ul>
           </li>
-
-
-
-
           <li class="nav-item">
-            
             <a href="#" class="nav-link">
               <i class="nav-icon fa-solid fa-users-line" style="color:black;"></i>
               <p style="color:black;">
@@ -530,40 +474,28 @@ li a p{
                 <i class="fas fa-angle-left right" ></i>
               </p>
             </a>
-
-              <ul class="nav nav-treeview">
-            
-                <li class="nav-item" >
-                    <a href="admin_addNewResidence.php" class="nav-link" >
-                      <i class=" nav-residence-icon nav-icon fa-solid fa-user-plus"></i>
-                      <p class="nav-select" style="color:black;">New Residence</p>
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a href="admin_allResidence.php" class="nav-link">
-                      <i class="nav-residence-icon nav-icon fa-solid fa-users-line"></i>
-                      <p class="nav-select" style="color:black;">All Residence</p>
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a href="admin_archieveResidence.php" class="nav-link">
-                      <i class="nav-residence-icon nav-icon fa-solid fa-users-slash" ></i>
-                      <p class="nav-select" style="color:black;">Archive Residence</p>
-                    </a>
-                  </li>
-
-              </ul>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item" >
+                  <a href="admin_addNewResidence.php" class="nav-link" >
+                    <i class=" nav-residence-icon nav-icon fa-solid fa-user-plus"></i>
+                    <p class="nav-select" style="color:black;">New Residence</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="admin_allResidence.php" class="nav-link">
+                    <i class="nav-residence-icon nav-icon fa-solid fa-users-line"></i>
+                    <p class="nav-select" style="color:black;">All Residence</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="admin_archieveResidence.php" class="nav-link">
+                    <i class="nav-residence-icon nav-icon fa-solid fa-users-slash" ></i>
+                    <p class="nav-select" style="color:black;">Archive Residence</p>
+                  </a>
+                </li>
+            </ul>
           </li>
-
-
-
           <li class="nav-header text-white">OTHERS</li>
-
-
-
           <li class="nav-item">
             <a href="calendar.php" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt" style="color:black;"></i>
@@ -596,7 +528,6 @@ li a p{
                 </p>
             </a>
           </li>
-
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -604,237 +535,225 @@ li a p{
     <!-- /.sidebar -->
   </aside>
 
-
-
-
-
-
     <!-- main content -->
     <div class="content-wrapper bg-white font-inter" >   
       <div class="content p-1">
-         <div class="container-fluid p-1">
+        <div class="container-fluid p-1">
             <div class="row p-2" >
-              <div class="row-lg p-1 elevation-1 rounded " style="height: 700px;">
-                <div class="card font-weight-bold elevation-0"  >
-                  <div class="card-header pl-1">
-                    <h3 class="card-title font-weight-bold">Resident Report</h3>
-                  </div>
-                  <!-- /.card-header -->
+                <div class="row-lg p-1 elevation-1 rounded " style="height: 700px;">
+                  <div class="card font-weight-bold elevation-0"  >
+                    <div class="card-header pl-1">
+                      <h3 class="card-title font-weight-bold">Resident Report</h3>
+                    </div>
+                    <!-- /.card-header -->
 
-                  <div class="card-body ">
-                    <form id="filterForm">
-                      <div class="row">
-                              <div class="col-sm-4">
-                                  <div class="input-group mb-3">
+                    <div class="card-body ">
+                      <form id="filterForm">
+                        <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="input-group mb-3">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text text-white font-weight-bold bc1">VOTERS</span>
+                                          </div>
+                                          <select name="voters" id="voters" class="form-control">
+                                          <option value="">--SELECT VOTERS--</option>
+                                          <option value="YES">YES</option>
+                                          <option value="NO">NO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-4">
+                                    <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                          <span class="input-group-text text-white font-weight-bold bc1">VOTERS</span>
+                                          <span class="input-group-text text-white font-weight-bold bc1">AGE</span>
                                         </div>
-                                        <select name="voters" id="voters" class="form-control">
-                                        <option value="">--SELECT VOTERS--</option>
-                                        <option value="YES">YES</option>
-                                        <option value="NO">NO</option>
-                                      </select>
-                                  </div>
-                              </div>
+                                          <input type="number" name="age" id="age" class="form-control" value=""> 
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text text-white font-weight-bold bc1"> SEX</span>
+                                        </div>
+                                        <select name="status" id="status" class="form-control">
+                                          <option value="">--SELECT SEX--</option>
+                                          <option value="Male" >MALE</option>
+                                          <option value="Female" >FEMALE</option>
+                                        </select>
+                                    </div>
+                                </div>
                               
-                              <div class="col-sm-4">
-                                  <div class="input-group mb-3">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text text-white font-weight-bold bc1">AGE</span>
-                                      </div>
-                                        <input type="number" name="age" id="age" class="form-control" value=""> 
-                                      </select>
-                                  </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text text-white font-weight-bold bc1">PWD</span>
+                                        </div>
+                                        <select name="pwd" id="pwd" class="form-control">
+                                          <option value="">--SELECT PWD--</option>
+                                          <option value="YES">YES</option>
+                                          <option value="NO">NO</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                              </div>
-
-                              <div class="col-sm-4">
-                                  <div class="input-group mb-3">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text text-white font-weight-bold bc1"> SEX</span>
-                                      </div>
-                                      <select name="status" id="status" class="form-control">
-                                        <option value="">--SELECT SEX--</option>
-                                        <option value="Male" >MALE</option>
-                                        <option value="Female" >FEMALE</option>
-                                      </select>
-                                  </div>
-                              </div>
-                            
-                              <div class="col-sm-4">
-                                  <div class="input-group mb-3">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text text-white font-weight-bold bc1">PWD</span>
-                                      </div>
-                                      <select name="pwd" id="pwd" class="form-control">
-                                        <option value="">--SELECT PWD--</option>
-                                        <option value="YES">YES</option>
-                                        <option value="NO">NO</option>
-                                      </select>
-                                  </div>
-                              </div>
-
-                              <div class="col-sm-4">
-                                  <div class="input-group mb-3">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text text-white font-weight-bold bc1">CIVIL STATUS</span>
-                                      </div>
-                                      <select name="single_parent" id="single_parent" class="form-control">
-                                        <option value="">--SELECT CIVIL STATUS--</option>
-                                        <option value="Single">SINGLE</option>
-                                        <option value="Married">MARRIED</option>
-                                        <option value="Widowed">WIDOWED</option>
-                                        <option value="Divorced">DIVORCED</option>
-                                      </select>
-                                  </div>
-                              </div>
-                      
+                                <div class="col-sm-4">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text text-white font-weight-bold bc1">CIVIL STATUS</span>
+                                        </div>
+                                        <select name="single_parent" id="single_parent" class="form-control">
+                                          <option value="">--SELECT CIVIL STATUS--</option>
+                                          <option value="Single">SINGLE</option>
+                                          <option value="Married">MARRIED</option>
+                                          <option value="Widowed">WIDOWED</option>
+                                          <option value="Divorced">DIVORCED</option>
+                                        </select>
+                                    </div>
+                                </div>
                         
-                              <div class="col-sm-4">
-                                  <div class="input-group mb-3">
-                                      <div class="input-group-prepend">
-                                        <span class="input-group-text text-white font-weight-bold bc1">SENIOR</span>
-                                      </div>
-                                      <select name="senior" id="senior" class="form-control">
-                                        <option value="">--SELECT SENIOR--</option>
-                                        <option value="YES">YES</option>
-                                        <option value="NO">NO</option>
-                                      </select>
-                                  </div>
+                          
+                                <div class="col-sm-4">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text text-white font-weight-bold bc1">SENIOR</span>
+                                        </div>
+                                        <select name="senior" id="senior" class="form-control">
+                                          <option value="">--SELECT SENIOR--</option>
+                                          <option value="YES">YES</option>
+                                          <option value="NO">NO</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 text-center">
+                                  <button type="button" class="btn btn-flat bg-info px-3 elevation-3 text-white" id="search">
+                                      <i class="fas fa-filter"></i> FILTER
+                                  </button>
+                                  <button type="button" class="btn btn-flat btn-danger px-3 elevation-3" id="reset">
+                                      <i class="fas fa-undo"></i> RESET
+                                  </button>
                               </div>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- end of card body -->
 
-                              <div class="col-sm-12 text-center">
-                                <button type="button" class="btn btn-flat bg-info px-3 elevation-3 text-white" id="search">
-                                    <i class="fas fa-filter"></i> FILTER
-                                </button>
-                                <button type="button" class="btn btn-flat btn-danger px-3 elevation-3" id="reset">
-                                    <i class="fas fa-undo"></i> RESET
-                                </button>
-                            </div>
-                      </div>
-                    </form>
+                    <div class="form-group pl-3">
+                        <button type="button" id="printReportBtn" class="btn btn-warning btn-flat elevation-5 px-3">
+                            <i class="fas fa-print text-white"></i> PRINT
+                        </button>
+                    </div>
+                  
+                      <!-- Table container with scroll -->
+                    <div class="px-3 pb-3" style="max-height:350px; overflow-y: auto;">
+                      <table class="table table-striped table-hover table-sm bg-white rounded" id="tableReport">
+                        <thead class="sticky-top" style="z-index: 10; background-color: #2c3e50; color: white;">
+                          <tr>
+                            <th>NAME</th>
+                            <th>SEX</th>
+                            <th>CIVIL STATUS</th>
+                            <th>AGE</th>
+                            <th>PWD</th>
+                            <th>SENIOR</th>
+                            <th>VOTERS</th>
+                          </tr>
+                        </thead>
+                        <tbody id="residentData">
+                          <!-- Data will load here via AJAX -->
+                        </tbody>
+                      </table>
+                    </div>
+                  
                   </div>
-                  <!-- end of card body -->
-
-                  <div class="form-group pl-3">
-                      <button type="button" id="printReportBtn" class="btn btn-warning btn-flat elevation-5 px-3">
-                          <i class="fas fa-print text-white"></i> PRINT
-                      </button>
-                  </div>
-                
-                    <!-- Table container with scroll -->
-                  <div class="px-3 pb-3" style="max-height:350px; overflow-y: auto;">
-                    <table class="table table-striped table-hover table-sm bg-white rounded" id="tableReport">
-                      <thead class="sticky-top" style="z-index: 10; background-color: #2c3e50; color: white;">
-                        <tr>
-                          <th>NAME</th>
-                          <th>SEX</th>
-                          <th>CIVIL STATUS</th>
-                          <th>AGE</th>
-                          <th>PWD</th>
-                          <th>SENIOR</th>
-                          <th>VOTERS</th>
-                        </tr>
-                      </thead>
-                      <tbody id="residentData">
-                        <!-- Data will load here via AJAX -->
-                      </tbody>
-                    </table>
-                  </div>
-                
                 </div>
-              </div>
-              <!-- end of second row -->
+                <!-- end of second row -->
 
 
-              <div class="row p-2 mt-3 ml-1 w-100 rounded">
+                <div class="row p-2 mt-3 ml-1 w-100 rounded">
+                    <div class="row pl-2 w-100">
+                      <h3>Charts</h3>
+                    </div>
+                    <div class="row ml-2 p-3 w-100">
 
-                  <div class="row pl-2 w-100">
-                    <h3>Charts</h3>
-                  </div>
+                        <!-- CHARTS ROW -->
+                        <div class="row p-2 w-100">
 
-                  <div class="row ml-2 p-3 w-100">
-
-                      <!-- CHARTS ROW -->
-                      <div class="row p-2 w-100">
-
-                           <!-- PIE CHART (population each zone) -->
-                           <div class="col-6 p-1">
-                            <div class="card elevation-1 cards">
-                              <div class="card-header text-center">
-                                <h3 class="card-title font-weight-bold">Population of each Zone</h3>
-                              </div>
-                              <div class="card-body w-100">
-                                <canvas id="populationChart" style="height: 300px;"></canvas>
+                            <!-- PIE CHART (population each zone) -->
+                            <div class="col-6 p-1">
+                              <div class="card elevation-1 cards">
+                                <div class="card-header text-center">
+                                  <h3 class="card-title font-weight-bold">Population of each Zone</h3>
+                                </div>
+                                <div class="card-body w-100">
+                                  <canvas id="populationChart" style="height: 300px;"></canvas>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          <!-- DONUT CHART (total requests each certificate)-->
-                          <div class="col-6 p-1">
-                            <div class="card  card-outline cards">
-                              <div class="card-header">
-                                <h3 class="card-title font-weight-bold" > Total Requests of each Certificate</h3>
-                              </div>
-                              <div class="card-body">
-                                <canvas id="totalRequestsChart" style="height: 300px;"></canvas>
+                            <!-- DONUT CHART (total requests each certificate)-->
+                            <div class="col-6 p-1">
+                              <div class="card  card-outline cards">
+                                <div class="card-header">
+                                  <h3 class="card-title font-weight-bold" > Total Requests of each Certificate</h3>
+                                </div>
+                                <div class="card-body">
+                                  <canvas id="totalRequestsChart" style="height: 300px;"></canvas>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                      </div>
-                      <!-- /.row -->
+                        </div>
+                        <!-- /.row -->
 
-                      <!-- CHARTS ROW -->
-                      <div class="row p-2 w-100">
-                          <!-- PIE CHART ( sex chart ) -->
-                          <div class="col-6 p-1">
-                            <div class="card elevation-1 cards">
-                              <div class="card-header text-center">
-                                <h3 class="card-title font-weight-bold">Sex Breakdown</h3>
-                              </div>
-                              <div class="card-body w-100">
-                                <canvas id="sexBrkdnChart" style="height: 300px;"></canvas>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- DONUT CHART (age groups) -->
-                          <div class="col-6 p-1">
-                            <div class="card  card-outline cards">
-                              <div class="card-header">
-                                <h3 class="card-title font-weight-bold" > Age Groups</h3>
-                              </div>
-                              <div class="card-body">
-                                <canvas id="ageGrpChart" style="height: 300px;"></canvas>
+                        <!-- CHARTS ROW -->
+                        <div class="row p-2 w-100">
+                            <!-- PIE CHART ( sex chart ) -->
+                            <div class="col-6 p-1">
+                              <div class="card elevation-1 cards">
+                                <div class="card-header text-center">
+                                  <h3 class="card-title font-weight-bold">Sex Breakdown</h3>
+                                </div>
+                                <div class="card-body w-100">
+                                  <canvas id="sexBrkdnChart" style="height: 300px;"></canvas>
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                      </div>
-                      <!-- /.row -->
+                            <!-- DONUT CHART (age groups) -->
+                            <div class="col-6 p-1">
+                              <div class="card  card-outline cards">
+                                <div class="card-header">
+                                  <h3 class="card-title font-weight-bold" > Age Groups</h3>
+                                </div>
+                                <div class="card-body">
+                                  <canvas id="ageGrpChart" style="height: 300px;"></canvas>
+                                </div>
+                              </div>
+                            </div>
+
+                        </div>
+                        <!-- /.row -->
 
 
                     </div>
-
-                    
-                  </div>
-                  <!-- outer row -->
-
-              </div>
-              <!-- container of row -->
+                </div>
+                <!-- outer row -->
 
             </div>
+            <!-- container of row -->
+            </div>
             <!-- end of first coloumn -->
-
-
-
           </div>
           <!-- end of container fluid -->
       </div>
       <!-- end of content -->
     </div>
     <!-- end of content-wrapper -->
+
   </div>
   <!-- end of wrapper -->
 
@@ -858,7 +777,7 @@ li a p{
 
 
 <!-- filtering -->
- <script>
+<script>
   $(document).ready(function() {
       // Load initial data
       loadResidents();
@@ -945,11 +864,7 @@ li a p{
   }
 </script>
 
-
-
-
 <!-- pie chart for total residents on each zone-->
-<!-- JavaScript -->
 <script>
   $(function () {
     const canvas = $('#populationChart').get(0);
@@ -1011,8 +926,6 @@ li a p{
   });
 </script>
 
-
-
 <!-- dunot chart for each total requests in each certificate-->
 <script>
   $(function () {
@@ -1048,7 +961,6 @@ li a p{
     }
   });
 </script>
-
 
 <!-- pie chart for sex breakdown-->
 <script>
@@ -1105,10 +1017,6 @@ li a p{
     }
   });
 </script>
-
-
-
-
 
 <!-- age groups -->
 <script>
@@ -1168,10 +1076,6 @@ li a p{
       });
   });
 </script>
-
-
-
-
 
 <!-- settings dropdown -->
 <script>

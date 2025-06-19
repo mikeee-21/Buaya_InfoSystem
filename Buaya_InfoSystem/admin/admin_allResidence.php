@@ -1168,20 +1168,20 @@ li a p{
 
 
 <!-- dropdown directory management -->
-    <script>
-      $(function () {
-        // Prevent the dropdown from closing when clicking inside
-        $('.dropdown-menu').on('click', function (e) {
-          e.stopPropagation();
-        });
+<script>
+  $(function () {
+    // Prevent the dropdown from closing when clicking inside
+    $('.dropdown-menu').on('click', function (e) {
+      e.stopPropagation();
+    });
 
-        // Toggle submenu visibility
-        $("#directoryToggle").on("click", function (e) {
-          e.preventDefault();
-          $("#directorySubmenu").slideToggle("fast");
-        });
-      });
-    </script>
+    // Toggle submenu visibility
+    $("#directoryToggle").on("click", function (e) {
+      e.preventDefault();
+      $("#directorySubmenu").slideToggle("fast");
+    });
+  });
+</script>
 
 
 
@@ -1201,419 +1201,367 @@ li a p{
 
 <!-- DISPLAY ALL RESIDENCE AND FILTERING -->
 <script>
-// Utility functions - defined once
-function calculateAge(dob) {
-  const birthDate = new Date(dob);
-  const diff = Date.now() - birthDate.getTime();
-  const age = new Date(diff).getUTCFullYear() - 1970;
-  return isNaN(age) ? '' : age;
-}
-
-function capitalize(str) {
-  if (!str) return '';
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-}
-
-// Toggle resident status
-function toggleStatus(el) {
-  const residentId = el.getAttribute('data-id');
-  const isInactive = el.classList.contains('inactive');
-  const newStatus = isInactive ? 'active' : 'inactive';
-
-  // Toggle UI
-  el.classList.toggle('inactive');
-  const text = el.querySelector('.toggle-text');
-  text.textContent = capitalize(newStatus);
-
-  // Send to views
-  fetch('../views/admin/update_resident_status.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id: residentId, status: newStatus })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.status !== 'success') {
-      alert('Failed to update status: ' + data.message);
-      // Revert changes if failed
-      el.classList.toggle('inactive');
-      text.textContent = capitalize(isInactive ? 'inactive' : 'active');
-    }
-  });
-}
-
-// Populate the modal with resident data
-function populateResidentModal(data) {
-  //full address
-  const fullAddress = `${data.res_barangay}, ${data.res_municipality}, ${data.res_province}`; 
-
-  document.querySelector('#resident_id span').textContent = data.res_id;
-  document.getElementById('edit_first_name').value        = data.res_first_name;
-  document.getElementById('edit_middle_name').value       = data.res_middle_name || null;
-  document.getElementById('edit_last_name').value         = data.res_last_name;
-  document.getElementById('edit_suffix').value            = data.res_suffix || null;
-  document.getElementById('edit_voters').value            = data.res_voter_status;
-
-  document.getElementById('edit_precinct').value          = data.res_precinct_number;
-
-  document.getElementById('edit_birth_date').value        = data.res_date_of_birth;
-  document.getElementById('edit_birth_place').value       = data.res_place_of_birth;
-  document.getElementById('edit_age').value               = calculateAge(data.res_date_of_birth);
-  document.getElementById('edit_single_parent').value     = data.res_single_parent_status;
-  document.getElementById('edit_pwd').value               = data.res_pwd_status;
-  document.getElementById('edit_pwd_info').value          = data.res_pwd_type || null;
-  document.getElementById('edit_gender').value            = data.res_sex;
-  document.getElementById('edit_civil_status').value      = data.res_civil_status;
-  document.getElementById('edit_religion').value          = data.res_religion;
-  document.getElementById('edit_nationality').value       = data.res_nationality;
-  document.getElementById('edit_house_number').value      = data.res_house_number || null;
-  document.getElementById('edit_street').value            = data.res_street || null;
-  document.getElementById('edit_address').value           = fullAddress;
-
-  document.getElementById('edit_barangay').value          = data.res_barangay;
-  document.getElementById('edit_municipality').value      = data.res_municipality;
-  document.getElementById('edit_province').value          = data.res_province;
-  document.getElementById('edit_zip').value               = data.res_zip_code;
-
-  document.getElementById('edit_email_address').value     = data.res_email_address || null;
-  document.getElementById('edit_contact_number').value    = data.res_contact_number;
-  document.getElementById('edit_profile_image').src       = data.res_image;
-
-  document.getElementById('edit_fathers_name').value      = data.res_father_name;
-  document.getElementById('edit_mothers_name').value      = data.res_mother_name;
-  document.getElementById('edit_guardian').value          = data.res_guardian_name || null;
-  document.getElementById('edit_guardian_contact').value  = data.res_guardian_contact || null
-
-  // Set image preview
-  const imgEl = document.querySelector('#edit_profile_image'); // Match the ID from your HTML
-  if (imgEl) {
-    imgEl.src = data.res_image ? `../${data.res_image}`  : '../server_imgs/default_user_img.jpg'; // Ensure path is correct
+  // Utility functions - defined once
+  function calculateAge(dob) {
+    const birthDate = new Date(dob);
+    const diff = Date.now() - birthDate.getTime();
+    const age = new Date(diff).getUTCFullYear() - 1970;
+    return isNaN(age) ? '' : age;
   }
 
+  function capitalize(str) {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
 
-  // Find the option that has the text matching the zone name
-  const zoneSelect = document.getElementById('edit_zone');
-  if (zoneSelect && data.res_zone_name) {
-    for (let option of zoneSelect.options) {
-      if (option.textContent.trim() === data.res_zone_name.trim()) {
-        zoneSelect.value = option.value;
-        break;
+  // Toggle resident status
+  function toggleStatus(el) {
+    const residentId = el.getAttribute('data-id');
+    const isInactive = el.classList.contains('inactive');
+    const newStatus = isInactive ? 'active' : 'inactive';
+
+    // Toggle UI
+    el.classList.toggle('inactive');
+    const text = el.querySelector('.toggle-text');
+    text.textContent = capitalize(newStatus);
+
+    // Send to views
+    fetch('../views/admin/update_resident_status.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: residentId, status: newStatus })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status !== 'success') {
+        alert('Failed to update status: ' + data.message);
+        // Revert changes if failed
+        el.classList.toggle('inactive');
+        text.textContent = capitalize(isInactive ? 'inactive' : 'active');
+      }
+    });
+  }
+
+  // Populate the modal with resident data
+  function populateResidentModal(data) {
+    //full address
+    const fullAddress = `${data.res_barangay}, ${data.res_municipality}, ${data.res_province}`; 
+
+    document.querySelector('#resident_id span').textContent = data.res_id;
+    document.getElementById('edit_first_name').value        = data.res_first_name;
+    document.getElementById('edit_middle_name').value       = data.res_middle_name || null;
+    document.getElementById('edit_last_name').value         = data.res_last_name;
+    document.getElementById('edit_suffix').value            = data.res_suffix || null;
+    document.getElementById('edit_voters').value            = data.res_voter_status;
+
+    document.getElementById('edit_precinct').value          = data.res_precinct_number;
+
+    document.getElementById('edit_birth_date').value        = data.res_date_of_birth;
+    document.getElementById('edit_birth_place').value       = data.res_place_of_birth;
+    document.getElementById('edit_age').value               = calculateAge(data.res_date_of_birth);
+    document.getElementById('edit_single_parent').value     = data.res_single_parent_status;
+    document.getElementById('edit_pwd').value               = data.res_pwd_status;
+    document.getElementById('edit_pwd_info').value          = data.res_pwd_type || null;
+    document.getElementById('edit_gender').value            = data.res_sex;
+    document.getElementById('edit_civil_status').value      = data.res_civil_status;
+    document.getElementById('edit_religion').value          = data.res_religion;
+    document.getElementById('edit_nationality').value       = data.res_nationality;
+    document.getElementById('edit_house_number').value      = data.res_house_number || null;
+    document.getElementById('edit_street').value            = data.res_street || null;
+    document.getElementById('edit_address').value           = fullAddress;
+
+    document.getElementById('edit_barangay').value          = data.res_barangay;
+    document.getElementById('edit_municipality').value      = data.res_municipality;
+    document.getElementById('edit_province').value          = data.res_province;
+    document.getElementById('edit_zip').value               = data.res_zip_code;
+
+    document.getElementById('edit_email_address').value     = data.res_email_address || null;
+    document.getElementById('edit_contact_number').value    = data.res_contact_number;
+    document.getElementById('edit_profile_image').src       = data.res_image;
+
+    document.getElementById('edit_fathers_name').value      = data.res_father_name;
+    document.getElementById('edit_mothers_name').value      = data.res_mother_name;
+    document.getElementById('edit_guardian').value          = data.res_guardian_name || null;
+    document.getElementById('edit_guardian_contact').value  = data.res_guardian_contact || null
+
+    // Set image preview
+    const imgEl = document.querySelector('#edit_profile_image'); // Match the ID from your HTML
+    if (imgEl) {
+      imgEl.src = data.res_image ? `../${data.res_image}`  : '../server_imgs/default_user_img.jpg'; // Ensure path is correct
+    }
+
+
+    // Find the option that has the text matching the zone name
+    const zoneSelect = document.getElementById('edit_zone');
+    if (zoneSelect && data.res_zone_name) {
+      for (let option of zoneSelect.options) {
+        if (option.textContent.trim() === data.res_zone_name.trim()) {
+          zoneSelect.value = option.value;
+          break;
+        }
       }
     }
   }
-}
+
+  // Main function to load all residents
+  function loadAllResidents() {
+    fetch('../views/admin/get_all_residents.php')
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.querySelector("#allResidenceTable tbody");
+        tbody.innerHTML = ""; // Clear previously fetched residents
+
+
+        if (document.getElementById('total')) {
+          document.getElementById('total').value = data.length;
+        }
+
+
+        if (data.length === 0) {
+            tableBody.innerHTML = '<tr><td colspan="10">No matching residents found.</td></tr>';
+          } else {
+            data.forEach(res => {
+              const tr = createResidentRow(res);
+              tbody.appendChild(tr);
+            });
+
+      };
+
+
+      });
+  }
+
+
+  // Form state management
+  function setFormEditable(isEditable) {
+    const fields = document.querySelectorAll('#editResidenceForm input, #editResidenceForm select, #editResidenceForm textarea');
+    fields.forEach(field => {
+      field.disabled = !isEditable;
+    });
+  }
 
 
 
-// Main function to load all residents
-function loadAllResidents() {
-  fetch('../views/admin/get_all_residents.php')
+  function toggleEditActions(show) {
+    const editActions = document.getElementById('editActions');
+    const editBtn = document.getElementById('editBtn');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    if (show) {
+      // Show the "Cancel" and "Edit" buttons, hide the "Close" and "Edit Details" buttons
+      editActions.style.display = 'flex';
+      editBtn.style.display = 'none';
+      closeModalBtn.style.display = 'none';
+    } else {
+      // Show the "Close" and "Edit Details" buttons, hide the "Cancel" and "Edit" buttons
+      editActions.style.display = 'none';
+      editBtn.style.display = 'block';
+      closeModalBtn.style.display = 'block';
+    }
+  }
+
+
+  // Filter residents function
+  function filterResidents() {
+    const filters = {};
+    const getVal = id => document.getElementById(id)?.value;
+
+    // Text fields
+    ['first_name', 'middle_name', 'last_name', 'resident_id'].forEach(key => {
+      const val = getVal(key);
+      if (val) filters[key] = val;
+    });
+
+    ['voters', 'pwd', 'single_parent', 'senior'].forEach(key => {
+      const val = getVal(key);
+      if (val === "YES" || val === "NO") filters[key] = val;
+    });
+
+    const status = getVal('status');
+    if (status === "ACTIVE" || status === "INACTIVE") filters['status'] = status;
+
+    const age = getVal('age');
+    if (age !== "" && !isNaN(age)) filters['age'] = parseInt(age, 10);
+
+
+
+    fetch('../views/admin/filter_residents.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(filters)
+    })
     .then(response => response.json())
     .then(data => {
-      const tbody = document.querySelector("#allResidenceTable tbody");
-      tbody.innerHTML = ""; // Clear previously fetched residents
-
+      const tbody = document.querySelector('#allResidenceTable tbody');
+      tbody.innerHTML = ''; 
 
       if (document.getElementById('total')) {
         document.getElementById('total').value = data.length;
       }
 
-
       if (data.length === 0) {
-          tableBody.innerHTML = '<tr><td colspan="10">No matching residents found.</td></tr>';
-        } else {
-          data.forEach(res => {
-            const tr = createResidentRow(res);
-            tbody.appendChild(tr);
-          });
+      
+        tbody.innerHTML = '<tr><td colspan="10">No matching residents found.</td></tr>';
 
-    };
+      } else {
+        data.forEach(res => {
+          const tr = createResidentRow(res);
+          tbody.appendChild(tr);
+        });
+      }
+    })
 
-
+    .catch(error => {
+      console.error("AJAX Error:", error);
+      alert("Error loading data: " + error.message);
     });
-}
-
-
-
-
-// Form state management
-function setFormEditable(isEditable) {
-  const fields = document.querySelectorAll('#editResidenceForm input, #editResidenceForm select, #editResidenceForm textarea');
-  fields.forEach(field => {
-    field.disabled = !isEditable;
-  });
-}
-
-
-
-
-
-function toggleEditActions(show) {
-  const editActions = document.getElementById('editActions');
-  const editBtn = document.getElementById('editBtn');
-  const closeModalBtn = document.getElementById('closeModal');
-
-  if (show) {
-    // Show the "Cancel" and "Edit" buttons, hide the "Close" and "Edit Details" buttons
-    editActions.style.display = 'flex';
-    editBtn.style.display = 'none';
-    closeModalBtn.style.display = 'none';
-  } else {
-    // Show the "Close" and "Edit Details" buttons, hide the "Cancel" and "Edit" buttons
-    editActions.style.display = 'none';
-    editBtn.style.display = 'block';
-    closeModalBtn.style.display = 'block';
   }
-}
 
 
+  // Define this outside!
+  function createResidentRow(res) {
+    const tr = document.createElement("tr");
+    tr.classList.add("text-center");
+
+    tr.innerHTML = `
+      <td class="text-start align-middle rounded-row">
+        <img src="../${res.res_image}" alt="Official Image"
+          class="img-fluid rounded-circle"
+          style="width: 50px; height: 50px; object-fit: cover;">
+      </td>
+
+      <td class="text-start align-middle">${res.res_id}</td>
+      <td class="text-start align-middle">${res.res_first_name} ${res.res_last_name}</td>
+      <td class="text-start align-middle">${calculateAge(res.res_date_of_birth)}</td>
+      <td class="text-start align-middle">${res.res_pwd_type || ''}</td>
+      <td class="text-start align-middle">
+        <span class="badge-${res.res_single_parent_status === 'YES' ? 'yes' : 'no'}">${res.res_single_parent_status}</span>
+      </td>
+      <td class="text-start align-middle">
+        <span class="badge-${res.res_voter_status === 'YES' ? 'yes' : 'no'}">${res.res_voter_status}</span>
+      </td>
+      <td class="text-start align-middle">
+        <div class="ml-5 toggle-wrapper ${res.res_status === 'Inactive' ? 'inactive' : ''}" 
+            onclick="toggleStatus(this)" 
+            data-id="${res.res_id}">
+          <div class="toggle-circle"></div>
+          <span class="toggle-text">${capitalize(res.res_status)}</span>
+        </div>
+      </td>
+      <td class="text-center align-middle">
+        <button class="btn btn-sm editBtn" data-toggle="modal" data-target="#viewResidenceModal">
+          <i class="fa-solid fa-pen-to-square text-success"></i>
+        </button>
+        <button class="btn btn-sm rmvBtn" data-id="${res.res_id}">
+          <i class="fas fa-trash-alt text-danger"></i>
+        </button>
+      </td>
+    `;
+
+    // Add click listener for edit
+    tr.querySelector('.editBtn').addEventListener('click', () => {
+      populateResidentModal(res);
+      setFormEditable(false);  // Lock the fields when modal opens
+    });
 
 
+    // delete button listener
+    tr.querySelector('.rmvBtn').addEventListener('click', (e) => {
+    const resId = e.currentTarget.getAttribute('data-id');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Filter residents function
-function filterResidents() {
-  const filters = {};
-  const getVal = id => document.getElementById(id)?.value;
-
-  // Text fields
-  ['first_name', 'middle_name', 'last_name', 'resident_id'].forEach(key => {
-    const val = getVal(key);
-    if (val) filters[key] = val;
-  });
-
-  ['voters', 'pwd', 'single_parent', 'senior'].forEach(key => {
-    const val = getVal(key);
-    if (val === "YES" || val === "NO") filters[key] = val;
-  });
-
-  const status = getVal('status');
-  if (status === "ACTIVE" || status === "INACTIVE") filters['status'] = status;
-
-  const age = getVal('age');
-  if (age !== "" && !isNaN(age)) filters['age'] = parseInt(age, 10);
-
-
-
-  fetch('../views/admin/filter_residents.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(filters)
-  })
-  .then(response => response.json())
-  .then(data => {
-    const tbody = document.querySelector('#allResidenceTable tbody');
-    tbody.innerHTML = ''; 
-
-    if (document.getElementById('total')) {
-      document.getElementById('total').value = data.length;
-    }
-
-    if (data.length === 0) {
-     
-      tbody.innerHTML = '<tr><td colspan="10">No matching residents found.</td></tr>';
-
-    } else {
-      data.forEach(res => {
-        const tr = createResidentRow(res);
-        tbody.appendChild(tr);
-      });
-    }
-  })
-
-  .catch(error => {
-    console.error("AJAX Error:", error);
-    alert("Error loading data: " + error.message);
-  });
-}
-
-
-
-
-
-
-
-
-
-// Define this outside!
-function createResidentRow(res) {
-  const tr = document.createElement("tr");
-  tr.classList.add("text-center");
-
-  tr.innerHTML = `
-    <td class="text-start align-middle rounded-row">
-      <img src="../${res.res_image}" alt="Official Image"
-        class="img-fluid rounded-circle"
-        style="width: 50px; height: 50px; object-fit: cover;">
-    </td>
-
-    <td class="text-start align-middle">${res.res_id}</td>
-    <td class="text-start align-middle">${res.res_first_name} ${res.res_last_name}</td>
-    <td class="text-start align-middle">${calculateAge(res.res_date_of_birth)}</td>
-    <td class="text-start align-middle">${res.res_pwd_type || ''}</td>
-    <td class="text-start align-middle">
-      <span class="badge-${res.res_single_parent_status === 'YES' ? 'yes' : 'no'}">${res.res_single_parent_status}</span>
-    </td>
-    <td class="text-start align-middle">
-      <span class="badge-${res.res_voter_status === 'YES' ? 'yes' : 'no'}">${res.res_voter_status}</span>
-    </td>
-    <td class="text-start align-middle">
-      <div class="ml-5 toggle-wrapper ${res.res_status === 'Inactive' ? 'inactive' : ''}" 
-          onclick="toggleStatus(this)" 
-          data-id="${res.res_id}">
-        <div class="toggle-circle"></div>
-        <span class="toggle-text">${capitalize(res.res_status)}</span>
-      </div>
-    </td>
-    <td class="text-center align-middle">
-      <button class="btn btn-sm editBtn" data-toggle="modal" data-target="#viewResidenceModal">
-        <i class="fa-solid fa-pen-to-square text-success"></i>
-      </button>
-      <button class="btn btn-sm rmvBtn" data-id="${res.res_id}">
-        <i class="fas fa-trash-alt text-danger"></i>
-      </button>
-    </td>
-  `;
-
-  // Add click listener for edit
-  tr.querySelector('.editBtn').addEventListener('click', () => {
-    populateResidentModal(res);
-    setFormEditable(false);  // Lock the fields when modal opens
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to archive this resident?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, archive it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        archiveResident(resId, tr); // <- make sure 'tr' is in scope
+        loadAllResidents();
+      }
+    });
   });
 
 
-  // delete button listener
-  tr.querySelector('.rmvBtn').addEventListener('click', (e) => {
-  const resId = e.currentTarget.getAttribute('data-id');
-
-  Swal.fire({
-    title: 'Are you sure?',
-    text: "Do you want to archive this resident?",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, archive it!'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      archiveResident(resId, tr); // <- make sure 'tr' is in scope
-      loadAllResidents();
-    }
-  });
-});
-
-
-  return tr;
-}
+    return tr;
+  }
 
 
 
-
-
-//archive resident
-function archiveResident(resId, rowElement) {
-  fetch('../views/admin/archived_resident.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ res_id: resId })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.status === 'success') {
-      Swal.fire({
-        icon: 'success',
-        title: 'Archived!',
-        text: 'Resident archived successfully.',
-        timer: 1500,
-        showConfirmButton: false
-      });
-      rowElement.remove(); // remove the row from the table
-      loadAllResidents();
-    } else {
+  //archive resident
+  function archiveResident(resId, rowElement) {
+    fetch('../views/admin/archived_resident.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ res_id: resId })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === 'success') {
+        Swal.fire({
+          icon: 'success',
+          title: 'Archived!',
+          text: 'Resident archived successfully.',
+          timer: 1500,
+          showConfirmButton: false
+        });
+        rowElement.remove(); // remove the row from the table
+        loadAllResidents();
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Failed!',
+          text: data.message
+        });
+      }
+    })
+    .catch(err => {
+      console.error('Error:', err);
       Swal.fire({
         icon: 'error',
-        title: 'Failed!',
-        text: data.message
+        title: 'Error',
+        text: 'An unexpected error occurred.'
       });
-    }
-  })
-  .catch(err => {
-    console.error('Error:', err);
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: 'An unexpected error occurred.'
     });
-  });
-}
+  }
 
 
 
 
-
-
-
-
-
-
-
-// Document ready - attach event listeners
-document.addEventListener('DOMContentLoaded', function() {
-  // Initial load
-  loadAllResidents();
-  
-  // Edit button event listeners
-  document.getElementById('editBtn')?.addEventListener('click', () => {
-    toggleEditActions(true);
-    setFormEditable(true);
-    document.getElementById('editBtn').disabled = true;
-  });
-  
-  // Cancel button event listener
-  document.getElementById('cancelEditForm')?.addEventListener('click', () => {
-    setFormEditable(false);
-    toggleEditActions(false);
-    document.getElementById('editBtn').disabled = false;
-  });
-  
-  // Close button event listener
-  document.getElementById('closeModal')?.addEventListener('click', () => {
-    setFormEditable(false);
-    document.getElementById('editBtn').disabled = false;
-  });
+  // Document ready - attach event listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initial load
+    loadAllResidents();
+    
+    // Edit button event listeners
+    document.getElementById('editBtn')?.addEventListener('click', () => {
+      toggleEditActions(true);
+      setFormEditable(true);
+      document.getElementById('editBtn').disabled = true;
+    });
+    
+    // Cancel button event listener
+    document.getElementById('cancelEditForm')?.addEventListener('click', () => {
+      setFormEditable(false);
+      toggleEditActions(false);
+      document.getElementById('editBtn').disabled = false;
+    });
+    
+    // Close button event listener
+    document.getElementById('closeModal')?.addEventListener('click', () => {
+      setFormEditable(false);
+      document.getElementById('editBtn').disabled = false;
+    });
 
 
 
 
   
-
-
-
-
-
-
   // Modal events
   const viewResidenceModal = document.getElementById('viewResidenceModal');
   if (viewResidenceModal) {
@@ -1780,12 +1728,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
-
-
 <!-- Additional script for search/back buttons -->
 <script>
 $(document).ready(function () {
@@ -1806,41 +1748,36 @@ $(document).ready(function () {
 
 
 
-
-
-
-
 <script>
-  // Fetch the zones from the views
-  fetch('../views/admin/get_all_zone_name.php')
-    .then(response => response.json())
-    .then(zones => {
-        // Get the select element
-        const zoneSelect = document.getElementById('edit_zone');
+    // Fetch the zones from the views
+    fetch('../views/admin/get_all_zone_name.php')
+      .then(response => response.json())
+      .then(zones => {
+          // Get the select element
+          const zoneSelect = document.getElementById('edit_zone');
 
-        // Clear existing options (if any)
-        zoneSelect.innerHTML = '';
+          // Clear existing options (if any)
+          zoneSelect.innerHTML = '';
 
-        // Add an empty default option (optional)
-        const defaultOption = document.createElement('option');
-        defaultOption.textContent = 'Select Zone';
-        defaultOption.value = '';
-        zoneSelect.appendChild(defaultOption);
+          // Add an empty default option (optional)
+          const defaultOption = document.createElement('option');
+          defaultOption.textContent = 'Select Zone';
+          defaultOption.value = '';
+          zoneSelect.appendChild(defaultOption);
 
-        // Populate the select with options from the database
-        zones.forEach(zone => {
-            const option = document.createElement('option');
-            option.value = zone.zone_id; 
-            option.textContent = zone.zone_name; 
-            zoneSelect.appendChild(option);
-        });
+          // Populate the select with options from the database
+          zones.forEach(zone => {
+              const option = document.createElement('option');
+              option.value = zone.zone_id; 
+              option.textContent = zone.zone_name; 
+              zoneSelect.appendChild(option);
+          });
 
-        // Set the selected zone based on resident data
-        zoneSelect.value = data.res_zone_name; 
-    })
-    .catch(error => console.error('Error fetching zones:', error));
+          // Set the selected zone based on resident data
+          zoneSelect.value = data.res_zone_name; 
+      })
+      .catch(error => console.error('Error fetching zones:', error));
 </script>
-
 
 
 

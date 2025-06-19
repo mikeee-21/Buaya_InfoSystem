@@ -200,109 +200,77 @@ li a p{
 <body class="hold-transition sidebar-mini">
   
 <div class="wrapper">
-
-
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white font-inter" style="border: none; box-shadow: none;">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item mr-3">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button">
-                  <i class="fas fa-bars" style="color:black;"></i>
-                </a>
-            </li>
-
-          <li class="nav-item">
-              <span class="navbar-text font-weight-bold" style="color:black; font-size: 18px;"> BARANGAY BUAYA</span>
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white font-inter" style="border: none; box-shadow: none;">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item mr-3">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+            <i class="fas fa-bars" style="color:black;"></i>
+          </a>
+      </li>
+      <li class="nav-item">
+          <span class="navbar-text font-weight-bold" style="color:black; font-size: 18px;"> BARANGAY BUAYA</span>
+      </li>
+    </ul>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- HOME -->
+      <li class="nav-item mr-4">
+        <a href="dashboard.php" class="nav-link">
+          <i class="fa-solid fa-house" style="color:black;"></i>
+        </a>
+      </li>
+      <!-- REVIEWS -->
+      <li class="nav-item mr-3">
+        <a class="nav-link"  href="reviews_settings.php">
+          <i class="fa-solid fa-comment-dots" style="color:black;"></i>
+        </a>
+      </li>
+      <!-- SETTINGS -->
+      <li class="nav-item dropdown mr-3">
+        <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-solid fa-gear" style="color:black;"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
+          <!-- Directory Management -->
+          <li class="dropdown-item">
+            <a href="#" class="d-block w-100" id="directoryToggle">
+              Directory Management <i class="fas fa-caret-down float-right"></i>
+            </a>
+            <!-- Submenu -->
+            <div id="directorySubmenu" style="display: none;" class="sub mt-2">
+              <a class="dropdown-item ml-3" href="settings_addNew_off.php">Add New Official</a>
+              <a class="dropdown-item ml-3" href="settings_list_official.php">List of Officials</a>
+              <a class="dropdown-item ml-3" href="settings_officials_endterm.php">Officials End Terms</a>
+            </div>
           </li>
-          
-          
+          <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
+          <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
         </ul>
-
-
-
-      <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
-
-        <!-- HOME -->
-        <li class="nav-item mr-4">
-          <a href="dashboard.php" class="nav-link">
-            <i class="fa-solid fa-house" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- REVIEWS -->
-        <li class="nav-item mr-3">
-          <a class="nav-link"  href="reviews_settings.php">
-            <i class="fa-solid fa-comment-dots" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- SETTINGS -->
-        <li class="nav-item dropdown mr-3">
-          <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa-solid fa-gear" style="color:black;"></i>
-          </a>
-
-          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-            
-            <!-- Directory Management -->
-            <li class="dropdown-item">
-              <a href="#" class="d-block w-100" id="directoryToggle">
-                Directory Management <i class="fas fa-caret-down float-right"></i>
-              </a>
-
-                <!-- Submenu -->
-              <div id="directorySubmenu" style="display: none;" class="sub mt-2">
-                <a class="dropdown-item ml-3" href="settings_addNew_off.php">Add New Official</a>
-                <a class="dropdown-item ml-3" href="settings_list_official.php">List of Officials</a>
-                <a class="dropdown-item ml-3" href="settings_officials_endterm.php">Officials End Terms</a>
-              </div>
-
-            </li>
-
-            <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
-            <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
-          </ul>
-        </li>
-
-
-
-        <!-- FULL SCREEN -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-            <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- ADMIN -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" href="admin_profile.php" >
-            <i class="fa-solid fa-user mr-1" style="color:black;"></i>
-            <span style="color:black;">Admin</span>
-          </a>
-        </li>
-
-        <!-- SIGN OUT -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
-            <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
-            <span style="color:black;">Sign Out</span>
-          </a>
-        </li>
-
-      </ul>
-    </nav>
-
-
-
-
-
-
-
-
-
-
+      </li>
+      <!-- FULL SCREEN -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
+        </a>
+      </li>
+      <!-- ADMIN -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="admin_profile.php" >
+          <i class="fa-solid fa-user mr-1" style="color:black;"></i>
+          <span style="color:black;">Admin</span>
+        </a>
+      </li>
+      <!-- SIGN OUT -->
+      <li class="nav-item mr-4">
+        <a class="nav-link" href="../views/admin/sign_out.php" role="button">
+          <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
+          <span style="color:black;">Sign Out</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar elevation-4" style="background: linear-gradient(135deg, #000155, #0FCDA7);">
@@ -315,14 +283,11 @@ li a p{
 
     <!-- Sidebar -->
     <div class="sidebar">
-      
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-
           <li class="nav-item menu-open">
             <a href="dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt" style="color:black;"></i>
@@ -331,9 +296,6 @@ li a p{
               </p>
             </a>
           </li>
-
-
-
           <li class="nav-item">
             <a href="announcement.php" class="nav-link">
             <i class="nav-icon fa-solid fa-circle-info" style="color:black;"></i>
@@ -342,11 +304,7 @@ li a p{
               </p>
             </a>
           </li>
-
-
-
           <li class="nav-item">
-
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy" style="color:black;"></i>
               <p style="color:black;">
@@ -354,29 +312,22 @@ li a p{
                 <i class="fas fa-angle-left right" ></i>
               </p>
             </a>
-
-                        <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                            <a href="pending_request.php" class="nav-link">
-                              <i class="nav-dr-icon nav-icon fa-solid fa-hourglass-end" ></i>
-                              <p class="nav-select" style="color:black; font-size: 15px; margin-left: 8px;">Pending Requests</p>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="approved_request.php" class="nav-link" style="color:black;">
-                            <i class="nav-dr-icon nav-icon fa-solid fa-person-circle-check"></i>
-                              <p class="nav-select" style="color:black; ">Approved Requests</p>
-                            </a>
-                          </li>
-                        </ul>
-
-            
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pending_request.php" class="nav-link">
+                  <i class="nav-dr-icon nav-icon fa-solid fa-hourglass-end" ></i>
+                  <p class="nav-select" style="color:black; font-size: 15px; margin-left: 8px;">Pending Requests</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="approved_request.php" class="nav-link" style="color:black;">
+                <i class="nav-dr-icon nav-icon fa-solid fa-person-circle-check"></i>
+                  <p class="nav-select" style="color:black; ">Approved Requests</p>
+                </a>
+              </li>
+            </ul>
           </li>
-
-
-
           <li class="nav-item">
-
             <a href="#" class="nav-link">
               <i class="nav-icon fa-solid fa-users" style="color:black;"></i>
               <p style="color:black;">
@@ -384,32 +335,22 @@ li a p{
                 <i class="right fas fa-angle-left" ></i>
               </p>
             </a>
-
-
-                    <ul class="nav nav-treeview">
-
-                      <li class="nav-item">
-                        <a href="brgy_officials.php" class="nav-link">
-                          <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
-                          <p class="nav-select" style="color:black;">Barangay Officials</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="brgy_sk_officials.php" class="nav-link">
-                          <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
-                          <p class="nav-select" style="color:black;">SK Officials</p>
-                        </a>
-                      </li>
-
-                    </ul>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="brgy_officials.php" class="nav-link">
+                  <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
+                  <p class="nav-select" style="color:black;">Barangay Officials</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="brgy_sk_officials.php" class="nav-link">
+                  <i class="nav-direct-icon nav-icon fa-solid fa-users-line"></i>
+                  <p class="nav-select" style="color:black;">SK Officials</p>
+                </a>
+              </li>
+            </ul>
           </li>
-
-
-
-
           <li class="nav-item">
-            
             <a href="#" class="nav-link">
               <i class="nav-icon fa-solid fa-users-line" style="color:black;"></i>
               <p style="color:black;">
@@ -417,40 +358,28 @@ li a p{
                 <i class="fas fa-angle-left right" ></i>
               </p>
             </a>
-
-              <ul class="nav nav-treeview">
-            
-                <li class="nav-item" >
-                    <a href="admin_addNewResidence.php" class="nav-link" >
-                      <i class=" nav-residence-icon nav-icon fa-solid fa-user-plus"></i>
-                      <p class="nav-select" style="color:black;">New Residence</p>
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a href="admin_allResidence.php" class="nav-link">
-                      <i class="nav-residence-icon nav-icon fa-solid fa-users-line"></i>
-                      <p class="nav-select" style="color:black;">All Residence</p>
-                    </a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a href="admin_archieveResidence.php" class="nav-link">
-                      <i class="nav-residence-icon nav-icon fa-solid fa-users-slash" ></i>
-                      <p class="nav-select" style="color:black;">Archive Residence</p>
-                    </a>
-                  </li>
-
-              </ul>
-
+            <ul class="nav nav-treeview">
+              <li class="nav-item" >
+                  <a href="admin_addNewResidence.php" class="nav-link" >
+                    <i class=" nav-residence-icon nav-icon fa-solid fa-user-plus"></i>
+                    <p class="nav-select" style="color:black;">New Residence</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="admin_allResidence.php" class="nav-link">
+                    <i class="nav-residence-icon nav-icon fa-solid fa-users-line"></i>
+                    <p class="nav-select" style="color:black;">All Residence</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="admin_archieveResidence.php" class="nav-link">
+                    <i class="nav-residence-icon nav-icon fa-solid fa-users-slash" ></i>
+                    <p class="nav-select" style="color:black;">Archive Residence</p>
+                  </a>
+                </li>
+            </ul>
           </li>
-
-
-
           <li class="nav-header text-white">OTHERS</li>
-
-
-
           <li class="nav-item">
             <a href="calendar.php" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt" style="color:black;"></i>
@@ -483,7 +412,6 @@ li a p{
                 </p>
             </a>
           </li>
-
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -492,112 +420,32 @@ li a p{
   </aside>
 
 
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper font-inter bg-white">
+      <!-- Content Header (Page header) -->
+      <section class="content-header" >
+        <div class="container-fluid" >
+            <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Calendar</h1>
+            </div>
+            </div>
+        </div><!-- /.container-fluid -->
+      </section>
 
-
-
-
-         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper font-inter bg-white">
-            <!-- Content Header (Page header) -->
-            <section class="content-header" >
-            <div class="container-fluid" >
-                <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Calendar</h1>
-                </div>
-                </div>
-            </div><!-- /.container-fluid -->
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="sticky-top mb-3">
-                      <div class="card elevation-2" style="background-color:hsl(160, 100%, 95%);">
-                        <div class="card-header">
-                          <h3 class="card-title">Create Event</h3>
-                        </div>
-                        <div class="card-body">
-                          <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                            <ul class="fc-color-picker" id="color-chooser">
-                              <li><a class="text-primary" href="#" data-color="#3c8dbc"><i class="fas fa-square"></i></a></li>
-                              <li><a class="text-warning" href="#" data-color="#f39c12"><i class="fas fa-square"></i></a></li>
-                              <li><a class="text-success" href="#" data-color="#00a65a"><i class="fas fa-square"></i></a></li>
-                              <li><a class="text-danger" href="#" data-color="#dd4b39"><i class="fas fa-square"></i></a></li>
-                              <li><a class="text-info" href="#" data-color="#00c0ef"><i class="fas fa-square"></i></a></li>
-                            </ul>
-                          </div>
-                          <div class="input-group mb-3">
-                            <input id="new-event" type="text" class="form-control" placeholder="Event Title">
-                          </div>
-                          <div class="input-group mb-3">
-                            <textarea id="event-description" class="form-control" placeholder="Event Description"></textarea>
-                          </div>
-                          <div class="input-group mb-3">
-                            <input type="date" id="event-date" class="form-control">
-                          </div>
-                          <div class="input-group mb-3">
-                            <input type="time" id="event-time-start" class="form-control" placeholder="Start Time">
-                            <input type="time" id="event-time-end" class="form-control" placeholder="End Time">
-                          </div>
-                          <div class="input-group">
-                            <button id="add-new-event" type="button" class="btn btn-primary">Add Event</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="sticky-top mb-3">
+                <div class="card elevation-2" style="background-color:hsl(160, 100%, 95%);">
+                  <div class="card-header">
+                    <h3 class="card-title">Create Event</h3>
                   </div>
-
-                  <div class="col-md-9">
-                    <div class="card card-primary">
-                      <div class="card-body p-0 elevation-2" style="background-color:hsl(160, 100%, 95%);">
-                        <div id="calendar" style="height: 500px; overflow: auto;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- Edit Event Modal -->
-            <div class="modal fade" id="edit-event-modal" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Edit Event</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="form-group">
-                      <label>Event Title</label>
-                      <input type="text" class="form-control" id="edit-event-title">
-                    </div>
-                    <div class="form-group">
-                      <label>Description</label>
-                      <textarea class="form-control" id="edit-event-description"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label>Date</label>
-                      <input type="date" class="form-control" id="edit-event-date">
-                    </div>
-                    <div class="form-group">
-                      <label>Time</label>
-                      <div class="row">
-                        <div class="col">
-                          <input type="time" class="form-control" id="edit-event-time-start" placeholder="Start">
-                        </div>
-                        <div class="col">
-                          <input type="time" class="form-control" id="edit-event-time-end" placeholder="End">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label>Color</label>
-                      <ul class="fc-color-picker" id="edit-color-chooser">
+                  <div class="card-body">
+                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                      <ul class="fc-color-picker" id="color-chooser">
                         <li><a class="text-primary" href="#" data-color="#3c8dbc"><i class="fas fa-square"></i></a></li>
                         <li><a class="text-warning" href="#" data-color="#f39c12"><i class="fas fa-square"></i></a></li>
                         <li><a class="text-success" href="#" data-color="#00a65a"><i class="fas fa-square"></i></a></li>
@@ -605,14 +453,91 @@ li a p{
                         <li><a class="text-info" href="#" data-color="#00c0ef"><i class="fas fa-square"></i></a></li>
                       </ul>
                     </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="delete-event-btn">Delete Event</button>
-                    <button type="button" class="btn btn-primary" id="save-event-changes">Save changes</button>
+                    <div class="input-group mb-3">
+                      <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+                    </div>
+                    <div class="input-group mb-3">
+                      <textarea id="event-description" class="form-control" placeholder="Event Description"></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                      <input type="date" id="event-date" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                      <input type="time" id="event-time-start" class="form-control" placeholder="Start Time">
+                      <input type="time" id="event-time-end" class="form-control" placeholder="End Time">
+                    </div>
+                    <div class="input-group">
+                      <button id="add-new-event" type="button" class="btn btn-primary">Add Event</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div class="col-md-9">
+              <div class="card card-primary">
+                <div class="card-body p-0 elevation-2" style="background-color:hsl(160, 100%, 95%);">
+                  <div id="calendar" style="height: 500px; overflow: auto;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Edit Event Modal -->
+      <div class="modal fade" id="edit-event-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit Event</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Event Title</label>
+                <input type="text" class="form-control" id="edit-event-title">
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" id="edit-event-description"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Date</label>
+                <input type="date" class="form-control" id="edit-event-date">
+              </div>
+              <div class="form-group">
+                <label>Time</label>
+                <div class="row">
+                  <div class="col">
+                    <input type="time" class="form-control" id="edit-event-time-start" placeholder="Start">
+                  </div>
+                  <div class="col">
+                    <input type="time" class="form-control" id="edit-event-time-end" placeholder="End">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Color</label>
+                <ul class="fc-color-picker" id="edit-color-chooser">
+                  <li><a class="text-primary" href="#" data-color="#3c8dbc"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-warning" href="#" data-color="#f39c12"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-success" href="#" data-color="#00a65a"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-danger" href="#" data-color="#dd4b39"><i class="fas fa-square"></i></a></li>
+                  <li><a class="text-info" href="#" data-color="#00c0ef"><i class="fas fa-square"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="delete-event-btn">Delete Event</button>
+              <button type="button" class="btn btn-primary" id="save-event-changes">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 
 
 
@@ -958,7 +883,6 @@ li a p{
 </script>
 
 
-
 <script>
       $(function () {
         // Prevent the dropdown from closing when clicking inside
@@ -973,10 +897,6 @@ li a p{
         });
       });
 </script>
-
-
-
-
 
 
 </body>

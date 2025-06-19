@@ -498,103 +498,6 @@ li a p{
 
 
           <div id="officials-container" class="font-inter"></div>
-          <script>
-              fetch('../views/admin/get_brgy_officials.php')
-                  .then(res => res.json())
-                  .then(data => {
-                      if (data.status === 'success') {
-
-                          const officials = data.data;
-                          const container = document.getElementById('officials-container');
-                          let councilorRow = null;
-                          officials.forEach((off, i) => {
-
-                              
-
-                              const mname = off.res_middle_name ? `${off.res_middle_name}.` : "";
-                              const fullName = `${off.res_first_name} ${mname} ${off.res_last_name}`;
-
-                              const image    = off.res_image ? `../${off.res_image}`  : '../server_imgs/default_user_img.jpg';
-
-                        
-
-                                const cardHTML = `
-
-                                  
-                                  <div class="row-item p-3 elevation-1 elevation-2 cards" style="width:49%; height:100%; border-radius:10px;  cursor: pointer;">
-                                      <div class="row-12" style="display: flex;">
-                                          <div class="mr-2" style="width: 150px; height: 150px; overflow: hidden;">
-                                              <img src="${image}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-                                          </div>
-                                          <div class="pl-2" style="width: 360px; height: 150px;">
-                                              <div class="first_div" style="font-family:'Inter', sans-serif; font-size: 20px;">
-
-                                                  <p class="m-0 fw-bold">${fullName}</p>
-
-                                                  <p style="font-size: 15px;"> <i class="icon mr-2 fa-solid fa-user-tie"></i>
-                                                    ${off.pos_name.toUpperCase()}
-                                                  </p>
-
-                                              </div>
-                                              <div class="sec_div" style="font-family:'Inter', sans-serif; font-size:15px;">
-
-                                                  <p class="m-0"> <i class="icon mr-2 fa-solid fa-calendar-days"></i> Start Term: <span class="ml-4" style="font-weight: bold;">${off.off_start_term}</span></p>
-                                                  <p class="m-0"> <i class="icon mr-2 fa-solid fa-calendar-days"></i> End Term:   <span  class="ml-4" style="font-weight: bold;">${off.off_end_term}</span></p>
-                                                  <p class="m-0"> <i class="icon mr-2 fa-solid fa-list-check"></i> Committee: <span class="ml-3" style="font-weight: bold;">${off.off_committee}</span></p>
-
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="row-12 mt-3" style="display: flex;">
-                                          <div class="col ml-0" style="font-family:'Inter', sans-serif;">
-                                              <p> <i class="icon fa-solid fa-calendar"></i> Date of Birth: <span style="font-weight: bold;">${off.res_date_of_birth}</span></p>
-                                              <p> <i class="icon mr-2 fa-solid fa-user-tie"></i> Age: <span style="font-weight: bold;">${calculateAge(off.res_date_of_birth)}</span></p>
-                                          </div>
-                                          <div class="col" style="font-family:'Inter', sans-serif;">
-                                              <p> <i class="icon fa-solid fa-phone"></i> : <span style="font-weight: bold;">${off.res_contact_number}</span></p>
-                                              <p> <i class="icon fa-solid fa-envelope"></i> : <span style="font-weight: bold;">${off.res_email_address}</span></p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              `;
-
-                              if (off.pos_name === 'Captain') {
-                                  const row = document.createElement('div');
-                                  row.className = 'row p-2 m-2 d-flex justify-content-center';
-                                  row.innerHTML = cardHTML;
-                                  container.appendChild(row);
-                              } else {
-                                  if (!councilorRow || councilorRow.children.length >= 2) {
-                                      councilorRow = document.createElement('div');
-                                      councilorRow.className = 'row p-2 m-2';
-                                      councilorRow.style.display = 'flex';
-                                      councilorRow.style.justifyContent = 'space-between';
-                                      container.appendChild(councilorRow);
-                                  }
-                                  const wrapper = document.createElement('div');
-                                  wrapper.innerHTML = cardHTML;
-                                  councilorRow.appendChild(wrapper.firstElementChild);
-                              }
-                          });
-                      } else {
-                          console.error(data.message);
-                      }
-                  });
-
-              function calculateAge(dob) {
-                  const birthDate = new Date(dob);
-                  const today = new Date();
-                  let age = today.getFullYear() - birthDate.getFullYear();
-                  const m = today.getMonth() - birthDate.getMonth();
-                  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                      age--;
-                  }
-                  return age;
-              }
-          </script>
-
-
-
 
         </div>
         <!-- EMD OF COL -->
@@ -632,6 +535,101 @@ li a p{
   });
 </script>
 
+
+<script>
+    fetch('../views/admin/get_brgy_officials.php')
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 'success') {
+
+                const officials = data.data;
+                const container = document.getElementById('officials-container');
+                let councilorRow = null;
+                officials.forEach((off, i) => {
+
+                    
+
+                    const mname = off.res_middle_name ? `${off.res_middle_name}.` : "";
+                    const fullName = `${off.res_first_name} ${mname} ${off.res_last_name}`;
+
+                    const image    = off.res_image ? `../${off.res_image}`  : '../server_imgs/default_user_img.jpg';
+
+              
+
+                      const cardHTML = `
+
+                        
+                        <div class="row-item p-3 elevation-1 elevation-2 cards" style="width:49%; height:100%; border-radius:10px;  cursor: pointer;">
+                            <div class="row-12" style="display: flex;">
+                                <div class="mr-2" style="width: 150px; height: 150px; overflow: hidden;">
+                                    <img src="${image}" alt="Profile" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                </div>
+                                <div class="pl-2" style="width: 360px; height: 150px;">
+                                    <div class="first_div" style="font-family:'Inter', sans-serif; font-size: 20px;">
+
+                                        <p class="m-0 fw-bold">${fullName}</p>
+
+                                        <p style="font-size: 15px;"> <i class="icon mr-2 fa-solid fa-user-tie"></i>
+                                          ${off.pos_name.toUpperCase()}
+                                        </p>
+
+                                    </div>
+                                    <div class="sec_div" style="font-family:'Inter', sans-serif; font-size:15px;">
+
+                                        <p class="m-0"> <i class="icon mr-2 fa-solid fa-calendar-days"></i> Start Term: <span class="ml-4" style="font-weight: bold;">${off.off_start_term}</span></p>
+                                        <p class="m-0"> <i class="icon mr-2 fa-solid fa-calendar-days"></i> End Term:   <span  class="ml-4" style="font-weight: bold;">${off.off_end_term}</span></p>
+                                        <p class="m-0"> <i class="icon mr-2 fa-solid fa-list-check"></i> Committee: <span class="ml-3" style="font-weight: bold;">${off.off_committee}</span></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-12 mt-3" style="display: flex;">
+                                <div class="col ml-0" style="font-family:'Inter', sans-serif;">
+                                    <p> <i class="icon fa-solid fa-calendar"></i> Date of Birth: <span style="font-weight: bold;">${off.res_date_of_birth}</span></p>
+                                    <p> <i class="icon mr-2 fa-solid fa-user-tie"></i> Age: <span style="font-weight: bold;">${calculateAge(off.res_date_of_birth)}</span></p>
+                                </div>
+                                <div class="col" style="font-family:'Inter', sans-serif;">
+                                    <p> <i class="icon fa-solid fa-phone"></i> : <span style="font-weight: bold;">${off.res_contact_number}</span></p>
+                                    <p> <i class="icon fa-solid fa-envelope"></i> : <span style="font-weight: bold;">${off.res_email_address}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    if (off.pos_name === 'Captain') {
+                        const row = document.createElement('div');
+                        row.className = 'row p-2 m-2 d-flex justify-content-center';
+                        row.innerHTML = cardHTML;
+                        container.appendChild(row);
+                    } else {
+                        if (!councilorRow || councilorRow.children.length >= 2) {
+                            councilorRow = document.createElement('div');
+                            councilorRow.className = 'row p-2 m-2';
+                            councilorRow.style.display = 'flex';
+                            councilorRow.style.justifyContent = 'space-between';
+                            container.appendChild(councilorRow);
+                        }
+                        const wrapper = document.createElement('div');
+                        wrapper.innerHTML = cardHTML;
+                        councilorRow.appendChild(wrapper.firstElementChild);
+                    }
+                });
+            } else {
+                console.error(data.message);
+            }
+        });
+
+    function calculateAge(dob) {
+        const birthDate = new Date(dob);
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+</script>
 
 </body>
 </html>

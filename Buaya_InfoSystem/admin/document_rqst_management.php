@@ -160,627 +160,626 @@ li a p{
 
 
 /* adding certificate part */
- /* Enhanced animations and styles */
-    .enhanced-row {
-        animation: slideInUp 0.6s ease-out forwards;
+.enhanced-row {
+    animation: slideInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid #f1f3f4;
+    position: relative;
+}
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.certificate-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.certificate-icon {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.enhanced-row:hover .certificate-icon-wrapper {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    transform: rotate(5deg) scale(1.1);
+}
+
+.enhanced-row:hover .certificate-icon {
+    color: white !important;
+}
+
+.certificate-title {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 2px;
+}
+
+.certificate-subtitle {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.request-count-badge {
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    min-width: 60px;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.badge-zero {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #6c757d;
+}
+
+.badge-low {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    color: #856404;
+    border-color: #ffeaa7;
+}
+
+.badge-medium {
+    background: linear-gradient(135deg, #cce5ff, #99d6ff);
+    color: #0066cc;
+    border-color: #99d6ff;
+}
+
+.badge-high {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.badge-very-high {
+    background: linear-gradient(135deg, #f8d7da, #f1c2c6);
+    color: #721c24;
+    border-color: #f1c2c6;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.enhanced-action-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.enhanced-action-btn {
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enhanced-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.enhanced-action-btn:hover::before {
+    left: 100%;
+}
+
+.edit-action-btn {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    box-shadow: 0 4px 15px rgba(21, 87, 36, 0.2);
+}
+
+.edit-action-btn:hover {
+    background: linear-gradient(135deg, #c3e6cb, #b8dcc8);
+    transform: translateY(-3px) rotate(3deg);
+    box-shadow: 0 8px 25px rgba(21, 87, 36, 0.3);
+}
+
+.delete-action-btn {
+    background: linear-gradient(135deg, #f8d7da, #f1c2c6);
+    color: #721c24;
+    box-shadow: 0 4px 15px rgba(114, 28, 36, 0.2);
+}
+
+.delete-action-btn:hover {
+    background: linear-gradient(135deg, #f1c2c6, #ecb7bc);
+    transform: translateY(-3px) rotate(-3deg);
+    box-shadow: 0 8px 25px rgba(114, 28, 36, 0.3);
+}
+
+.modern-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: modernSpin 1s linear infinite;
+}
+
+@keyframes modernSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.pulse-btn {
+    animation: gentlePulse 2s infinite;
+}
+
+@keyframes gentlePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.loading-container, .empty-state-container, .error-state-container {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
         opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border-bottom: 1px solid #f1f3f4;
-        position: relative;
+        transform: scale(0.9);
     }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
-    @keyframes slideInUp {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+/* SweetAlert2 enhancements */
+.swal2-popup.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
 
-    .certificate-icon-wrapper {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
+.swal2-popup.animated.fadeInDown {
+    animation-name: fadeInDown;
+}
 
-    .certificate-icon {
-        font-size: 1.2rem;
-        transition: all 0.3s ease;
-    }
+.swal2-popup.animated.fadeInUp {
+    animation-name: fadeInUp;
+}
 
-    .enhanced-row:hover .certificate-icon-wrapper {
-        background: linear-gradient(135deg, #2196f3, #1976d2);
-        transform: rotate(5deg) scale(1.1);
-    }
+.swal2-popup.animated.bounceIn {
+    animation-name: bounceIn;
+}
 
-    .enhanced-row:hover .certificate-icon {
-        color: white !important;
-    }
+.swal2-popup.animated.shake {
+    animation-name: shake;
+}
 
-    .certificate-title {
-        font-size: 1rem;
-        color: #2c3e50;
-        margin-bottom: 2px;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
     }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
 
-    .certificate-subtitle {
-        font-size: 0.75rem;
-        color: #7f8c8d;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
     }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
 
-    .request-count-badge {
-        padding: 8px 16px;
-        border-radius: 25px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        min-width: 60px;
-        justify-content: center;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
 
-    .badge-zero {
-        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        color: #6c757d;
+@keyframes shake {
+    from, to {
+        transform: translate3d(0, 0, 0);
     }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
 
-    .badge-low {
-        background: linear-gradient(135deg, #fff3cd, #ffeaa7);
-        color: #856404;
-        border-color: #ffeaa7;
-    }
+.btn-hover-effect {
+    transition: all 0.3s ease;
+}
 
-    .badge-medium {
-        background: linear-gradient(135deg, #cce5ff, #99d6ff);
-        color: #0066cc;
-        border-color: #99d6ff;
-    }
-
-    .badge-high {
-        background: linear-gradient(135deg, #d4edda, #c3e6cb);
-        color: #155724;
-        border-color: #c3e6cb;
-    }
-
-    .badge-very-high {
-        background: linear-gradient(135deg, #f8d7da, #f1c2c6);
-        color: #721c24;
-        border-color: #f1c2c6;
-        animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-
-    .enhanced-action-group {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .enhanced-action-btn {
-        border: none;
-        padding: 10px 14px;
-        border-radius: 10px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        min-width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .enhanced-action-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-        transition: left 0.5s ease;
-    }
-
-    .enhanced-action-btn:hover::before {
-        left: 100%;
-    }
-
-    .edit-action-btn {
-        background: linear-gradient(135deg, #d4edda, #c3e6cb);
-        color: #155724;
-        box-shadow: 0 4px 15px rgba(21, 87, 36, 0.2);
-    }
-
-    .edit-action-btn:hover {
-        background: linear-gradient(135deg, #c3e6cb, #b8dcc8);
-        transform: translateY(-3px) rotate(3deg);
-        box-shadow: 0 8px 25px rgba(21, 87, 36, 0.3);
-    }
-
-    .delete-action-btn {
-        background: linear-gradient(135deg, #f8d7da, #f1c2c6);
-        color: #721c24;
-        box-shadow: 0 4px 15px rgba(114, 28, 36, 0.2);
-    }
-
-    .delete-action-btn:hover {
-        background: linear-gradient(135deg, #f1c2c6, #ecb7bc);
-        transform: translateY(-3px) rotate(-3deg);
-        box-shadow: 0 8px 25px rgba(114, 28, 36, 0.3);
-    }
-
-    .modern-spinner {
-        width: 40px;
-        height: 40px;
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #007bff;
-        border-radius: 50%;
-        animation: modernSpin 1s linear infinite;
-    }
-
-    @keyframes modernSpin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-    .pulse-btn {
-        animation: gentlePulse 2s infinite;
-    }
-
-    @keyframes gentlePulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.02); }
-        100% { transform: scale(1); }
-    }
-
-    .loading-container, .empty-state-container, .error-state-container {
-        animation: fadeInScale 0.5s ease-out;
-    }
-
-    @keyframes fadeInScale {
-        from {
-            opacity: 0;
-            transform: scale(0.9);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    /* SweetAlert2 enhancements */
-    .swal2-popup.animated {
-        animation-duration: 0.5s;
-        animation-fill-mode: both;
-    }
-
-    .swal2-popup.animated.fadeInDown {
-        animation-name: fadeInDown;
-    }
-
-    .swal2-popup.animated.fadeInUp {
-        animation-name: fadeInUp;
-    }
-
-    .swal2-popup.animated.bounceIn {
-        animation-name: bounceIn;
-    }
-
-    .swal2-popup.animated.shake {
-        animation-name: shake;
-    }
-
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translate3d(0, -100%, 0);
-        }
-        to {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translate3d(0, 100%, 0);
-        }
-        to {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-    @keyframes bounceIn {
-        from, 20%, 40%, 60%, 80%, to {
-            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        }
-        0% {
-            opacity: 0;
-            transform: scale3d(.3, .3, .3);
-        }
-        20% {
-            transform: scale3d(1.1, 1.1, 1.1);
-        }
-        40% {
-            transform: scale3d(.9, .9, .9);
-        }
-        60% {
-            opacity: 1;
-            transform: scale3d(1.03, 1.03, 1.03);
-        }
-        80% {
-            transform: scale3d(.97, .97, .97);
-        }
-        to {
-            opacity: 1;
-            transform: scale3d(1, 1, 1);
-        }
-    }
-
-    @keyframes shake {
-        from, to {
-            transform: translate3d(0, 0, 0);
-        }
-        10%, 30%, 50%, 70%, 90% {
-            transform: translate3d(-10px, 0, 0);
-        }
-        20%, 40%, 60%, 80% {
-            transform: translate3d(10px, 0, 0);
-        }
-    }
-
-    .btn-hover-effect {
-        transition: all 0.3s ease;
-    }
-
-    .btn-hover-effect:hover {
-        transform: translateY(-2px);
-    }
+.btn-hover-effect:hover {
+    transform: translateY(-2px);
+}
 
 
 
 /* table design */
 .main-container {
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-            border: none;
-            overflow: hidden;
-        }
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border: none;
+    overflow: hidden;
+}
 
-        .stats-container {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 1.5rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
+.stats-container {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
 
-        .stat-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: none;
-            position: relative;
-            overflow: hidden;
-        }
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
 
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            transition: width 0.3s ease;
-        }
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    transition: width 0.3s ease;
+}
 
-        .stat-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
 
-        .stat-card:hover::before {
-            width: 8px;
-        }
+.stat-card:hover::before {
+    width: 8px;
+}
 
-        .stat-card.approved::before {
-            background: var(--approved-green);
-        }
+.stat-card.approved::before {
+    background: var(--approved-green);
+}
 
-        .stat-card.pending::before {
-            background: var(--pending-yellow);
-        }
+.stat-card.pending::before {
+    background: var(--pending-yellow);
+}
 
-        .stat-card.rejected::before {
-            background: var(--rejected-red);
-        }
+.stat-card.rejected::before {
+    background: var(--rejected-red);
+}
 
-        .stat-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            font-size: 1.2rem;
-            margin-left: auto;
-        }
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    margin-left: auto;
+}
 
-        .stat-card.approved .stat-icon {
-            background: linear-gradient(135deg, var(--approved-green), #059669);
-        }
+.stat-card.approved .stat-icon {
+    background: linear-gradient(135deg, var(--approved-green), #059669);
+}
 
-        .stat-card.pending .stat-icon {
-            background: linear-gradient(135deg, var(--pending-yellow), #d97706);
-        }
+.stat-card.pending .stat-icon {
+    background: linear-gradient(135deg, var(--pending-yellow), #d97706);
+}
 
-        .stat-card.rejected .stat-icon {
-            background: linear-gradient(135deg, var(--rejected-red), #dc2626);
-        }
+.stat-card.rejected .stat-icon {
+    background: linear-gradient(135deg, var(--rejected-red), #dc2626);
+}
 
-        .search-filter-section {
-            padding: 1.5rem;
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-        }
+.search-filter-section {
+    padding: 1.5rem;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+}
 
-        .search-input-container {
-            position: relative;
-        }
+.search-input-container {
+    position: relative;
+}
 
-        .search-input {
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 12px 45px 12px 15px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            background: #f8fafc;
-        }
+.search-input {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 45px 12px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
 
-        .search-input:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(0, 1, 85, 0.1);
-            background: white;
-            outline: none;
-        }
+.search-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 1, 85, 0.1);
+    background: white;
+    outline: none;
+}
 
-        .search-icon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #64748b;
-            transition: color 0.3s ease;
-        }
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    transition: color 0.3s ease;
+}
 
-        .search-input:focus + .search-icon {
-            color: var(--primary-blue);
-        }
+.search-input:focus + .search-icon {
+    color: var(--primary-blue);
+}
 
-        .filter-select {
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 12px 15px;
-            background: #f8fafc;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+.filter-select {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
-        .filter-select:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(0, 1, 85, 0.1);
-            background: white;
-            outline: none;
-        }
+.filter-select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 1, 85, 0.1);
+    background: white;
+    outline: none;
+}
 
-        .table-container {
-            max-height: 370px;
-            overflow: auto;
-            margin: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
-        }
+.table-container {
+    max-height: 370px;
+    overflow: auto;
+    margin: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
 
-        .table-container::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
+.table-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
 
-        .table-container::-webkit-scrollbar-track {
-            background: #f1f5f9;
-            border-radius: 4px;
-        }
+.table-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
 
-        .table-container::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
+.table-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
 
-        .table-container::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
 
-        .modern-table {
-            margin: 0;
-            border-collapse: separate;
-            border-spacing: 0;
-        }
+.modern-table {
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
 
-        .modern-table thead th {
-            background: linear-gradient(135deg, #000155 0%, #1e3c72 100%) !important;
-            color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-            padding: 1rem 0.75rem;
-            border: none;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            text-align: center;
-        }
+.modern-table thead th {
+    background: linear-gradient(135deg, #000155 0%, #1e3c72 100%) !important;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 1rem 0.75rem;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-align: center;
+}
 
-        .modern-table thead th:first-child {
-            border-top-left-radius: 10px;
-        }
+.modern-table thead th:first-child {
+    border-top-left-radius: 10px;
+}
 
-        .modern-table thead th:last-child {
-            border-top-right-radius: 10px;
-        }
+.modern-table thead th:last-child {
+    border-top-right-radius: 10px;
+}
 
-        .modern-table tbody tr {
-            background: white;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid #f1f5f9;
-        }
+.modern-table tbody tr {
+    background: white;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f1f5f9;
+}
 
-        .modern-table tbody tr:hover {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            transform: scale(1.001);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+.modern-table tbody tr:hover {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    transform: scale(1.001);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-        .modern-table tbody td {
-            padding: 1rem 0.75rem;
-            border: none;
-            text-align: center;
-            vertical-align: middle;
-            font-size: 14px;
-        }
+.modern-table tbody td {
+    padding: 1rem 0.75rem;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+}
 
-         /* Status Badges */
-        .status-badge {
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-        }
+    /* Status Badges */
+.status-badge {
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
 
-        .status-badge:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
+.status-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
-        .status-pending {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            color: #d63031;
-            box-shadow: 0 3px 10px rgba(253, 203, 110, 0.4);
-        }
+.status-pending {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    color: #d63031;
+    box-shadow: 0 3px 10px rgba(253, 203, 110, 0.4);
+}
 
-        .status-approved {
-            background: linear-gradient(135deg, #81ecec 0%, #00b894 100%);
-            color: #ffffff;
-            box-shadow: 0 3px 10px rgba(0, 184, 148, 0.4);
-        }
+.status-approved {
+    background: linear-gradient(135deg, #81ecec 0%, #00b894 100%);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 184, 148, 0.4);
+}
 
-        .status-rejected {
-            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
-            color: #ffffff;
-            box-shadow: 0 3px 10px rgba(232, 67, 147, 0.4);
-        }
+.status-rejected {
+    background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(232, 67, 147, 0.4);
+}
 
-        .claimed-requests-btn {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 12px 20px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
-        }
+.claimed-requests-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
 
-        .claimed-requests-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-            color: white;
-            text-decoration: none;
-        }
+.claimed-requests-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    color: white;
+    text-decoration: none;
+}
 
-        .empty-state {
-            text-align: center;
-            padding: 3rem 2rem;
-            color: #64748b;
-        }
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #64748b;
+}
 
-        .empty-state i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.5;
-        }
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
 
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        .pulse {
-            animation: pulse 2s infinite;
-        }
+.pulse {
+    animation: pulse 2s infinite;
+}
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
 
-        @media (max-width: 768px) {
-            .stats-container {
-                padding: 1rem;
-            }
-            
-            .stat-card {
-                margin-bottom: 0.5rem;
-            }
-            
-            .search-filter-section {
-                padding: 1rem;
-            }
-            
-            .modern-table {
-                font-size: 12px;
-            }
-            
-            .modern-table tbody td,
-            .modern-table thead th {
-                padding: 0.5rem 0.25rem;
-            }
-        }
+@media (max-width: 768px) {
+    .stats-container {
+        padding: 1rem;
+    }
+    
+    .stat-card {
+        margin-bottom: 0.5rem;
+    }
+    
+    .search-filter-section {
+        padding: 1rem;
+    }
+    
+    .modern-table {
+        font-size: 12px;
+    }
+    
+    .modern-table tbody td,
+    .modern-table thead th {
+        padding: 0.5rem 0.25rem;
+    }
+}
 
 </style>
 
@@ -788,281 +787,266 @@ li a p{
 
 <body class="hold-transition sidebar-mini">
 
-<div class="wrapper">
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white" style="border: none; box-shadow: none;">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white" style="border: none; box-shadow: none;">
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- HOME -->
+                <li class="nav-item mr-4">
+                <a href="dashboard.php" class="nav-link">
+                    <i class="fa-solid fa-house" style="color:black;"></i>
+                </a>
+                </li>
+                <!-- REVIEWS -->
+                <li class="nav-item mr-3">
+                <a class="nav-link"  href="reviews_settings.php">
+                    <i class="fa-solid fa-comment-dots" style="color:black;"></i>
+                </a>
+                </li>
+                <!-- SETTINGS -->
+                <li class="nav-item dropdown mr-3">
+                <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-gear" style="color:black;"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
+                    <!-- Directory Management -->
+                    <li class="dropdown-item">
+                    <a href="#" class="d-block w-100" id="directoryToggle">
+                        Directory Management <i class="fas fa-caret-down float-right"></i>
+                    </a>
+                    <!-- Submenu -->
+                    <div id="directorySubmenu" style="display: none;" class="sub mt-2">
+                        <a class="dropdown-item ml-3" href="settings_addNew_off.php">Add New Official</a>
+                        <a class="dropdown-item ml-3" href="settings_list_official.php">List of Officials</a>
+                        <a class="dropdown-item ml-3" href="settings_officials_endterm.php">Officials End Terms</a>
+                    </div>
+                    </li>
+                    <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
+                    <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
+                </ul>
+                </li>
+                <!-- FULL SCREEN -->
+                <li class="nav-item mr-4">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
+                </a>
+                </li>
+                <!-- ADMIN -->
+                <li class="nav-item mr-4">
+                <a class="nav-link" href="admin_profile.php" >
+                    <i class="fa-solid fa-user mr-1" style="color:black;"></i>
+                    <span style="color:black;">Admin</span>
+                </a>
+                </li>
+                <!-- SIGN OUT -->
+                <li class="nav-item mr-4">
+                <a class="nav-link" href="../views/admin/sign_out.php" role="button">
+                    <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
+                    <span style="color:black;">Sign Out</span>
+                </a>
+                </li>
+            </ul>
+        </nav>
 
 
 
-      <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
+        
+        <!-- MAIN CONTENT -->
+        <div class="content-wrapper m-0 p-2 bg-white font-inter" >
+            <div class="col p-2 d-flex justify-content-between">
+                
+                <div class="col-4 p-2 " style="height: 700px;" >
+                    <div class="row-4 p-3 mb-3  " style="background-color:rgb(255, 255, 255); border: 1px solid rgb(194, 194, 194);
+                                                    border-radius: 10px;">
+                        <div class="row-2 mb-3 ">
+                            <div class="d-flex align-items-center text-white justify-content-center p-2 w-50 font-inter font-weight-bold" 
+                                style="height: 50px; background-color: #001556; border-radius: 10px;">   
 
-        <!-- HOME -->
-        <li class="nav-item mr-4">
-          <a href="dashboard.php" class="nav-link">
-            <i class="fa-solid fa-house" style="color:black;"></i>
-          </a>
-        </li>
+                                <i class="mr-2 fa-solid fa-plus"></i>
+                                <p class="m-0">Add New Certificate</p>
+                                
+                            </div>
+                        </div>
+                        <div class="row mb-3 " style="border: 1px solid rgb(135, 135, 135); border-radius: 10px; height: 60px;">
+                            <input type="text" id="certificate_name" class="p-2 pl-4 pr-4 w-100 h-100" style="background-color:rgb(255, 255, 255); border:none; border-radius: 10px;" 
+                                    placeholder="Name of the Certificate" >
+                        </div>
+                        <div class="row-2 d-flex justify-content-end font-inter" >      
+                            <button type="submit" class="btn px-3 font-weight-bold text-white" style="background-color: #000155; border-radius: 10px;" id="addBtn"> <i class="mr-2 fa-solid fa-plus"></i>Add</button>
+                        </div>
+                    </div>
 
-        <!-- REVIEWS -->
-        <li class="nav-item mr-3">
-          <a class="nav-link"  href="reviews_settings.php">
-            <i class="fa-solid fa-comment-dots" style="color:black;"></i>
-          </a>
-        </li>
+                    <div class="row-7 p-0 " style="background-color:rgb(255, 255, 255); border: 1px solid rgb(194, 194, 194); 
+                                        border-radius: 10px; height: 450px; overflow: auto;">
+                        <table class="table table-striped table-hover" id="officialTable" style="width: 100%;">
+                            <thead class="m-0" style="font-size:14px;  background-color:rgb(255, 255, 255); position: sticky; top: 0; z-index: 10;">
+                                <tr>
+                                    <th class="px-2 text-center" style="width: 40%; ">Certificate</th>
+                                    <th class="px-2 text-center" style="width: 35; ">Number of Request</th>
+                                    <th class="px-2 text-center" style="width: 25%; ">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="certificate_table">
+                            </tbody>
+                        </table>
+                    </div>
+                
 
-        <!-- SETTINGS -->
-        <li class="nav-item dropdown mr-3">
-          <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa-solid fa-gear" style="color:black;"></i>
-          </a>
+                </div>
+                            
+                <div class="container-fluid py-4">
+                        <div class="col-12 col-lg-10 mx-auto">
+                            <div class="main-container">
+                                <!-- Stats Section -->
+                                <div class="stats-container">
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-3 col-6">
+                                            <div class="stat-card approved fade-in">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h6 class="mb-1 text-muted">Approved</h6>
+                                                        <h4 class="mb-0 fw-bold text-success" id="approved-count">0</h4>
+                                                    </div>
+                                                    <div class="stat-icon">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-6">
+                                            <div class="stat-card pending fade-in" style="animation-delay: 0.1s">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h6 class="mb-1 text-muted">Pending</h6>
+                                                        <h4 class="mb-0 fw-bold text-warning" id="pending-count">0</h4>
+                                                    </div>
+                                                    <div class="stat-icon">
+                                                        <i class="fas fa-clock"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-6">
+                                            <div class="stat-card rejected fade-in" style="animation-delay: 0.2s">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h6 class="mb-1 text-muted">Rejected</h6>
+                                                        <h4 class="mb-0 fw-bold text-danger" id="rejected-count">0</h4>
+                                                    </div>
+                                                    <div class="stat-icon">
+                                                        <i class="fas fa-times"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-6">
+                                            <div class="fade-in" style="animation-delay: 0.3s">
+                                                <a href="claimed_certificatet_set.php" class="claimed-requests-btn w-100 justify-content-center">
+                                                    <i class="fas fa-check-to-slot"></i>
+                                                    Claimed Requests
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-            
-            <!-- Directory Management -->
-            <li class="dropdown-item">
-              <a href="#" class="d-block w-100" id="directoryToggle">
-                Directory Management <i class="fas fa-caret-down float-right"></i>
-              </a>
+                                <!-- Search and Filter Section -->
+                                <div class="search-filter-section">
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="search-input-container">
+                                                <input type="text" id="searching" class="form-control search-input" placeholder="Search by name, purpose, or certificate..." autocomplete="off">
+                                                <i class="fas fa-search search-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <label class="fw-semibold text-muted mb-0">Filter:</label>
+                                                <select id="status-filter" class="form-select filter-select">
+                                                    <option value="all">All Status</option>
+                                                    <option value="approved">Approved Only</option>
+                                                    <option value="pending">Pending Only</option>
+                                                    <option value="rejected">Rejected Only</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- Submenu -->
-              <div id="directorySubmenu" style="display: none;" class="sub mt-2">
-                <a class="dropdown-item ml-3" href="settings_addNew_off.php">Add New Official</a>
-                <a class="dropdown-item ml-3" href="settings_list_official.php">List of Officials</a>
-                <a class="dropdown-item ml-3" href="settings_officials_endterm.php">Officials End Terms</a>
-              </div>
+                                <!-- Table Section -->
+                                <div class="table-container">
+                                    <table class="table modern-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Full Name</th>
+                                                <th>Purpose</th>
+                                                <th>Date Requested</th>
+                                                <th>Certificate Type</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="requests-table-body">
+                                            <!-- Sample data for demonstration -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                </div>
 
-            </li>
 
-            <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
-            <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
-          </ul>
-        </li>
+            </div>
+            <!-- END OF COL -->
 
-
-        <!-- FULL SCREEN -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-            <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
-          </a>
-        </li>
-
-        <!-- ADMIN -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" href="admin_profile.php" >
-            <i class="fa-solid fa-user mr-1" style="color:black;"></i>
-            <span style="color:black;">Admin</span>
-          </a>
-        </li>
-
-        <!-- SIGN OUT -->
-        <li class="nav-item mr-4">
-          <a class="nav-link" href="../views/admin/sign_out.php" role="button">
-            <i class="fa-solid fa-right-from-bracket mr-1" style="color:black;"></i>
-            <span style="color:black;">Sign Out</span>
-          </a>
-        </li>
-
-      </ul>
-    </nav>
+        </div>
+        <!-- END OF CONTENT WRAPPER -->
+    </div>
+    <!-- ./wrapper -->
 
 
 
     
-    <!-- MAIN CONTENT -->
+    <!-- EDIT CERTIFICATE MODAL -->
+    <div class="modal fade font-inter" id="editCertificateModal" data-backdrop="static" data-keyboard="false" 
+        tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
 
-    <div class="content-wrapper m-0 p-2 bg-white font-inter" >
-        <div class="col p-2 d-flex justify-content-between">
-            
-            <div class="col-4 p-2 " style="height: 700px;" >
-                <div class="row-4 p-3 mb-3  " style="background-color:rgb(255, 255, 255); border: 1px solid rgb(194, 194, 194);
-                                                   border-radius: 10px;">
-                    <div class="row-2 mb-3 ">
-                        <div class="d-flex align-items-center text-white justify-content-center p-2 w-50 font-inter font-weight-bold" 
-                             style="height: 50px; background-color: #001556; border-radius: 10px;">   
+        
+        <div  class="modal-dialog modal-lg modal-dialog-centered p-3" role="document" >
+            <div class="modal-content p-3 bg-white w-75 mx-auto  elevation-2" style="border-radius: 20px;">
 
-                            <i class="mr-2 fa-solid fa-plus"></i>
-                            <p class="m-0">Add New Certificate</p>
-                            
+                    <div class="row-4 p-3 mb-3">
+                        <div class="row-2 mb-3 ">
+                            <div class="d-flex align-items-center justify-content-center p-2 w-50 font-inter text-white font-weight-bold" 
+                                style="height: 50px; background-color: #000155; border-radius: 10px;">   
+
+                                <i class="mr-2  fa-solid fa-pen-to-square"></i>
+                                <p class="m-0">Edit Certificate</p>
+                                
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mb-3 " style="border: 1px solid rgb(135, 135, 135); border-radius: 10px; height: 60px;">
-                        <input type="text" id="certificate_name" class="p-2 pl-4 pr-4 w-100 h-100" style="background-color:rgb(255, 255, 255); border:none; border-radius: 10px;" 
-                                placeholder="Name of the Certificate" >
-                    </div>
-                    <div class="row-2 d-flex justify-content-end font-inter" >      
-                        <button type="submit" class="btn px-3 font-weight-bold text-white" style="background-color: #000155; border-radius: 10px;" id="addBtn"> <i class="mr-2 fa-solid fa-plus"></i>Add</button>
-                    </div>
-                </div>
 
-                <div class="row-7 p-0 " style="background-color:rgb(255, 255, 255); border: 1px solid rgb(194, 194, 194); 
-                                       border-radius: 10px; height: 450px; overflow: auto;">
-                    <table class="table table-striped table-hover" id="officialTable" style="width: 100%;">
-                        <thead class="m-0" style="font-size:14px;  background-color:rgb(255, 255, 255); position: sticky; top: 0; z-index: 10;">
-                            <tr>
-                                <th class="px-2 text-center" style="width: 40%; ">Certificate</th>
-                                <th class="px-2 text-center" style="width: 35; ">Number of Request</th>
-                                <th class="px-2 text-center" style="width: 25%; ">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="certificate_table">
-                        </tbody>
-                    </table>
-                </div>
-            
 
-            </div>
                         
-            <div class="container-fluid py-4">
-                    <div class="col-12 col-lg-10 mx-auto">
-                        <div class="main-container">
-                            <!-- Stats Section -->
-                            <div class="stats-container">
-                                <div class="row g-3 mb-3">
-                                    <div class="col-md-3 col-6">
-                                        <div class="stat-card approved fade-in">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <h6 class="mb-1 text-muted">Approved</h6>
-                                                    <h4 class="mb-0 fw-bold text-success" id="approved-count">0</h4>
-                                                </div>
-                                                <div class="stat-icon">
-                                                    <i class="fas fa-check"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-6">
-                                        <div class="stat-card pending fade-in" style="animation-delay: 0.1s">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <h6 class="mb-1 text-muted">Pending</h6>
-                                                    <h4 class="mb-0 fw-bold text-warning" id="pending-count">0</h4>
-                                                </div>
-                                                <div class="stat-icon">
-                                                    <i class="fas fa-clock"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-6">
-                                        <div class="stat-card rejected fade-in" style="animation-delay: 0.2s">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <h6 class="mb-1 text-muted">Rejected</h6>
-                                                    <h4 class="mb-0 fw-bold text-danger" id="rejected-count">0</h4>
-                                                </div>
-                                                <div class="stat-icon">
-                                                    <i class="fas fa-times"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-6">
-                                        <div class="fade-in" style="animation-delay: 0.3s">
-                                            <a href="claimed_certificatet_set.php" class="claimed-requests-btn w-100 justify-content-center">
-                                                <i class="fas fa-check-to-slot"></i>
-                                                Claimed Requests
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row mb-3" style="border: 1px solid rgb(135, 135, 135); border-radius: 10px; height: 60px;">
+                            <!-- Hidden input to store ID -->
+                            <input type="hidden" id="edit_cert_id">
+                            <!-- Input for new zone name -->
+                            <input type="text"   id="edit_cert_name" class="p-2 pl-4 pr-4 w-100 h-100" style="background-color:rgb(255, 255, 255); border:none; border-radius: 10px;" 
+                                    placeholder="Enter the new name" >
+                        
+                        </div>
 
-                            <!-- Search and Filter Section -->
-                            <div class="search-filter-section">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="search-input-container">
-                                            <input type="text" id="searching" class="form-control search-input" placeholder="Search by name, purpose, or certificate..." autocomplete="off">
-                                            <i class="fas fa-search search-icon"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex align-items-center gap-3">
-                                            <label class="fw-semibold text-muted mb-0">Filter:</label>
-                                            <select id="status-filter" class="form-select filter-select">
-                                                <option value="all">All Status</option>
-                                                <option value="approved">Approved Only</option>
-                                                <option value="pending">Pending Only</option>
-                                                <option value="rejected">Rejected Only</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Table Section -->
-                            <div class="table-container">
-                                <table class="table modern-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Full Name</th>
-                                            <th>Purpose</th>
-                                            <th>Date Requested</th>
-                                            <th>Certificate Type</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="requests-table-body">
-                                        <!-- Sample data for demonstration -->
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="row-2 d-flex justify-content-end font-inter" >
+                            <button type="button" class="btn px-3 elevation-5 mr-2" style="background-color: #FFF153; border-radius: 20px;" id="closeBtn" data-dismiss="modal"><i class="mr-2  fas fa-times"></i> Close</button>
+                            <button type="submit" class="btn px-3 elevation-5" style="background-color: #81D5C6; border-radius: 20px;" id="saveBtn"> <i class="mr-2  fa-solid fa-share"></i>Save</button>
                         </div>
                     </div>
+
             </div>
-
-
         </div>
-        <!-- END OF COL -->
 
     </div>
-    <!-- END OF CONTENT WRAPPER -->
-</div>
-<!-- ./wrapper -->
-
-
-<!-- EDIT CERTIFICATE MODAL -->
-<div class="modal fade font-inter" id="editCertificateModal" data-backdrop="static" data-keyboard="false" 
-    tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-
-    
-    <div  class="modal-dialog modal-lg modal-dialog-centered p-3" role="document" >
-        <div class="modal-content p-3 bg-white w-75 mx-auto  elevation-2" style="border-radius: 20px;">
-
-                <div class="row-4 p-3 mb-3">
-                    <div class="row-2 mb-3 ">
-                        <div class="d-flex align-items-center justify-content-center p-2 w-50 font-inter text-white font-weight-bold" 
-                            style="height: 50px; background-color: #000155; border-radius: 10px;">   
-
-                            <i class="mr-2  fa-solid fa-pen-to-square"></i>
-                            <p class="m-0">Edit Certificate</p>
-                            
-                        </div>
-                    </div>
-
-
-                    
-                    <div class="row mb-3" style="border: 1px solid rgb(135, 135, 135); border-radius: 10px; height: 60px;">
-                        <!-- Hidden input to store ID -->
-                        <input type="hidden" id="edit_cert_id">
-                        <!-- Input for new zone name -->
-                        <input type="text"   id="edit_cert_name" class="p-2 pl-4 pr-4 w-100 h-100" style="background-color:rgb(255, 255, 255); border:none; border-radius: 10px;" 
-                                placeholder="Enter the new name" >
-                    
-                    </div>
-
-                    <div class="row-2 d-flex justify-content-end font-inter" >
-                        <button type="button" class="btn px-3 elevation-5 mr-2" style="background-color: #FFF153; border-radius: 20px;" id="closeBtn" data-dismiss="modal"><i class="mr-2  fas fa-times"></i> Close</button>
-                        <button type="submit" class="btn px-3 elevation-5" style="background-color: #81D5C6; border-radius: 20px;" id="saveBtn"> <i class="mr-2  fa-solid fa-share"></i>Save</button>
-                    </div>
-                </div>
-
-        </div>
-    </div>
-
-</div>
 
 
 
@@ -1241,7 +1225,6 @@ li a p{
 
 
 
-
 <!-- get all certificate -->
 <script>
         function loadCertificatesEnhanced() {
@@ -1407,7 +1390,6 @@ li a p{
 </script>
 
 
-
 <!-- edit certificate name -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1561,9 +1543,6 @@ li a p{
 </script>
 
 
-
-
-
 <!-- delete -->
 <script>
     function deleteCertificateEnhanced(btn) {
@@ -1684,8 +1663,6 @@ li a p{
         deleteCertificateEnhanced(btn);
     }
 </script>
-
-
 
 
 <script>

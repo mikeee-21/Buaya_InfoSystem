@@ -860,78 +860,62 @@ li a p{
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
-   <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white " style=" border: none; box-shadow: none;">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item mr-3">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button">
-                  <i class="fas fa-bars" style="color:black;"></i>
-                </a>
-            </li>
 
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white " style=" border: none; box-shadow: none;">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+          <li class="nav-item mr-3">
+              <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                <i class="fas fa-bars" style="color:black;"></i>
+              </a>
+          </li>
           <li class="nav-item">
               <span class="navbar-text font-weight-bold" style="color:black; font-size: 18px;"> BARANGAY BUAYA</span>
           </li>
-          
-          
-        </ul>
-
-
-
+      </ul>
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-
         <!-- HOME -->
         <li class="nav-item mr-4">
           <a href="dashboard.php" class="nav-link">
             <i class="fa-solid fa-house" style="color:black;"></i>
           </a>
         </li>
-
         <!-- REVIEWS -->
         <li class="nav-item mr-3">
           <a class="nav-link"  href="reviews_settings.php">
             <i class="fa-solid fa-comment-dots" style="color:black;"></i>
           </a>
         </li>
-
         <!-- SETTINGS -->
         <li class="nav-item dropdown mr-3">
           <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-gear" style="color:black;"></i>
           </a>
-
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-            
             <!-- Directory Management -->
             <li class="dropdown-item">
               <a href="#" class="d-block w-100" id="directoryToggle">
                 Directory Management <i class="fas fa-caret-down float-right"></i>
               </a>
-
                 <!-- Submenu -->
               <div id="directorySubmenu" style="display: none;" class="sub mt-2">
                 <a class="dropdown-item ml-3 font-inter" href="settings_addNew_off.php">Add New Official</a>
                 <a class="dropdown-item ml-3 font-inter" href="settings_list_official.php">List of Officials</a>
                 <a class="dropdown-item ml-3 font-inter" href="settings_officials_endterm.php">Officials End Terms</a>
               </div>
-
             </li>
-
             <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
             <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
           </ul>
         </li>
-
-
         <!-- FULL SCREEN -->
         <li class="nav-item mr-4">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
           </a>
         </li>
-
         <!-- ADMIN -->
         <li class="nav-item mr-4">
           <a class="nav-link" href="admin_profile.php" >
@@ -939,7 +923,6 @@ li a p{
             <span style="color:black;">Admin</span>
           </a>
         </li>
-
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
           <a class="nav-link" href="../views/admin/sign_out.php" role="button">
@@ -947,7 +930,6 @@ li a p{
             <span style="color:black;">Sign Out</span>
           </a>
         </li>
-
       </ul>
     </nav>
 
@@ -961,17 +943,13 @@ li a p{
           <img src="img/logo.jpg" alt="BrgyBuaya Logo" class="brand-image elevation-4" >
         </div>
         </a>
-
       <!-- Sidebar -->
       <div class="sidebar mt-5">
-        
         <!-- Sidebar Menu -->
         <nav class="mt-5">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
-
-
             <li class="nav-item menu-open">
               <a href="dashboard.php" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt" style="color:black;"></i>
@@ -980,9 +958,6 @@ li a p{
                 </p>
               </a>
             </li>
-
-
-
             <li class="nav-item">
               <a href="announcement.php" class="nav-link">
               <i class="nav-icon fa-solid fa-circle-info" style="color:black;"></i>
@@ -991,11 +966,7 @@ li a p{
                 </p>
               </a>
             </li>
-
-
-
             <li class="nav-item">
-
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy" style="color:black;"></i>
                 <p style="color:black;">
@@ -1003,29 +974,22 @@ li a p{
                   <i class="fas fa-angle-left right" ></i>
                 </p>
               </a>
-
-                          <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                              <a href="pending_request.php" class="nav-link">
-                                <i class="nav-dr-icon nav-icon fa-solid fa-hourglass-end"></i>
-                                <p class="nav-select" style="color:black; font-size: 15px; margin-left: 8px;">Pending Requests</p>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a href="approved_request.php" class="nav-link" style="color:black;">
-                              <i class="nav-dr-icon nav-icon fa-solid fa-person-circle-check"></i>
-                                <p class="nav-select" style="color:black; ">Approved Requests</p>
-                              </a>
-                            </li>
-                          </ul>
-
-              
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="pending_request.php" class="nav-link">
+                    <i class="nav-dr-icon nav-icon fa-solid fa-hourglass-end"></i>
+                    <p class="nav-select" style="color:black; font-size: 15px; margin-left: 8px;">Pending Requests</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="approved_request.php" class="nav-link" style="color:black;">
+                  <i class="nav-dr-icon nav-icon fa-solid fa-person-circle-check"></i>
+                    <p class="nav-select" style="color:black; ">Approved Requests</p>
+                  </a>
+                </li>
+              </ul>
             </li>
-
-
-
             <li class="nav-item">
-
               <a href="#" class="nav-link">
                 <i class="nav-icon fa-solid fa-users" style="color:black;"></i>
                 <p style="color:black;">
@@ -1033,32 +997,22 @@ li a p{
                   <i class="right fas fa-angle-left" ></i>
                 </p>
               </a>
-
-
-                      <ul class="nav nav-treeview">
-
-                        <li class="nav-item">
-                          <a href="brgy_officials.php" class="nav-link">
-                            <i class="nav-direct-icon nav-icon fa-solid fa-users-line" ></i>
-                            <p class="nav-select" style="color:black;">Barangay Officials</p>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="brgy_sk_officials.php" class="nav-link">
-                            <i class="nav-direct-icon nav-icon fa-solid fa-users-line" ></i>
-                            <p class="nav-select" style="color:black;">SK Officials</p>
-                          </a>
-                        </li>
-
-                      </ul>
-
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="brgy_officials.php" class="nav-link">
+                    <i class="nav-direct-icon nav-icon fa-solid fa-users-line" ></i>
+                    <p class="nav-select" style="color:black;">Barangay Officials</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="brgy_sk_officials.php" class="nav-link">
+                    <i class="nav-direct-icon nav-icon fa-solid fa-users-line" ></i>
+                    <p class="nav-select" style="color:black;">SK Officials</p>
+                  </a>
+                </li>
+              </ul>
             </li>
-
-
-
-
             <li class="nav-item">
-              
               <a href="#" class="nav-link">
                 <i class="nav-icon fa-solid fa-users-line" style="color:black;"></i>
                 <p style="color:black;">
@@ -1066,40 +1020,28 @@ li a p{
                   <i class="fas fa-angle-left right" ></i>
                 </p>
               </a>
-
-                <ul class="nav nav-treeview">
-              
-                  <li class="nav-item" >
-                      <a href="admin_addNewResidence.php" class="nav-link" >
-                        <i class=" nav-residence-icon nav-icon fa-solid fa-user-plus" ></i>
-                        <p class="nav-select" style="color:black;">New Residence</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="admin_allResidence.php" class="nav-link">
-                        <i class="nav-residence-icon nav-icon fa-solid fa-users-line"></i>
-                        <p class="nav-select" style="color:black;">All Residence</p>
-                      </a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="admin_archieveResidence.php" class="nav-link">
-                        <i class="nav-residence-icon nav-icon fa-solid fa-users-slash" ></i>
-                        <p class="nav-select" style="color:black;">Archive Residence</p>
-                      </a>
-                    </li>
-
-                </ul>
-
+              <ul class="nav nav-treeview">
+                <li class="nav-item" >
+                    <a href="admin_addNewResidence.php" class="nav-link" >
+                      <i class=" nav-residence-icon nav-icon fa-solid fa-user-plus" ></i>
+                      <p class="nav-select" style="color:black;">New Residence</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="admin_allResidence.php" class="nav-link">
+                      <i class="nav-residence-icon nav-icon fa-solid fa-users-line"></i>
+                      <p class="nav-select" style="color:black;">All Residence</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="admin_archieveResidence.php" class="nav-link">
+                      <i class="nav-residence-icon nav-icon fa-solid fa-users-slash" ></i>
+                      <p class="nav-select" style="color:black;">Archive Residence</p>
+                    </a>
+                  </li>
+              </ul>
             </li>
-
-
-
             <li class="nav-header text-white">OTHERS</li>
-
-
-
             <li class="nav-item">
               <a href="calendar.php" class="nav-link">
                 <i class="nav-icon fas fa-calendar-alt" style="color:black;"></i>
@@ -1124,22 +1066,18 @@ li a p{
                   </p>
               </a>
             </li>
-
             <li class="nav-item">
                 <a href="activity_Log.php" class="nav-link">
                   <i class="nav-icon fa-solid fa-user" style="color:black;"></i>
                   <p style="color:black;">Activity logs</p>
                 </a>
               </li>
-
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
       </div>
       <!-- /.sidebar -->
     </aside>
-
-
 
 
     <!-- content wrapper -->
@@ -1261,6 +1199,7 @@ li a p{
         </div>
       </div>
     </div>
+
   </div>
 
 
@@ -1293,12 +1232,12 @@ li a p{
 
 
 
-  <!-- AdminLTE App -->
-  <script src="../assets/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../assets/dist/js/adminlte.min.js"></script>
   
 
 
-  <script>
+<script>
   $(function () {
     // Prevent the dropdown from closing when clicking inside
     $('.dropdown-menu').on('click', function (e) {
@@ -1314,7 +1253,7 @@ li a p{
 </script>
 
 <!-- fetch all announcement type -->
- <script>
+<script>
   // Load announcement types dynamically
   fetch('../views/admin/get_all_announcement_type.php')
 
@@ -1338,75 +1277,75 @@ li a p{
 </script>
 
 
-
-
-
-
 <!-- submit the announcement to the db -->
 <script>
-// Keep your existing form submission code for creating announcements
-document.getElementById('announcementForm').addEventListener('submit', function (e) {
-  e.preventDefault();
+  // Keep your existing form submission code for creating announcements
+  document.getElementById('announcementForm').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  const form = document.getElementById('announcementForm');
-  const formData = new FormData(form);
-  
-  // Check if we're updating or creating
-  const announcementId = document.getElementById('edit_announcement_id').value;
-  const isUpdate = announcementId !== '';
-  
-  // Determine the endpoint based on operation type
-  const endpoint = isUpdate 
-    ? '../views/admin/update_announcement.php' 
-    : '../views/admin/add_announcement.php';
+    const form = document.getElementById('announcementForm');
+    const formData = new FormData(form);
+    
+    // Check if we're updating or creating
+    const announcementId = document.getElementById('edit_announcement_id').value;
+    const isUpdate = announcementId !== '';
+    
+    // Determine the endpoint based on operation type
+    const endpoint = isUpdate 
+      ? '../views/admin/update_announcement.php' 
+      : '../views/admin/add_announcement.php';
 
-  fetch(endpoint, {
-    method: 'POST',
-    body: formData
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.success) {
+    fetch(endpoint, {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        Swal.fire({
+          title: 'Success!',
+          text: data.message,
+          icon: 'success',
+          confirmButtonColor: '#52AB99'
+        }).then(() => {
+          // Reset form and reload page
+          resetForm();
+          location.reload();
+        });
+      } else {
+        Swal.fire({
+          title: isUpdate ? 'Failed to Update' : 'Failed to Post',
+          text: data.message,
+          icon: 'error',
+          confirmButtonColor: '#d33'
+        });
+        
+        // If there are image errors, show them
+        if (data.image_errors && data.image_errors.length > 0) {
+
+          console.error('Image errors:', data.image_errors);
+
+        }
+
+      }
+
+    })
+
+    .catch(err => {
+      console.error(err);
+      
       Swal.fire({
-        title: 'Success!',
-        text: data.message,
-        icon: 'success',
-        confirmButtonColor: '#52AB99'
-      }).then(() => {
-        // Reset form and reload page
-        resetForm();
-        location.reload();
-      });
-    } else {
-      Swal.fire({
-        title: isUpdate ? 'Failed to Update' : 'Failed to Post',
-        text: data.message,
+        title: 'Error',
+        text: 'Error submitting form.',
         icon: 'error',
         confirmButtonColor: '#d33'
       });
-      
-      // If there are image errors, show them
-      if (data.image_errors && data.image_errors.length > 0) {
-        console.error('Image errors:', data.image_errors);
-      }
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    
-    Swal.fire({
-      title: 'Error',
-      text: 'Error submitting form.',
-      icon: 'error',
-      confirmButtonColor: '#d33'
+
     });
+
   });
-});
+
 </script>
-
-
-
-
 
 
 <!-- image preview -->
@@ -1510,9 +1449,6 @@ document.getElementById('announcementForm').addEventListener('submit', function 
     }
   });
 </script>
-
-
-
 
 
 <!-- display all announcement here -->

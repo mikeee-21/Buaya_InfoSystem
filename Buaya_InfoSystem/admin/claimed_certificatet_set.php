@@ -616,278 +616,278 @@ li a p{
 
 /* modal style */
 .modal-content {
-            border: none;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-        }
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
 
-        .modal-header {
-            background: linear-gradient(135deg, #000155, #0FCDA7);
-            color: white;
-            border: none;
-            padding: 1rem;
-            position: relative;
-        }
+.modal-header {
+    background: linear-gradient(135deg, #000155, #0FCDA7);
+    color: white;
+    border: none;
+    padding: 1rem;
+    position: relative;
+}
 
-        .modal-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 0;
-        }
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
 
-        .section-header {
-            color: var(--primary-color);
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-color);
-            position: relative;
-        }
+.section-header {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+}
 
-        .btn-close {
-            background: none;
-            border: none;
-            color: white;
-            opacity: 0.8;
-            font-size: 1.25rem;
-            transition: opacity 0.2s;
-        }
+.btn-close {
+    background: none;
+    border: none;
+    color: white;
+    opacity: 0.8;
+    font-size: 1.25rem;
+    transition: opacity 0.2s;
+}
 
-        .btn-close:hover {
-            opacity: 1;
-            color: white;
-        }
+.btn-close:hover {
+    opacity: 1;
+    color: white;
+}
 
-        .modal-body {
-            padding: 2rem;
-            background: white;
-        }
+.modal-body {
+    padding: 2rem;
+    background: white;
+}
 
-        .section-header {
-            color: var(--primary-color);
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-color);
-            position: relative;
-        }
+.section-header {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+}
 
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--primary-color);
-        }
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-color);
+}
 
-        .info-group {
-            margin-bottom: 2rem;
-        }
+.info-group {
+    margin-bottom: 2rem;
+}
 
-        .info-item {
-            margin-bottom: 1.25rem;
-        }
+.info-item {
+    margin-bottom: 1.25rem;
+}
 
-        .info-label {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 0.375rem;
-            text-transform: capitalize;
-        }
+.info-label {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.375rem;
+    text-transform: capitalize;
+}
 
-        .info-value {
-            color: var(--primary-color);
-            font-size: 1rem;
-            font-weight: 400;
-            font-weight: bold;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-color);
-            min-height: 2.5rem;
-            display: flex;
-            align-items: center;
-            transition: border-color 0.2s;
-        }
+.info-value {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 400;
+    font-weight: bold;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    transition: border-color 0.2s;
+}
 
-        .info-value:hover {
-            border-color: var(--primary-color);
-        }
+.info-value:hover {
+    border-color: var(--primary-color);
+}
 
-        .info-value.empty {
-            color: var(--text-muted);
-            font-style: italic;
-        }
+.info-value.empty {
+    color: var(--text-muted);
+    font-style: italic;
+}
 
-        .status-display {
-            background: var(--light-bg);
-            border-radius: 12px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
+.status-display {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
 
-        .status-text {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin: 0;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+.status-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-        .status-claimed {
-            background: var(--success-color);
-            color: white;
-        }
+.status-claimed {
+    background: var(--success-color);
+    color: white;
+}
 
-        .status-unclaimed {
-            background: var(--warning-color);
-            color: white;
-        }
+.status-unclaimed {
+    background: var(--warning-color);
+    color: white;
+}
 
-        .status-rejected {
-            background: var(--danger-color);
-            color: white;
-        }
+.status-rejected {
+    background: var(--danger-color);
+    color: white;
+}
 
-        .message-section {
-            background: var(--light-bg);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--primary-color);
-        }
+.message-section {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
 
-        .message-text {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            font-weight: bold;
-            margin: 0;
-        }
+.message-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: bold;
+    margin: 0;
+}
 
-        .rejection-section {
-            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-            border-left: 4px solid var(--danger-color);
-        }
+.rejection-section {
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--danger-color);
+}
 
-        .rejection-label {
-            color: var(--danger-color);
-            font-weight: 600;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.75rem;
-        }
+.rejection-label {
+    color: var(--danger-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
 
-        .rejection-text {
-            color: #2d3436;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
+.rejection-text {
+    color: #2d3436;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
 
-        .dates-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
+.dates-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
 
-        .date-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.25rem;
-            text-align: center;
-            transition: all 0.2s;
-        }
+.date-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: all 0.2s;
+}
 
-        .date-card:hover {
-            border-color: var(--primary-color);
-            box-shadow: var(--shadow);
-        }
+.date-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
 
-        .date-icon {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
+.date-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
 
-        .date-label {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
+.date-label {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
 
-        .date-value {
-            color: var(--primary-color);
-            font-size: 1rem;
-            font-weight: 600;
-        }
+.date-value {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
 
-        .modal-footer {
-            background: var(--light-bg);
-            border: none;
-            padding: 1.5rem 2rem;
-        }
+.modal-footer {
+    background: var(--light-bg);
+    border: none;
+    padding: 1.5rem 2rem;
+}
 
-        .btn-modal-close {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
+.btn-modal-close {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
 
-        .btn-modal-close:hover {
-            background: var(--secondary-color);
-            color: white;
-            transform: translateY(-1px);
-            box-shadow: var(--shadow);
-        }
+.btn-modal-close:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
 
-        @media (max-width: 768px) {
-            .modal-dialog {
-                margin: 1rem;
-            }
-            
-            .dates-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .modal-body {
-                padding: 1.5rem;
-            }
-            
-            .modal-header {
-                padding: 1.25rem 1.5rem;
-            }
-        }
+@media (max-width: 768px) {
+    .modal-dialog {
+        margin: 1rem;
+    }
+    
+    .dates-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .modal-header {
+        padding: 1.25rem 1.5rem;
+    }
+}
 
-        /* Smooth transitions */
-        * {
-            transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-        }
+/* Smooth transitions */
+* {
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
 
 </style>
 
@@ -899,62 +899,48 @@ li a p{
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white " style="border: none; box-shadow: none;">
-
-
-
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-
         <!-- HOME -->
         <li class="nav-item mr-4">
           <a href="dashboard.php" class="nav-link">
             <i class="fa-solid fa-house" style="color:black;"></i>
           </a>
         </li>
-
         <!-- REVIEWS -->
         <li class="nav-item mr-3">
           <a class="nav-link"  href="reviews_settings.php">
             <i class="fa-solid fa-comment-dots" style="color:black;"></i>
           </a>
         </li>
-
         <!-- SETTINGS -->
         <li class="nav-item dropdown mr-3">
           <a class="nav-link " href="#" id="settingsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-gear" style="color:black;"></i>
           </a>
-
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdown" style="width: 250px;">
-            
             <!-- Directory Management -->
             <li class="dropdown-item">
               <a href="#" class="d-block w-100" id="directoryToggle">
                 Directory Management <i class="fas fa-caret-down float-right"></i>
               </a>
-
                 <!-- Submenu -->
               <div id="directorySubmenu" style="display: none;" class="sub mt-2">
                 <a class="dropdown-item ml-3" href="settings_addNew_off.php">Add New Official</a>
                 <a class="dropdown-item ml-3" href="settings_list_official.php">List of Officials</a>
                 <a class="dropdown-item ml-3" href="settings_officials_endterm.php">Officials End Terms</a>
               </div>
-
             </li>
-
             <li><a class="dropdown-item" href="document_rqst_management.php">Document Management</a></li>
             <li><a class="dropdown-item" href="zonepurokSettings.php">Zone and Purok Management</a></li>
           </ul>
         </li>
-
-
         <!-- FULL SCREEN -->
         <li class="nav-item mr-4">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt" style="color:black;"></i>
           </a>
         </li>
-
         <!-- ADMIN -->
         <li class="nav-item mr-4">
           <a class="nav-link" href="admin_profile.php" >
@@ -962,7 +948,6 @@ li a p{
             <span style="color:black;">Admin</span>
           </a>
         </li>
-
         <!-- SIGN OUT -->
         <li class="nav-item mr-4">
           <a class="nav-link" href="../views/admin/sign_out.php" role="button">
